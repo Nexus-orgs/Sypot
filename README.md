@@ -1,233 +1,126 @@
-# Sypot - Event Discovery & Social Mobile App 📱
+# Welcome to your Lovable project
 
-A React Native mobile application for discovering events, connecting with people, and organizing social gatherings. Built based on the Sypot design system with a modern, user-friendly interface.
+## Project info
 
-## 🎨 Design Implementation
+**URL**: https://lovable.dev/projects/8c18fc69-c3d6-4af7-8c2d-efcc5979c1cd
 
-This React Native app implements the complete Sypot design system including:
+## How can I edit this code?
 
-- **Splash Screen** with animated gradient backgrounds and brand logo
-- **Authentication Flow** (Welcome, Login, Sign Up, Password Reset)
-- **Main App Screens** (Home Feed, Explore, Create Events, Messages, Profile)
-- **Event Management** (Discovery, Details, Creation, Booking)
-- **Social Features** (Chat, Friends, User Profiles)
-- **Complete Navigation** with Tab and Stack navigators
+There are several ways of editing your application.
 
-## 🚀 Features
+**Use Lovable**
 
-### ✨ Core Functionality
+Simply visit the [Lovable Project](https://lovable.dev/projects/8c18fc69-c3d6-4af7-8c2d-efcc5979c1cd) and start prompting.
 
-- 🔐 **Authentication System** - Complete login/signup flow
-- 🏠 **Home Feed** - Discover events with beautiful event cards
-- 🔍 **Event Discovery** - Explore and search events
-- 📱 **Event Management** - Create and manage events
-- 💬 **Messaging System** - Chat with other users
-- 👤 **User Profiles** - Personal and business profiles
-- 🗺️ **Map Integration** - Location-based event discovery
-- 🎫 **Booking System** - Event reservations and tickets
+Changes made via Lovable will be committed automatically to this repo.
 
-### 🎯 UI/UX Implementation
+**Use your preferred IDE**
 
-- 🎨 **Design System** - Complete theme matching original Sypot designs
-- 📱 **Mobile-First** - Responsive design optimized for mobile devices
-- 🌈 **Brand Colors** - Teal (#14b8a6) and Orange (#f97316) gradients
-- ✨ **Animations** - Smooth transitions and micro-interactions
-- 🔧 **Reusable Components** - Button, Input, EventCard, Logo components
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-## 🏗️ Project Structure
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-```
-src/
-├── components/          # Reusable UI components
-│   ├── common/         # Button, Input, Logo
-│   ├── cards/          # EventCard, UserCard
-│   └── forms/          # Form components
-├── navigation/          # Navigation setup
-│   ├── AppNavigator.tsx    # Root navigator
-│   ├── AuthNavigator.tsx   # Auth flow
-│   ├── HomeNavigator.tsx   # Home stack
-│   └── types.ts           # Navigation types
-├── screens/            # All app screens
-│   ├── auth/          # Authentication screens
-│   ├── main/          # Main app screens
-│   ├── events/        # Event-related screens
-│   ├── messages/      # Chat screens
-│   └── profile/       # Profile screens
-├── themes/            # Design system
-│   ├── colors.ts      # Brand colors and gradients
-│   ├── typography.ts  # Text styles
-│   ├── spacing.ts     # Layout spacing
-│   └── index.ts       # Theme exports
-└── assets/           # Images, icons, fonts
+Follow these steps:
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
 ```
 
-## 🎯 Design System
+**Edit a file directly in GitHub**
 
-### Colors
 
-- **Primary**: `#0df2db` (Teal)
-- **Secondary**: `#f26c0d` (Orange)
-- **Background**: `#f8f7f5` (Light), `#102220` (Dark)
-- **Text**: Smart contrast for accessibility
+**Use GitHub Codespaces**
 
-### Typography
 
-- **Font**: Plus Jakarta Sans
-- **Scales**: Display, Heading, Body, Caption, Label styles
-- **Responsive**: Adaptive sizing for different screen sizes
+## What technologies are used for this project?
 
-### Navigation
+This project is built with:
 
-- **Tab Navigation**: Home, Explore, Create, Messages, Profile
-- **Stack Navigation**: Hierarchical screen flow
-- **Gesture Support**: Swipe and touch interactions
 
-## 📱 Screen Flow
+## How can I deploy this project?
 
-1. **Splash Screen** → Shows animated logo with brand tagline
-2. **Authentication** → Welcome → Login/SignUp → Password Reset
-3. **Main App** → Tab-based navigation with 5 core sections
-4. **Home Feed** → Event discovery with event cards
-5. **Profile Management** → Settings, bookings, friends
+Simply open [Lovable](https://lovable.dev/projects/8c18fc69-c3d6-4af7-8c2d-efcc5979c1cd) and click on Share -> Publish.
 
-## 🛠️ Technical Stack
+## Can I connect a custom domain to my Lovable project?
+# Welcome to your Lovable project
 
-- **React Native 0.73.2** - Mobile app framework
-- **React Navigation 6** - Screen navigation
-- **TypeScript** - Type safety
-- **React Native Vector Icons** - Icon system
-- **React Native Linear Gradient** - Gradient backgrounds
-- **React Native Gesture Handler** - Touch interactions
-- **React Native Safe Area Context** - Safe area handling
+## Project info
 
-## 🎨 Component Library
+**URL**: https://lovable.dev/projects/8c18fc69-c3d6-4af7-8c2d-efcc5979c1cd
 
-### Common Components
+## How can I edit this code?
 
-- **Button** - Primary, secondary, outline, text variants
-- **Input** - Text input with validation and icons
-- **Logo** - Animated brand logo with gradients
+There are several ways of editing your application.
 
-### Cards
+**Use Lovable**
 
-- **EventCard** - Event display with image, details, attendees
-- **UserCard** - User profile display
-- **BusinessCard** - Business profile display
+Simply visit the [Lovable Project](https://lovable.dev/projects/8c18fc69-c3d6-4af7-8c2d-efcc5979c1cd) and start prompting.
 
-## 🚀 Getting Started
+Changes made via Lovable will be committed automatically to this repo.
 
-### Prerequisites
+**Use your preferred IDE**
 
-- Node.js 16+
-- React Native CLI
-- Android Studio (for Android development)
-- Xcode (for iOS development)
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-### Installation
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-```bash
-# Clone and install dependencies
-cd SypotApp
-npm install
+Follow these steps:
 
-# Install iOS dependencies (macOS only)
-cd ios && pod install && cd ..
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-# Start Metro bundler
-npm start
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-# Run on Android
-npm run android
+# Step 3: Install the necessary dependencies.
+npm i
 
-# Run on iOS
-npm run ios
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
 ```
 
-### Development
+**Edit a file directly in GitHub**
 
-```bash
-# Start development server
-npm start
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-# Run tests
-npm test
+**Use GitHub Codespaces**
 
-# Lint code
-npm run lint
-```
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## 🎯 Key Features Implemented
+## What technologies are used for this project?
 
-### ✅ Authentication System
+This project is built with:
 
-- Welcome screen with brand introduction
-- Login with email/phone validation
-- Sign up with profile creation
-- Password reset functionality
-- Form validation and error handling
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-### ✅ Home Experience
+## How can I deploy this project?
 
-- Event feed with infinite scroll
-- Event categories and filtering
-- Search functionality
-- User profile avatar
-- Notification indicators
+Simply open [Lovable](https://lovable.dev/projects/8c18fc69-c3d6-4af7-8c2d-efcc5979c1cd) and click on Share -> Publish.
 
-### ✅ Event Management
+Yes, you can!
 
-- Event creation flow
-- Event details display
-- Booking and attendance
-- Event categories
-- Location integration
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-### ✅ Social Features
-
-- User profiles and business profiles
-- Friends and connections
-- Messaging system
-- Chat interface
-
-### ✅ UI/UX Excellence
-
-- Consistent design language
-- Smooth animations
-- Loading states
-- Error handling
-- Accessibility support
-
-## 🎨 Design Fidelity
-
-This React Native app faithfully implements the original Sypot design system:
-
-- **Color Palette**: Exact brand colors with proper gradients
-- **Typography**: Plus Jakarta Sans with proper hierarchy
-- **Layout**: Consistent spacing and component alignment
-- **Icons**: Material Icons matching design specifications
-- **Components**: Reusable components following design patterns
-- **Navigation**: Intuitive flow matching user experience designs
-
-## 📋 Future Enhancements
-
-- [ ] Push notifications
-- [ ] Deep linking
-- [ ] Offline support
-- [ ] Advanced animations
-- [ ] Accessibility improvements
-- [ ] Performance optimizations
-- [ ] Testing coverage
-- [ ] CI/CD pipeline
-
-## 🎯 Summary
-
-This Sypot React Native application provides a complete event discovery and social networking platform with:
-
-- ✅ **Full Design Implementation** - Matches all original Sypot designs
-- ✅ **Complete Navigation** - All screens and flows implemented
-- ✅ **Reusable Components** - Scalable component library
-- ✅ **Modern Tech Stack** - Latest React Native and libraries
-- ✅ **Mobile Optimized** - Responsive and touch-friendly
-- ✅ **Production Ready** - Proper project structure and practices
-
-The app is ready for further development, testing, and deployment to app stores.
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+>>>>>>> a4643e3 ([skip lovable] Use tech stack vite_react_shadcn_ts_20250728_minor)

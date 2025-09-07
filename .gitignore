@@ -1,162 +1,50 @@
-# macOS
-.DS_Store
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# Xcode
-build/
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata
-*.xccheckout
-*.moved-aside
-DerivedData
-*.hmap
-*.ipa
-*.xcuserstate
-*.xcworkspace
-xcshareddata/
 ios/.xcode.env.local
-ios/Pods/
-ios/build/
-
-# Android/IntelliJ
-build/
-.idea/
-.gradle/
-local.properties
-*.iml
-*.ipr
-*.iws
-*.hprof
-.cxx/
-android/.cxx/
-android/app/build/
-**/build/
-captures/
-
-# Android signing artifacts
-*.keystore
-*.jks
-*.keystore.properties
-!debug.keystore
-
-# Node.js
-node_modules/
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnp/
-.pnp.js
+pnpm-debug.log*
+lerna-debug.log*
 
-# Bundle artifacts
-*.jsbundle
+node_modules
+dist
+dist-ssr
+*.local
 
-# CocoaPods
-/ios/Pods/
-**/Pods/
-vendor/bundle/
-
-# Temporary files created by Metro
-.metro-health-check*
-
-# Expo
-.expo/
-web-build/
-dist/
-
-# Flipper
-Flipper/
-
-# Yarn
-.yarn/*
-!.yarn/releases
-!.yarn/plugins
-!.yarn/sdks
-!.yarn/versions
-.pnp.*
-
-# VS Code / IDEs
-.vscode/
-*.swp
-*.swo
-
-# Environment variables
-.env
-.env.*
-.env.local
-.env.production
-.env.development
-secrets.json
-
-# Log files
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+>>>>>>> a4643e3 ([skip lovable] Use tech stack vite_react_shadcn_ts_20250728_minor)
+# Logs
+logs
 *.log
-*.tmp
-logs/
-cache/
-coverage/
-output.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
+node_modules
+dist
+dist-ssr
+*.local
 
-# Coverage directory used by tools like istanbul
-coverage/
-*.lcov
-
-# nyc test coverage
-.nyc_output
-
-# TypeScript cache
-*.tsbuildinfo
-
-# Fastlane
-*/fastlane/report.xml
-*/fastlane/Preview.html
-*/fastlane/screenshots
-*/fastlane/test_output
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/test_output
-
-# Jest
-coverage/
-
-# Detox
-/e2e/*.log
-
-# Google services / secrets
-google-services.json
-**/GoogleService-Info.plist
-keystore.properties
-
-# Flutter (for completeness)
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
-.pub/
-.pub-cache/
-.flutter-credentials
-ios/Flutter/Flutter.framework
-ios/Flutter/Flutter.podspec
-ios/Flutter/flutter_export_environment.sh
-ios/Flutter/Generated.xcconfig
-
-# React Native specifics
-android/app/build/
-ios/build/
-
-# Watchman
-.watchmanconfig
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
