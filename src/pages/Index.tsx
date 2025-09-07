@@ -1,16 +1,15 @@
-import Header from "@/components/Header";
+import { Layout } from "@/components/Layout";
 import HeroSection from "@/components/HeroSection";
 import FeaturedEvents from "@/components/FeaturedEvents";
 import FeatureSection from "@/components/FeatureSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <Layout>
       <HeroSection />
       <FeaturedEvents />
       <FeatureSection />
-    </div>
+    </Layout>
   );
 };
 
