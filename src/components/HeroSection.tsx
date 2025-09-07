@@ -20,7 +20,7 @@ const HeroSection = () => {
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
           Discover Your
           <span className="block bg-gradient-hero bg-clip-text text-transparent">
-            Local Vibe
+            Sypot
           </span>
         </h1>
         
