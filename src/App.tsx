@@ -21,6 +21,25 @@ import Settings from "./pages/Settings";
 import Notifications from "./pages/Notifications";
 import Help from "./pages/Help";
 import NotFound from "./pages/NotFound";
+import Onboarding from "./pages/Onboarding";
+import Activity from "./pages/Activity";
+import MyEvents from "./pages/MyEvents";
+import OrganizerDashboard from "./pages/OrganizerDashboard";
+import ManageEvents from "./pages/ManageEvents";
+import AttendeeManagement from "./pages/AttendeeManagement";
+import TicketingDashboard from "./pages/TicketingDashboard";
+import MenuUpload from "./pages/MenuUpload";
+import ReservationManagement from "./pages/ReservationManagement";
+import Offers from "./pages/Offers";
+import AdminDashboard from "./pages/AdminDashboard";
+import UserManagement from "./pages/UserManagement";
+import EventModeration from "./pages/EventModeration";
+import BusinessVerification from "./pages/BusinessVerification";
+import Payments from "./pages/Payments";
+import ReportsAnalytics from "./pages/ReportsAnalytics";
+import ContactSupport from "./pages/ContactSupport";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 const queryClient = new QueryClient();
 
@@ -33,21 +52,34 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/activity" element={<Activity />} />
           <Route path="/event/:id" element={<EventDetails />} />
           <Route path="/create-event" element={<CreateEvent />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/my-bookings" element={<MyBookings />} />
+          <Route path="/my-events" element={<MyEvents />} />
           <Route path="/business/:id" element={<BusinessDetails />} />
           <Route path="/business-dashboard" element={<BusinessDashboard />} />
           <Route path="/register-business" element={<BusinessRegistration />} />
+          <Route path="/business/menu" element={<MenuUpload />} />
+          <Route path="/business/reservations" element={<ReservationManagement />} />
+          <Route path="/business/offers" element={<Offers />} />
+          <Route path="/organizer" element={<OrganizerDashboard />} />
+          <Route path="/organizer/manage-events" element={<ManageEvents />} />
+          <Route path="/organizer/attendees" element={<AttendeeManagement />} />
+          <Route path="/organizer/ticketing" element={<TicketingDashboard />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/friends" element={<Friends />} />
           <Route path="/map" element={<MapView />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/contact" element={<ContactSupport />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
