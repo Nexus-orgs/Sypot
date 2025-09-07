@@ -14,6 +14,12 @@ import MyBookings from "./pages/MyBookings";
 import BusinessDetails from "./pages/BusinessDetails";
 import BusinessDashboard from "./pages/BusinessDashboard";
 import BusinessRegistration from "./pages/BusinessRegistration";
+import Chat from "./pages/Chat";
+import Friends from "./pages/Friends";
+import MapView from "./pages/MapView";
+import Settings from "./pages/Settings";
+import Notifications from "./pages/Notifications";
+import Help from "./pages/Help";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +42,12 @@ const App = () => (
           <Route path="/business/:id" element={<BusinessDetails />} />
           <Route path="/business-dashboard" element={<BusinessDashboard />} />
           <Route path="/register-business" element={<BusinessRegistration />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/friends" element={<Friends />} />
+          <Route path="/map" element={<MapView />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/help" element={<Help />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
