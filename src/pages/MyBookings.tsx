@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,6 +12,7 @@ import {
   Download,
   MessageCircle
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const MyBookings = () => {
   const upcomingBookings = [
@@ -124,10 +125,8 @@ const MyBookings = () => {
   );
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      <main className="container mx-auto px-4 py-8">
+    <Layout>
+      <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
             <h1 className="text-3xl font-bold mb-2">My Bookings</h1>
@@ -160,7 +159,9 @@ const MyBookings = () => {
                   <p className="text-muted-foreground mb-4">
                     Discover amazing events and book your tickets
                   </p>
-                  <Button variant="vibrant">Explore Events</Button>
+                  <Button variant="vibrant" asChild>
+                    <Link to="/explore">Explore Events</Link>
+                  </Button>
                 </div>
               )}
             </TabsContent>
@@ -183,9 +184,18 @@ const MyBookings = () => {
               )}
             </TabsContent>
           </Tabs>
+          
+          <div className="flex justify-center gap-4 mt-8">
+            <Button variant="outline" asChild>
+              <Link to="/events">Browse Events</Link>
+            </Button>
+            <Button variant="vibrant" asChild>
+              <Link to="/profile">View Profile</Link>
+            </Button>
+          </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </Layout>
   );
 };
 

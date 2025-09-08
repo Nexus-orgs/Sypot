@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "@/components/Header";
+import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,6 +18,7 @@ import {
   Settings,
   Camera
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -64,8 +65,7 @@ const Profile = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <Layout>
       
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
@@ -104,9 +104,11 @@ const Profile = () => {
                         <Edit3 className="h-4 w-4 mr-2" />
                         {isEditing ? "Cancel" : "Edit Profile"}
                       </Button>
-                      <Button variant="ghost" size="icon">
-                        <Settings className="h-4 w-4" />
-                      </Button>
+                       <Button variant="ghost" size="icon" asChild>
+                         <Link to="/settings">
+                           <Settings className="h-4 w-4" />
+                         </Link>
+                       </Button>
                     </div>
                   </div>
 
@@ -133,15 +135,15 @@ const Profile = () => {
                       <div className="font-semibold">{user.stats.followers}</div>
                       <div className="text-muted-foreground">Followers</div>
                     </div>
-                    <div className="text-center">
-                      <div className="font-semibold">{user.stats.following}</div>
-                      <div className="text-muted-foreground">Following</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                     <div className="text-center">
+                       <div className="font-semibold">{user.stats.following}</div>
+                       <div className="text-muted-foreground">Following</div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </CardContent>
+           </Card>
 
           {/* Edit Profile Form */}
           {isEditing && (
@@ -230,10 +232,12 @@ const Profile = () => {
               <div className="text-center py-12">
                 <Users className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">Connect with friends</h3>
-                <p className="text-muted-foreground mb-4">
-                  Find and connect with people to discover events together
-                </p>
-                <Button>Find Friends</Button>
+                 <p className="text-muted-foreground mb-4">
+                   Find and connect with people to discover events together
+                 </p>
+                 <Button variant="vibrant" asChild>
+                   <Link to="/friends">Find Friends</Link>
+                 </Button>
               </div>
             </TabsContent>
 
@@ -249,9 +253,30 @@ const Profile = () => {
               </div>
             </TabsContent>
           </Tabs>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <Button variant="outline" className="h-20 flex-col" asChild>
+              <Link to="/my-events">
+                <Calendar className="h-6 w-6 mb-2" />
+                My Events
+              </Link>
+            </Button>
+            <Button variant="outline" className="h-20 flex-col" asChild>
+              <Link to="/my-bookings">
+                <Calendar className="h-6 w-6 mb-2" />
+                My Bookings
+              </Link>
+            </Button>
+            <Button variant="outline" className="h-20 flex-col" asChild>
+              <Link to="/friends">
+                <Users className="h-6 w-6 mb-2" />
+                Friends
+              </Link>
+            </Button>
+          </div>
         </div>
       </main>
-    </div>
+    </Layout>
   );
 };
 

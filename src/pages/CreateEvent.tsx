@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "@/components/Header";
+import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -17,6 +17,7 @@ import {
   X,
   Plus
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CreateEvent = () => {
   const [eventType, setEventType] = useState("public");
@@ -41,8 +42,7 @@ const CreateEvent = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <Layout>
       
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
@@ -260,10 +260,19 @@ const CreateEvent = () => {
                 Create Event
               </Button>
             </div>
+            
+            <div className="flex gap-4 mt-4">
+              <Button variant="ghost" asChild>
+                <Link to="/events">Cancel</Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link to="/organizer/manage-events">Manage Events</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </main>
-    </div>
+    </Layout>
   );
 };
 

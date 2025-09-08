@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import Header from "@/components/Header";
+import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -17,6 +17,7 @@ import {
   Heart,
   Share2
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const BusinessDetails = () => {
   const { id } = useParams();
@@ -85,8 +86,7 @@ const BusinessDetails = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <Layout>
       
       <main className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -292,15 +292,24 @@ const BusinessDetails = () => {
                 <div className="aspect-square bg-muted rounded-lg flex items-center justify-center mb-4">
                   <MapPin className="h-8 w-8 text-muted-foreground" />
                 </div>
-                <Button variant="outline" className="w-full">
-                  View on Map
+                <Button variant="outline" className="w-full" asChild>
+                  <Link to="/map">View on Map</Link>
                 </Button>
               </CardContent>
             </Card>
           </div>
         </div>
+        
+        <div className="flex justify-center gap-4 mt-8">
+          <Button variant="outline" asChild>
+            <Link to="/explore">Browse Places</Link>
+          </Button>
+          <Button variant="vibrant" asChild>
+            <Link to="/events">View Events</Link>
+          </Button>
+        </div>
       </main>
-    </div>
+    </Layout>
   );
 };
 

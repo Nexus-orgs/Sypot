@@ -1,9 +1,10 @@
-import Header from "@/components/Header";
+import { Layout } from "@/components/Layout";
 import EventCard from "@/components/EventCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Search, Filter, MapPin, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Events = () => {
   const events = [
@@ -84,8 +85,7 @@ const Events = () => {
   const categories = ["All", "Music", "Food", "Art", "Wellness", "Entertainment", "Sports"];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <Layout>
       
       {/* Hero Section */}
       <section className="bg-gradient-hero py-16 text-white">
@@ -151,9 +151,18 @@ const Events = () => {
               Load More Events
             </Button>
           </div>
+          
+          <div className="flex justify-center gap-4 mt-8">
+            <Button variant="outline" asChild>
+              <Link to="/explore">Browse Categories</Link>
+            </Button>
+            <Button variant="vibrant" asChild>
+              <Link to="/create-event">Create Event</Link>
+            </Button>
+          </div>
         </div>
       </section>
-    </div>
+    </Layout>
   );
 };
 
