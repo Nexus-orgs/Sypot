@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "@/components/Header";
+import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -18,6 +18,7 @@ import {
   X,
   MoreVertical
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Friends = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -202,95 +203,102 @@ const Friends = () => {
   );
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold mb-2">Friends & Connections</h1>
-            <p className="text-muted-foreground">
-              Connect with people who share your interests
-            </p>
-          </div>
-
-          {/* Search */}
-          <div className="relative mb-8">
-            <Search className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-            <Input
-              placeholder="Search for friends by name or username..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 h-12"
-            />
-          </div>
-
-          {/* Friends Tabs */}
-          <Tabs defaultValue="friends" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="friends">
-                My Friends ({friends.length})
-              </TabsTrigger>
-              <TabsTrigger value="requests">
-                Requests ({friendRequests.length})
-              </TabsTrigger>
-              <TabsTrigger value="suggestions">
-                Suggestions ({suggestions.length})
-              </TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="friends" className="space-y-4">
-              {friends.length > 0 ? (
-                friends.map((friend) => (
-                  <UserCard key={friend.id} user={friend} />
-                ))
-              ) : (
-                <div className="text-center py-12">
-                  <Users className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">No friends yet</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Start connecting with people who share your interests
-                  </p>
-                  <Button variant="vibrant">Find Friends</Button>
-                </div>
-              )}
-            </TabsContent>
-
-            <TabsContent value="requests" className="space-y-4">
-              {friendRequests.length > 0 ? (
-                friendRequests.map((request) => (
-                  <UserCard key={request.id} user={request} />
-                ))
-              ) : (
-                <div className="text-center py-12">
-                  <UserPlus className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">No friend requests</h3>
-                  <p className="text-muted-foreground">
-                    New friend requests will appear here
-                  </p>
-                </div>
-              )}
-            </TabsContent>
-
-            <TabsContent value="suggestions" className="space-y-4">
-              {suggestions.length > 0 ? (
-                suggestions.map((suggestion) => (
-                  <UserCard key={suggestion.id} user={suggestion} />
-                ))
-              ) : (
-                <div className="text-center py-12">
-                  <Heart className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">No suggestions available</h3>
-                  <p className="text-muted-foreground">
-                    Check back later for friend suggestions
-                  </p>
-                </div>
-              )}
-            </TabsContent>
-          </Tabs>
+    <Layout>
+      <div className="max-w-4xl mx-auto">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold mb-2">Friends & Connections</h1>
+          <p className="text-muted-foreground">
+            Connect with people who share your interests
+          </p>
         </div>
-      </main>
-    </div>
+
+        {/* Search */}
+        <div className="relative mb-8">
+          <Search className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+          <Input
+            placeholder="Search for friends by name or username..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="pl-10 h-12"
+          />
+        </div>
+
+        {/* Friends Tabs */}
+        <Tabs defaultValue="friends" className="w-full">
+          <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsTrigger value="friends">
+              My Friends ({friends.length})
+            </TabsTrigger>
+            <TabsTrigger value="requests">
+              Requests ({friendRequests.length})
+            </TabsTrigger>
+            <TabsTrigger value="suggestions">
+              Suggestions ({suggestions.length})
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="friends" className="space-y-4">
+            {friends.length > 0 ? (
+              friends.map((friend) => (
+                <UserCard key={friend.id} user={friend} />
+              ))
+            ) : (
+              <div className="text-center py-12">
+                <Users className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2">No friends yet</h3>
+                <p className="text-muted-foreground mb-4">
+                  Start connecting with people who share your interests
+                </p>
+                <Button variant="vibrant" asChild>
+                  <Link to="/explore">Find Friends</Link>
+                </Button>
+              </div>
+            )}
+          </TabsContent>
+
+          <TabsContent value="requests" className="space-y-4">
+            {friendRequests.length > 0 ? (
+              friendRequests.map((request) => (
+                <UserCard key={request.id} user={request} />
+              ))
+            ) : (
+              <div className="text-center py-12">
+                <UserPlus className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2">No friend requests</h3>
+                <p className="text-muted-foreground">
+                  New friend requests will appear here
+                </p>
+              </div>
+            )}
+          </TabsContent>
+
+          <TabsContent value="suggestions" className="space-y-4">
+            {suggestions.length > 0 ? (
+              suggestions.map((suggestion) => (
+                <UserCard key={suggestion.id} user={suggestion} />
+              ))
+            ) : (
+              <div className="text-center py-12">
+                <Heart className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2">No suggestions available</h3>
+                <p className="text-muted-foreground">
+                  Check back later for friend suggestions
+                </p>
+              </div>
+            )}
+          </TabsContent>
+        </Tabs>
+        
+        <div className="flex justify-center gap-4 mt-8">
+          <Button variant="outline" asChild>
+            <Link to="/events">Browse Events</Link>
+          </Button>
+          <Button variant="vibrant" asChild>
+            <Link to="/chat">Messages</Link>
+          </Button>
+        </div>
+      </div>
+    </Layout>
   );
 };
 

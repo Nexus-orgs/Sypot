@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "@/components/Header";
+import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -17,6 +17,7 @@ import {
   X,
   MoreVertical
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Notifications = () => {
   const [filter, setFilter] = useState("all");
@@ -200,91 +201,96 @@ const Notifications = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-2xl mx-auto">
-          <div className="mb-8">
-            <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-3xl font-bold mb-2">Notifications</h1>
-                <p className="text-muted-foreground">
-                  Stay updated with your Sypot activity
-                </p>
-              </div>
-              {unreadCount > 0 && (
-                <Button onClick={markAllAsRead} variant="outline">
-                  Mark all as read
-                </Button>
-              )}
+    <Layout>
+      <div className="max-w-2xl mx-auto">
+        <div className="mb-8">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-bold mb-2">Notifications</h1>
+              <p className="text-muted-foreground">
+                Stay updated with your Sypot activity
+              </p>
             </div>
-          </div>
-
-          {/* Notification Stats */}
-          <div className="grid grid-cols-3 gap-4 mb-6">
-            <Card>
-              <CardContent className="p-4 text-center">
-                <div className="text-2xl font-bold text-primary">{unreadCount}</div>
-                <div className="text-sm text-muted-foreground">Unread</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-4 text-center">
-                <div className="text-2xl font-bold">{notifications.length}</div>
-                <div className="text-sm text-muted-foreground">Total</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-4 text-center">
-                <div className="text-2xl font-bold text-green-500">3</div>
-                <div className="text-sm text-muted-foreground">This Week</div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Filter Tabs */}
-          <Tabs value={filter} onValueChange={setFilter} className="w-full mb-6">
-            <TabsList className="grid w-full grid-cols-4">
-              <TabsTrigger value="all">
-                All ({notifications.length})
-              </TabsTrigger>
-              <TabsTrigger value="unread">
-                Unread ({unreadCount})
-              </TabsTrigger>
-              <TabsTrigger value="events">
-                Events
-              </TabsTrigger>
-              <TabsTrigger value="social">
-                Social
-              </TabsTrigger>
-            </TabsList>
-          </Tabs>
-
-          {/* Notifications List */}
-          <div className="space-y-4">
-            {filteredNotifications.length > 0 ? (
-              filteredNotifications.map((notification) => (
-                <NotificationCard key={notification.id} notification={notification} />
-              ))
-            ) : (
-              <Card>
-                <CardContent className="p-12 text-center">
-                  <Bell className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">No notifications</h3>
-                  <p className="text-muted-foreground">
-                    {filter === "unread" 
-                      ? "You're all caught up! No unread notifications."
-                      : "No notifications to show for this filter."
-                    }
-                  </p>
-                </CardContent>
-              </Card>
+            {unreadCount > 0 && (
+              <Button onClick={markAllAsRead} variant="outline">
+                Mark all as read
+              </Button>
             )}
           </div>
         </div>
-      </main>
-    </div>
+
+        {/* Notification Stats */}
+        <div className="grid grid-cols-3 gap-4 mb-6">
+          <Card>
+            <CardContent className="p-4 text-center">
+              <div className="text-2xl font-bold text-primary">{unreadCount}</div>
+              <div className="text-sm text-muted-foreground">Unread</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-4 text-center">
+              <div className="text-2xl font-bold">{notifications.length}</div>
+              <div className="text-sm text-muted-foreground">Total</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-4 text-center">
+              <div className="text-2xl font-bold text-green-500">3</div>
+              <div className="text-sm text-muted-foreground">This Week</div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Filter Tabs */}
+        <Tabs value={filter} onValueChange={setFilter} className="w-full mb-6">
+          <TabsList className="grid w-full grid-cols-4">
+            <TabsTrigger value="all">
+              All ({notifications.length})
+            </TabsTrigger>
+            <TabsTrigger value="unread">
+              Unread ({unreadCount})
+            </TabsTrigger>
+            <TabsTrigger value="events">
+              Events
+            </TabsTrigger>
+            <TabsTrigger value="social">
+              Social
+            </TabsTrigger>
+          </TabsList>
+        </Tabs>
+
+        {/* Notifications List */}
+        <div className="space-y-4">
+          {filteredNotifications.length > 0 ? (
+            filteredNotifications.map((notification) => (
+              <NotificationCard key={notification.id} notification={notification} />
+            ))
+          ) : (
+            <Card>
+              <CardContent className="p-12 text-center">
+                <Bell className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2">No notifications</h3>
+                <p className="text-muted-foreground">
+                  {filter === "unread" 
+                    ? "You're all caught up! No unread notifications."
+                    : "No notifications to show for this filter."
+                  }
+                </p>
+              </CardContent>
+            </Card>
+          )}
+        </div>
+        
+        <div className="flex justify-center gap-4 mt-8">
+          <Button variant="outline" asChild>
+            <Link to="/activity">Activity</Link>
+          </Button>
+          <Button variant="vibrant" asChild>
+            <Link to="/settings">Settings</Link>
+          </Button>
+        </div>
+      </div>
+    </Layout>
   );
 };
 
