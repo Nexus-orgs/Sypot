@@ -42,6 +42,9 @@ import ReportsAnalytics from "./pages/ReportsAnalytics";
 import ContactSupport from "./pages/ContactSupport";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import Careers from "./pages/Careers";
+import Checkout from "./pages/Checkout";
+import GateEntry from "./pages/GateEntry";
 
 const queryClient = new QueryClient();
 
@@ -84,6 +87,9 @@ const App = () => (
           <Route path="/contact" element={<ContactSupport />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/gate-entry" element={<GateEntry />} />
           {/* Admin Routes - Protected */}
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/users" element={<UserManagement />} />

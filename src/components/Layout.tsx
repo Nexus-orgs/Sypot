@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
+import { Footer } from '@/components/Footer';
 import {
   Home,
   Search,
@@ -289,7 +290,12 @@ export const Layout = ({ children }: LayoutProps) => {
       )}
 
       {/* Main Content */}
-      <main className="container py-6 pb-20 md:pb-6">{children}</main>
+      <main className="container py-6 pb-20 md:pb-6 min-h-[calc(100vh-4rem)]">{children}</main>
+      
+      {/* Footer - Hidden on mobile when bottom nav is visible */}
+      <div className="hidden md:block">
+        <Footer />
+      </div>
     </div>
   );
 };
