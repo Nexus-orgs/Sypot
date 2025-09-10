@@ -46,6 +46,8 @@ import Careers from "./pages/Careers";
 import Checkout from "./pages/Checkout";
 import GateEntry from "./pages/GateEntry";
 import FindYourCrew from "./pages/FindYourCrew";
+import Discover from "./pages/Discover";
+import VirtualEvents from "./pages/VirtualEvents";
 
 const queryClient = new QueryClient();
 
@@ -92,6 +94,8 @@ const App = () => (
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/gate-entry" element={<GateEntry />} />
           <Route path="/find-your-crew" element={<FindYourCrew />} />
+          <Route path="/discover" element={<Discover />} />
+          <Route path="/virtual-events" element={<VirtualEvents />} />
           {/* Admin Routes - Protected */}
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/users" element={<UserManagement />} />
