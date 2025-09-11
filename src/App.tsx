@@ -48,6 +48,8 @@ import GateEntry from "./pages/GateEntry";
 import FindYourCrew from "./pages/FindYourCrew";
 import Discover from "./pages/Discover";
 import VirtualEvents from "./pages/VirtualEvents";
+import MemoryBook from "./pages/MemoryBook";
+import Rewards from "./pages/Rewards";
 
 const queryClient = new QueryClient();
 
@@ -96,6 +98,8 @@ const App = () => (
           <Route path="/find-your-crew" element={<FindYourCrew />} />
           <Route path="/discover" element={<Discover />} />
           <Route path="/virtual-events" element={<VirtualEvents />} />
+          <Route path="/memory-book" element={<MemoryBook />} />
+          <Route path="/rewards" element={<Rewards />} />
           {/* Admin Routes - Protected */}
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/users" element={<UserManagement />} />

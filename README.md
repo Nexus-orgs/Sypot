@@ -1,43 +1,44 @@
-# Welcome to your Lovable project
+# Sypot - Smart Social Event Discovery Platform
 
-## Project info
+## 🎯 Overview
 
-**URL**: https://lovable.dev/projects/8c18fc69-c3d6-4af7-8c2d-efcc5979c1cd
+Sypot is a revolutionary event discovery and social networking platform that connects people with amazing experiences. It combines AI-powered recommendations, social crew matching, virtual event streaming, and comprehensive event management tools.
 
-## How can I edit this code?
+## ✨ Key Features
 
-There are several ways of editing your application.
+### For Event Attendees
 
-**Use Lovable**
+### For Event Organizers
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8c18fc69-c3d6-4af7-8c2d-efcc5979c1cd) and start prompting.
+### For Businesses
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# Clone the repository
+git clone https://github.com/Sanvella-lab/Sypot.git
 
-Follow these steps:
+# Navigate to the project directory
+cd Sypot
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install dependencies
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your Supabase credentials
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
+<<<<<<< HEAD
 
 **Use GitHub Codespaces**
 
@@ -95,32 +96,151 @@ npm run dev
 - Navigate to the desired file(s).
 - Click the "Edit" button (pencil icon) at the top right of the file view.
 - Make your changes and commit the changes.
+=======
+## 🛠️ Technology Stack
+>>>>>>> 0e69e4f (feat: Complete Sypot social event discovery platform with all requested features)
 
-**Use GitHub Codespaces**
+- **Frontend**: React + TypeScript + Vite
+- **UI Framework**: Tailwind CSS + shadcn/ui
+- **Backend**: Supabase (PostgreSQL + Auth + Realtime)
+- **State Management**: React Query + Context API
+- **Routing**: React Router v6
+- **Process Management**: PM2 (for production)
+- **AI Features**: Custom recommendation engine
+- **Maps**: Integration ready for Google Maps
+- **Payments**: Stripe & M-Pesa integration
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📱 Features in Detail
 
-## What technologies are used for this project?
+### AI Discovery Engine
+- Personalized recommendations based on user behavior
+- Three modes: Personalized, Trending, Surprise Me
+- Weather-based suggestions
+- Learning from user feedback
 
-This project is built with:
+### Find Your Crew
+- Smart matching based on interests and personality
+- Group formation for events
+- Language and availability matching
+- Crew statistics and ratings
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Virtual Events Platform
+- HD streaming with quality options
+- Interactive chat and reactions
+- Virtual gift economy
+- Recording and replay access
 
-## How can I deploy this project?
+### Gate Entry System
+- QR code scanning with camera
+- Real-time attendance tracking
+- Export attendee lists
+- Ticket validation
 
-Simply open [Lovable](https://lovable.dev/projects/8c18fc69-c3d6-4af7-8c2d-efcc5979c1cd) and click on Share -> Publish.
+## 🏗️ Project Structure
 
+<<<<<<< HEAD
 Yes, you can!
+=======
+```
+src/
+├── components/     # Reusable UI components
+├── pages/         # Page components (39+ screens)
+├── lib/           # Utilities and configurations
+├── hooks/         # Custom React hooks
+├── styles/        # Global styles
+└── types/         # TypeScript type definitions
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🔐 Environment Variables
+>>>>>>> 0e69e4f (feat: Complete Sypot social event discovery platform with all requested features)
 
+Create a `.env` file with the following variables:
+
+<<<<<<< HEAD
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
 >>>>>>> a4643e3 ([skip lovable] Use tech stack vite_react_shadcn_ts_20250728_minor)
+=======
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_anon_key
+VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_key (optional)
+VITE_GOOGLE_MAPS_API_KEY=your_maps_key (optional)
+```
+
+## 📦 Deployment
+
+### Using PM2 (Recommended)
+
+```bash
+# Install PM2 globally
+npm install -g pm2
+
+# Build the application
+npm run build
+
+# Start with PM2
+pm2 start ecosystem.config.js
+
+# Save PM2 configuration
+pm2 save
+pm2 startup
+```
+
+### Using Docker
+
+```bash
+# Build Docker image
+docker build -t sypot .
+
+# Run container
+docker run -p 8080:8080 sypot
+```
+
+### Deploy to Cloud Platforms
+
+The project is configured for easy deployment to:
+- Vercel
+- Netlify
+- AWS Amplify
+- Google Cloud Run
+- Digital Ocean App Platform
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🌟 Unique Features
+
+- **AI that learns** from user behavior
+- **Weather-based** event suggestions
+- **Virtual gift economy** for online events
+- **Personality matching** for crew formation
+- **Multi-language support** for global reach
+- **Gate-to-gift** complete event ecosystem
+- **Hybrid events** support (physical + virtual)
+
+## 📞 Support
+
+For support, email hello@sypot.com or join our Discord community.
+
+## 🙏 Acknowledgments
+
+- Built with React and modern web technologies
+- UI components from shadcn/ui
+- Backend powered by Supabase
+- Icons from Lucide React
+
+---
+
+**Sypot** - Discover Your Perfect Spot 📍
+>>>>>>> 0e69e4f (feat: Complete Sypot social event discovery platform with all requested features)
