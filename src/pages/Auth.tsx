@@ -134,9 +134,8 @@ const Auth = () => {
       })
       toast({
         title: "Welcome to Sypot!",
-        description: "Your account has been created successfully",
+        description: "Please check your email to verify your account",
       })
-      navigate("/onboarding")
     } catch (error) {
       console.error("Sign up error:", error)
       toast({
