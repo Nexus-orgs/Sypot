@@ -18,7 +18,7 @@ Sypot is a revolutionary event discovery and social networking platform that con
 
 ### Installation
 
-```bash
+\`\`\`bash
 # Clone the repository
 git clone https://github.com/Sanvella-lab/Sypot.git
 
@@ -34,7 +34,7 @@ cp .env.example .env
 
 # Start the development server
 npm run dev
-```
+\`\`\`
 
 The application will be available at `http://localhost:8080`
 
@@ -138,10 +138,7 @@ npm run dev
 
 ## 🏗️ Project Structure
 
-<<<<<<< HEAD
-Yes, you can!
-=======
-```
+\`\`\`
 src/
 ├── components/     # Reusable UI components
 ├── pages/         # Page components (39+ screens)
@@ -149,29 +146,25 @@ src/
 ├── hooks/         # Custom React hooks
 ├── styles/        # Global styles
 └── types/         # TypeScript type definitions
-```
+\`\`\`
 
 ## 🔐 Environment Variables
 >>>>>>> 0e69e4f (feat: Complete Sypot social event discovery platform with all requested features)
 
 Create a `.env` file with the following variables:
 
-<<<<<<< HEAD
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
->>>>>>> a4643e3 ([skip lovable] Use tech stack vite_react_shadcn_ts_20250728_minor)
-=======
-```env
+\`\`\`env
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_anon_key
 VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_key (optional)
 VITE_GOOGLE_MAPS_API_KEY=your_maps_key (optional)
-```
+\`\`\`
 
 ## 📦 Deployment
 
 ### Using PM2 (Recommended)
 
-```bash
+\`\`\`bash
 # Install PM2 globally
 npm install -g pm2
 
@@ -184,17 +177,17 @@ pm2 start ecosystem.config.js
 # Save PM2 configuration
 pm2 save
 pm2 startup
-```
+\`\`\`
 
 ### Using Docker
 
-```bash
+\`\`\`bash
 # Build Docker image
 docker build -t sypot .
 
 # Run container
 docker run -p 8080:8080 sypot
-```
+\`\`\`
 
 ### Deploy to Cloud Platforms
 
@@ -243,4 +236,3 @@ For support, email hello@sypot.com or join our Discord community.
 ---
 
 **Sypot** - Discover Your Perfect Spot 📍
->>>>>>> 0e69e4f (feat: Complete Sypot social event discovery platform with all requested features)
