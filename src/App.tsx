@@ -50,6 +50,10 @@ import Discover from "./pages/Discover";
 import VirtualEvents from "./pages/VirtualEvents";
 import MemoryBook from "./pages/MemoryBook";
 import Rewards from "./pages/Rewards";
+import TrendingEvents from "./pages/TrendingEvents";
+import ThisWeekend from "./pages/ThisWeekend";
+import FreeEvents from "./pages/FreeEvents";
+import AboutUs from "./pages/AboutUs";
 
 const queryClient = new QueryClient();
 
@@ -100,6 +104,10 @@ const App = () => (
           <Route path="/virtual-events" element={<VirtualEvents />} />
           <Route path="/memory-book" element={<MemoryBook />} />
           <Route path="/rewards" element={<Rewards />} />
+          <Route path="/trending-events" element={<TrendingEvents />} />
+          <Route path="/this-weekend" element={<ThisWeekend />} />
+          <Route path="/free-events" element={<FreeEvents />} />
+          <Route path="/about" element={<AboutUs />} />
           {/* Admin Routes - Protected */}
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/users" element={<UserManagement />} />
