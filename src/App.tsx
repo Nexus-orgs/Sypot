@@ -54,6 +54,8 @@ import TrendingEvents from "./pages/TrendingEvents";
 import ThisWeekend from "./pages/ThisWeekend";
 import FreeEvents from "./pages/FreeEvents";
 import AboutUs from "./pages/AboutUs";
+import PlacesNearYou from "./pages/PlacesNearYou";
+import HiddenGems from "./pages/HiddenGems";
 
 const queryClient = new QueryClient();
 
@@ -108,6 +110,8 @@ const App = () => (
           <Route path="/this-weekend" element={<ThisWeekend />} />
           <Route path="/free-events" element={<FreeEvents />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/places-near-you" element={<PlacesNearYou />} />
+          <Route path="/hidden-gems" element={<HiddenGems />} />
           {/* Admin Routes - Protected */}
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/users" element={<UserManagement />} />
