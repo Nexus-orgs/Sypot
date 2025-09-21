@@ -1,61 +1,74 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
-  Search, MapPin, Calendar, Filter, X, 
-  TrendingUp, Clock, Users, Star 
+  Search, 
+  X, 
+  MapPin, 
+  Calendar, 
+  TrendingUp, 
+  Clock,
+  Users,
+  Building2,
+  Music,
+  Utensils,
+  PartyPopper,
+  Briefcase,
+  Heart,
+  Star
 } from 'lucide-react';
-import { useDebounce } from '@/hooks/useDebounce';
-import { eventsService } from '@/services/events.service';
-import { format } from 'date-fns';
+import { cn } from '@/lib/utils';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface SearchResult {
   id: string;
+  type: 'event' | 'business' | 'category' | 'location';
   title: string;
-  category: string;
-  venue_name: string;
-  start_date: string;
-  cover_image_url?: string;
-  is_free: boolean;
-  min_price?: number;
-  trending_score?: number;
+  subtitle?: string;
+  icon?: React.ReactNode;
+  url: string;
+  category?: string;
+  trending?: boolean;
 }
 
 interface SearchBarProps {
   placeholder?: string;
-  showFilters?: boolean;
-  onSearch?: (query: string, filters?: any) => void;
   className?: string;
+  autoFocus?: boolean;
+  onSearch?: (query: string) => void;
 }
 
-export const SearchBar = ({ 
-  placeholder = "Search events, venues, or categories...",
-  showFilters = true,
-  onSearch,
-  className = ""
-}: SearchBarProps) => {
+export const SearchBar: React.FC<SearchBarProps> = ({
+  placeholder = "Search events, venues, or activities...",
+  className,
+  autoFocus = false,
+  onSearch
+}) => {
   const [query, setQuery] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [isSearching, setIsSearching] = useState(false);
-  const [showResults, setShowResults] = useState(false);
-  const [selectedFilters, setSelectedFilters] = useState({
-    category: '',
-    date: '',
-    location: '',
-    priceRange: ''
-  });
-  
+  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
-  const debouncedQuery = useDebounce(query, 300);
+  const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
+  // Load recent searches from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem('recentSearches');
+    if (saved) {
+      setRecentSearches(JSON.parse(saved));
+    }
+  }, []);
+
+  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setShowResults(false);
+        setIsOpen(false);
       }
     };
 
@@ -63,228 +76,274 @@ export const SearchBar = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Mock search function - replace with actual API call
+  const performSearch = useCallback(async (searchQuery: string) => {
+    if (!searchQuery.trim()) {
+      setResults([]);
+      return;
+    }
+
+    setIsLoading(true);
+    
+    // Simulate API delay
+    await new Promise(resolve => setTimeout(resolve, 300));
+
+    // Mock results - replace with actual search logic
+    const mockResults: SearchResult[] = [
+      {
+        id: '1',
+        type: 'category',
+        title: 'Music Events',
+        subtitle: '234 events this week',
+        icon: <Music className="w-4 h-4" />,
+        url: '/events?category=music',
+        trending: true
+      },
+      {
+        id: '2',
+        type: 'event',
+        title: 'Afrobeat Night at The Alchemist',
+        subtitle: 'Tomorrow, 8:00 PM • Westlands',
+        icon: <Calendar className="w-4 h-4" />,
+        url: '/event/afrobeat-night',
+        category: 'Music'
+      },
+      {
+        id: '3',
+        type: 'business',
+        title: 'The Alchemist Bar',
+        subtitle: 'Westlands, Nairobi • 4.5★',
+        icon: <Building2 className="w-4 h-4" />,
+        url: '/business/alchemist-bar'
+      },
+      {
+        id: '4',
+        type: 'location',
+        title: 'Events in Westlands',
+        subtitle: '56 upcoming events',
+        icon: <MapPin className="w-4 h-4" />,
+        url: '/events?location=westlands'
+      }
+    ].filter(result => 
+      result.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      result.subtitle?.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    setResults(mockResults);
+    setIsLoading(false);
+  }, []);
+
+  // Debounced search
   useEffect(() => {
-    if (debouncedQuery.length >= 2) {
-      performSearch();
-    } else {
-      setResults([]);
-      setShowResults(false);
-    }
-  }, [debouncedQuery]);
+    const timer = setTimeout(() => {
+      performSearch(query);
+    }, 300);
 
-  const performSearch = async () => {
-    setIsSearching(true);
-    try {
-      const searchResults = await eventsService.getEvents({
-        search: debouncedQuery,
-        limit: 5,
-        ...selectedFilters
-      });
-      setResults(searchResults || []);
-      setShowResults(true);
-    } catch (error) {
-      console.error('Search error:', error);
-      setResults([]);
-    } finally {
-      setIsSearching(false);
-    }
-  };
+    return () => clearTimeout(timer);
+  }, [query, performSearch]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (onSearch) {
-      onSearch(query, selectedFilters);
-    } else {
-      navigate(`/events?search=${encodeURIComponent(query)}`);
+    if (query.trim()) {
+      // Save to recent searches
+      const newRecent = [query, ...recentSearches.filter(s => s !== query)].slice(0, 5);
+      setRecentSearches(newRecent);
+      localStorage.setItem('recentSearches', JSON.stringify(newRecent));
+      
+      // Perform search
+      if (onSearch) {
+        onSearch(query);
+      } else {
+        navigate(`/events?search=${encodeURIComponent(query)}`);
+      }
+      
+      setIsOpen(false);
     }
-    setShowResults(false);
   };
 
   const handleResultClick = (result: SearchResult) => {
-    navigate(`/event/${result.id}`);
-    setShowResults(false);
+    // Save search term
+    const searchTerm = result.title;
+    const newRecent = [searchTerm, ...recentSearches.filter(s => s !== searchTerm)].slice(0, 5);
+    setRecentSearches(newRecent);
+    localStorage.setItem('recentSearches', JSON.stringify(newRecent));
+    
+    // Navigate to result
+    navigate(result.url);
+    setIsOpen(false);
     setQuery('');
   };
 
   const clearSearch = () => {
     setQuery('');
     setResults([]);
-    setShowResults(false);
+    inputRef.current?.focus();
+  };
+
+  const removeRecentSearch = (search: string) => {
+    const newRecent = recentSearches.filter(s => s !== search);
+    setRecentSearches(newRecent);
+    localStorage.setItem('recentSearches', JSON.stringify(newRecent));
   };
 
   const popularSearches = [
-    'Music festivals',
-    'Food & Wine',
-    'Comedy shows',
-    'Tech meetups',
-    'Art exhibitions'
+    { text: 'Live Music', icon: <Music className="w-3 h-3" /> },
+    { text: 'Happy Hour', icon: <PartyPopper className="w-3 h-3" /> },
+    { text: 'Restaurants', icon: <Utensils className="w-3 h-3" /> },
+    { text: 'This Weekend', icon: <Calendar className="w-3 h-3" /> },
+    { text: 'Free Events', icon: <Heart className="w-3 h-3" /> }
   ];
 
   return (
-    <div ref={searchRef} className={`relative ${className}`}>
-      <form onSubmit={handleSubmit} className="relative">
-        <div className="relative flex items-center">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
+    <div ref={searchRef} className={cn("relative", className)}>
+      <form onSubmit={handleSearch}>
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
           <Input
+            ref={inputRef}
             type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onFocus={() => query.length >= 2 && setShowResults(true)}
             placeholder={placeholder}
-            className="pl-10 pr-10 h-12 text-base"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setIsOpen(true);
+            }}
+            onFocus={() => setIsOpen(true)}
+            autoFocus={autoFocus}
+            className="pl-10 pr-10"
           />
           {query && (
-            <Button
+            <button
               type="button"
-              variant="ghost"
-              size="icon"
               onClick={clearSearch}
-              className="absolute right-2"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
             >
               <X className="w-4 h-4" />
-            </Button>
+            </button>
           )}
         </div>
-
-        {showFilters && (
-          <div className="flex gap-2 mt-2">
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              className="gap-1"
-            >
-              <MapPin className="w-3 h-3" />
-              Location
-            </Button>
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              className="gap-1"
-            >
-              <Calendar className="w-3 h-3" />
-              Date
-            </Button>
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              className="gap-1"
-            >
-              <Filter className="w-3 h-3" />
-              Filters
-            </Button>
-          </div>
-        )}
       </form>
 
-      {/* Search Results Dropdown */}
-      {showResults && (
-        <Card className="absolute top-full mt-2 w-full z-50 max-h-[500px] overflow-auto">
-          <CardContent className="p-4">
-            {isSearching ? (
-              <div className="text-center py-4">
-                <div className="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-primary"></div>
-                <p className="text-sm text-muted-foreground mt-2">Searching...</p>
-              </div>
-            ) : results.length > 0 ? (
-              <div className="space-y-3">
-                <p className="text-xs text-muted-foreground font-medium">
-                  SEARCH RESULTS
-                </p>
-                {results.map((result) => (
-                  <div
-                    key={result.id}
-                    onClick={() => handleResultClick(result)}
-                    className="flex items-start gap-3 p-2 rounded-lg hover:bg-muted cursor-pointer transition-colors"
-                  >
-                    {result.cover_image_url ? (
-                      <img
-                        src={result.cover_image_url}
-                        alt={result.title}
-                        className="w-16 h-16 rounded object-cover"
-                      />
-                    ) : (
-                      <div className="w-16 h-16 rounded bg-muted flex items-center justify-center">
-                        <Calendar className="w-6 h-6 text-muted-foreground" />
-                      </div>
-                    )}
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-medium text-sm truncate">{result.title}</h4>
-                      <div className="flex items-center gap-2 mt-1">
-                        <Badge variant="outline" className="text-xs">
-                          {result.category}
-                        </Badge>
-                        {result.is_free && (
-                          <Badge variant="secondary" className="text-xs">
-                            FREE
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full left-0 right-0 mt-2 z-50"
+          >
+            <Card className="shadow-lg">
+              <CardContent className="p-0">
+                {/* Loading State */}
+                {isLoading && (
+                  <div className="p-4 text-center text-gray-500">
+                    <div className="animate-pulse">Searching...</div>
+                  </div>
+                )}
+
+                {/* Search Results */}
+                {!isLoading && query && results.length > 0 && (
+                  <div className="py-2">
+                    <div className="px-3 py-2 text-xs font-semibold text-gray-500">Search Results</div>
+                    {results.map((result) => (
+                      <button
+                        key={result.id}
+                        onClick={() => handleResultClick(result)}
+                        className="w-full px-3 py-2 flex items-start gap-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                      >
+                        <div className="mt-0.5 text-gray-400">
+                          {result.icon}
+                        </div>
+                        <div className="flex-1 text-left">
+                          <div className="flex items-center gap-2">
+                            <span className="font-medium text-sm">{result.title}</span>
+                            {result.trending && (
+                              <Badge variant="secondary" className="text-xs">
+                                <TrendingUp className="w-3 h-3 mr-1" />
+                                Trending
+                              </Badge>
+                            )}
+                          </div>
+                          {result.subtitle && (
+                            <div className="text-xs text-gray-500">{result.subtitle}</div>
+                          )}
+                        </div>
+                        {result.category && (
+                          <Badge variant="outline" className="text-xs">
+                            {result.category}
                           </Badge>
                         )}
-                        {result.trending_score && result.trending_score > 80 && (
-                          <Badge variant="default" className="text-xs">
-                            <TrendingUp className="w-3 h-3 mr-1" />
-                            Trending
-                          </Badge>
-                        )}
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                {/* No Results */}
+                {!isLoading && query && results.length === 0 && (
+                  <div className="p-4 text-center text-gray-500">
+                    No results found for "{query}"
+                  </div>
+                )}
+
+                {/* Recent Searches */}
+                {!query && recentSearches.length > 0 && (
+                  <div className="py-2">
+                    <div className="px-3 py-2 text-xs font-semibold text-gray-500 flex items-center justify-between">
+                      Recent Searches
+                      <Clock className="w-3 h-3" />
+                    </div>
+                    {recentSearches.map((search, index) => (
+                      <div
+                        key={index}
+                        className="px-3 py-2 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800 group"
+                      >
+                        <button
+                          onClick={() => setQuery(search)}
+                          className="flex-1 text-left text-sm"
+                        >
+                          {search}
+                        </button>
+                        <button
+                          onClick={() => removeRecentSearch(search)}
+                          className="opacity-0 group-hover:opacity-100 transition-opacity"
+                        >
+                          <X className="w-3 h-3 text-gray-400 hover:text-gray-600" />
+                        </button>
                       </div>
-                      <div className="flex items-center gap-3 text-xs text-muted-foreground mt-1">
-                        <span className="flex items-center gap-1">
-                          <MapPin className="w-3 h-3" />
-                          {result.venue_name}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
-                          {format(new Date(result.start_date), 'MMM d')}
-                        </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Popular Searches */}
+                {!query && (
+                  <div className="py-2 border-t">
+                    <div className="px-3 py-2 text-xs font-semibold text-gray-500 flex items-center justify-between">
+                      Popular Searches
+                      <Star className="w-3 h-3" />
+                    </div>
+                    <div className="px-3 pb-2">
+                      <div className="flex flex-wrap gap-2">
+                        {popularSearches.map((search, index) => (
+                          <Button
+                            key={index}
+                            variant="outline"
+                            size="sm"
+                            onClick={() => setQuery(search.text)}
+                            className="h-7 text-xs"
+                          >
+                            {search.icon}
+                            {search.text}
+                          </Button>
+                        ))}
                       </div>
                     </div>
                   </div>
-                ))}
-                <Button
-                  variant="ghost"
-                  className="w-full mt-2"
-                  onClick={() => {
-                    navigate(`/events?search=${encodeURIComponent(query)}`);
-                    setShowResults(false);
-                  }}
-                >
-                  View all results
-                </Button>
-              </div>
-            ) : query.length >= 2 ? (
-              <div className="text-center py-8">
-                <Search className="w-12 h-12 text-muted-foreground mx-auto mb-3" />
-                <p className="text-sm font-medium">No results found</p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Try adjusting your search or filters
-                </p>
-              </div>
-            ) : (
-              <div className="space-y-3">
-                <p className="text-xs text-muted-foreground font-medium">
-                  POPULAR SEARCHES
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {popularSearches.map((term) => (
-                    <Badge
-                      key={term}
-                      variant="secondary"
-                      className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
-                      onClick={() => {
-                        setQuery(term);
-                        performSearch();
-                      }}
-                    >
-                      {term}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            )}
-          </CardContent>
-        </Card>
-      )}
+                )}
+              </CardContent>
+            </Card>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

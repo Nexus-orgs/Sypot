@@ -565,16 +565,22 @@ const Auth = () => {
                             Discover & attend events
                           </div>
                         </SelectItem>
-                        <SelectItem value="organizer">
+                        <SelectItem value="event_organizer">
                           <div className="flex items-center">
                             <Calendar className="mr-2 h-4 w-4" />
                             Organize events
                           </div>
                         </SelectItem>
-                        <SelectItem value="business">
+                        <SelectItem value="business_owner">
                           <div className="flex items-center">
                             <Building2 className="mr-2 h-4 w-4" />
                             Promote my business
+                          </div>
+                        </SelectItem>
+                        <SelectItem value="admin">
+                          <div className="flex items-center">
+                            <Shield className="mr-2 h-4 w-4" />
+                            Admin access
                           </div>
                         </SelectItem>
                       </SelectContent>

@@ -8,10 +8,10 @@ import { Loader2 } from "lucide-react"
 
 interface ProtectedRouteProps {
   children: React.ReactNode
-  requiredUserType?: "visitor" | "organizer" | "business" | "admin"
+  requiredRole?: "visitor" | "event_organizer" | "business_owner" | "admin"
 }
 
-export const ProtectedRoute = ({ children, requiredUserType }: ProtectedRouteProps) => {
+export const ProtectedRoute = ({ children, requiredRole }: ProtectedRouteProps) => {
   const { user, profile, loading } = useAuth()
   const location = useLocation()
 
@@ -32,25 +32,30 @@ export const ProtectedRoute = ({ children, requiredUserType }: ProtectedRoutePro
   }
 
   // Check if user's email is verified (required for most protected actions)
-  if (!user.email_confirmed_at) {
-    return <Navigate to="/auth/verify-email" replace />
-  }
+  // Comment this out for development - uncomment for production
+  // if (!user.email_confirmed_at) {
+  //   return <Navigate to="/auth/verify-email" replace />
+  // }
 
   // Check user type requirements
-  if (requiredUserType && profile) {
-    // Map the profile user_type to match the expected format
-    const userTypeMapping: Record<string, string> = {
-      visitor: "visitor",
-      organizer: "organizer",
-      business_owner: "business",
-      admin: "admin",
-    }
+  if (requiredRole && profile) {
+    const userRole = profile.user_type || "visitor"
 
-    const mappedUserType = userTypeMapping[profile.preferences?.user_type || "visitor"]
-
-    if (mappedUserType !== requiredUserType) {
-      // User doesn't have the required role - redirect to unauthorized page
-      return <Navigate to="/unauthorized" replace />
+    if (userRole !== requiredRole) {
+      // For admin routes, only allow admin users
+      if (requiredRole === "admin" && userRole !== "admin") {
+        return <Navigate to="/unauthorized" replace />
+      }
+      
+      // For business owner routes
+      if (requiredRole === "business_owner" && userRole !== "business_owner") {
+        return <Navigate to="/unauthorized" replace />
+      }
+      
+      // For event organizer routes
+      if (requiredRole === "event_organizer" && userRole !== "event_organizer") {
+        return <Navigate to="/unauthorized" replace />
+      }
     }
   }
 

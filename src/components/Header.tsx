@@ -1,9 +1,14 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Drawer, DrawerContent, DrawerTrigger, DrawerClose } from "@/components/ui/drawer";
-import { MapPin, Search, User, Menu } from "lucide-react";
+import { MapPin, Search, User, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SearchBar } from "@/components/SearchBar";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const Header = () => {
+  const [searchOpen, setSearchOpen] = useState(false);
+
   return (
     <header className="bg-white/80 backdrop-blur-md border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -31,8 +36,20 @@ const Header = () => {
           </Link>
         </nav>
 
+        {/* Desktop Search Bar */}
+        <div className="hidden lg:block flex-1 max-w-md mx-8">
+          <SearchBar placeholder="Search events, venues, activities..." />
+        </div>
+
         <div className="flex items-center space-x-2">
-          <Button variant="ghost" size="icon" aria-label="Search">
+          {/* Mobile Search Button */}
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            aria-label="Search"
+            className="lg:hidden"
+            onClick={() => setSearchOpen(true)}
+          >
             <Search className="h-5 w-5" />
           </Button>
 
@@ -89,6 +106,27 @@ const Header = () => {
           </div>
         </div>
       </div>
+      
+      {/* Mobile Search Dialog */}
+      <Dialog open={searchOpen} onOpenChange={setSearchOpen}>
+        <DialogContent className="top-0 translate-y-0 sm:top-0 sm:translate-y-0">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-semibold">Search</h3>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setSearchOpen(false)}
+            >
+              <X className="h-4 w-4" />
+            </Button>
+          </div>
+          <SearchBar 
+            autoFocus 
+            placeholder="Search events, venues, activities..." 
+            onSearch={() => setSearchOpen(false)}
+          />
+        </DialogContent>
+      </Dialog>
     </header>
   );
 };

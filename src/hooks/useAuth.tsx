@@ -91,6 +91,21 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       if (authError) throw authError
 
       if (authData.user) {
+        // Create or update the profile with the user type
+        const { error: profileError } = await supabase
+          .from("profiles")
+          .upsert({
+            id: authData.user.id,
+            full_name: metadata?.display_name || email.split("@")[0],
+            email: email,
+            user_type: metadata?.user_type || "visitor",
+            updated_at: new Date().toISOString(),
+          })
+
+        if (profileError) {
+          console.error("Error creating profile:", profileError)
+        }
+
         toast({
           title: "Account created!",
           description: "Please check your email to verify your account.",
@@ -116,19 +131,46 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setLoading(true)
       const supabase = createClient()
 
-      const { error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       })
 
       if (error) throw error
 
+      // Fetch the user's profile to get their user type
+      let redirectPath = "/dashboard"
+      if (data.user) {
+        const { data: profileData } = await supabase
+          .from("profiles")
+          .select("user_type")
+          .eq("id", data.user.id)
+          .single()
+
+        if (profileData?.user_type) {
+          // Redirect based on user type
+          switch (profileData.user_type) {
+            case "admin":
+              redirectPath = "/admin"
+              break
+            case "event_organizer":
+              redirectPath = "/organizer-dashboard"
+              break
+            case "business_owner":
+              redirectPath = "/business-dashboard"
+              break
+            default:
+              redirectPath = "/explore"
+          }
+        }
+      }
+
       toast({
         title: "Welcome back!",
         description: "You have successfully signed in.",
       })
 
-      navigate("/dashboard")
+      navigate(redirectPath)
     } catch (error: any) {
       toast({
         title: "Sign in failed",

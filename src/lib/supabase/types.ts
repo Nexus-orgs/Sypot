@@ -6,6 +6,7 @@ export interface Profile {
   avatar_url?: string
   phone?: string
   date_of_birth?: string
+  user_type?: "visitor" | "event_organizer" | "business_owner" | "admin"
   preferences?: Record<string, any>
   created_at: string
   updated_at: string
