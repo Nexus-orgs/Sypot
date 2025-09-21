@@ -1,97 +1,227 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Sypot - Social Event Discovery App
 
-# Getting Started
+![Sypot Logo](https://img.shields.io/badge/Sypot-Find%20Your%20Vibe-14b8a6?style=for-the-badge&logo=location-dot&logoColor=white)
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+**Find Your Vibe, Find Your People** - A React Native mobile application for discovering and attending local events, connecting with like-minded people, and creating memorable experiences.
 
-## Step 1: Start Metro
+## 🚀 Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### 🎯 Core Functionality
+- **Event Discovery**: Browse and discover events based on your interests and location
+- **Social Networking**: Connect with friends and meet new people at events
+- **Event Management**: Create, organize, and manage your own events
+- **Real-time Chat**: Message other attendees and organizers
+- **Map Integration**: Find events and venues on an interactive map
+- **Profile Management**: Customize your profile and track your event history
+- **Booking System**: Reserve spots at events and manage your bookings
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### 📱 Screens Implemented
 
-```sh
-# Using npm
-npm start
+#### Authentication Flow
+- **Splash Screen**: Beautiful animated splash with gradient background and Sypot logo
+- **Login/Sign Up**: Secure authentication with email/phone support
+- **Forgot Password**: Password recovery functionality
+- **Onboarding**: Interest selection to personalize the experience
 
-# OR using Yarn
-yarn start
+#### Main App Features
+- **Home Feed**: Personalized event recommendations and social feed
+- **Explore**: Search and browse events by category and location  
+- **Map View**: Interactive map showing nearby events and venues
+- **Messages**: Chat with other users and event organizers
+- **Profile**: User profile management and settings
+
+## 🎨 Design System
+
+### Color Palette
+- **Primary Teal**: `#14b8a6` - Main brand color for CTAs and highlights
+- **Primary Orange**: `#f97316` - Secondary brand color for accents
+- **Backgrounds**: Light (`#f8fafc`) and Dark (`#0a0a0a`) theme support
+- **Text Colors**: Optimized for readability in both light and dark modes
+
+### Typography
+- **Font Family**: Plus Jakarta Sans (system fallback)
+- **Font Weights**: 400 (Regular), 500 (Medium), 700 (Bold), 800 (Extra Bold)
+- **Responsive Sizes**: From 12px to 36px with appropriate line heights
+
+### Components
+- **Consistent Border Radius**: 4px to 24px for different UI elements
+- **Shadow System**: Three-tier shadow system for depth and hierarchy
+- **Spacing System**: 8pt grid system for consistent layouts
+
+## 🛠 Technical Stack
+
+### Frontend
+- **React Native 0.73.2**: Cross-platform mobile development
+- **TypeScript**: Type-safe development experience
+- **React Navigation 6**: Navigation between screens with stack and tab navigators
+
+### UI & Styling
+- **React Native SVG**: Custom logo and icon components
+- **React Native Linear Gradient**: Beautiful gradient backgrounds
+- **Custom Theme System**: Centralized design tokens and styling
+
+### Navigation Architecture
+- **Stack Navigator**: For authentication and main app flows
+- **Tab Navigator**: Bottom navigation for main app sections
+- **Type-safe Navigation**: TypeScript definitions for all routes and parameters
+
+## 📁 Project Structure
+
+```
+SypotApp/
+├── src/
+│   ├── components/          # Reusable UI components
+│   │   └── SypotLogo.tsx   # Custom SVG logo component
+│   ├── navigation/         # Navigation configuration
+│   │   └── AppNavigator.tsx
+│   ├── screens/           # Screen components
+│   │   ├── auth/         # Authentication screens
+│   │   ├── home/         # Home feed screens
+│   │   ├── explore/      # Explore and search screens
+│   │   ├── messages/     # Chat and messaging screens
+│   │   ├── profile/      # Profile management screens
+│   │   ├── map/          # Map view screens
+│   │   └── SplashScreen.tsx
+│   ├── types/            # TypeScript type definitions
+│   └── utils/           # Utilities and configurations
+│       └── theme.ts     # Design system and theme
+├── android/             # Android-specific code
+├── ios/                # iOS-specific code
+└── App.tsx             # Main application entry point
 ```
 
-## Step 2: Build and run your app
+## 🚀 Getting Started
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### Prerequisites
+- Node.js 16 or higher
+- React Native development environment
+- Android Studio (for Android development)
+- Xcode (for iOS development on macOS)
 
-### Android
+### Installation
 
-```sh
-# Using npm
-npm run android
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/JT-tanui/Sypot2.git
+   cd Sypot2
+   ```
 
-# OR using Yarn
-yarn android
-```
+2. **Install dependencies**
+   ```bash
+   npm install --legacy-peer-deps
+   ```
 
-### iOS
+3. **Install iOS dependencies (iOS only)**
+   ```bash
+   cd ios && pod install && cd ..
+   ```
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+4. **Start the Metro bundler**
+   ```bash
+   npm start
+   ```
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+5. **Run the application**
+   
+   For Android:
+   ```bash
+   npm run android
+   ```
+   
+   For iOS:
+   ```bash
+   npm run ios
+   ```
 
-```sh
-bundle install
-```
+## 📱 App Flow
 
-Then, and every time you update your native dependencies, run:
+### User Journey
+1. **Onboarding**: Splash screen → Login/Sign up → Interest selection
+2. **Discovery**: Home feed with personalized events → Explore by category
+3. **Engagement**: Event details → Booking → Chat with attendees
+4. **Navigation**: Map view for location-based discovery
+5. **Social**: Profile management → Friends → Messages
 
-```sh
-bundle exec pod install
-```
+### Key Interactions
+- **Swipe Navigation**: Smooth transitions between screens
+- **Pull-to-Refresh**: Update event feeds and data
+- **Search & Filter**: Find events by location, category, date
+- **Real-time Updates**: Live chat and event notifications
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## 🎨 Design Inspiration
 
-```sh
-# Using npm
-npm run ios
+The app design is based on modern mobile UI patterns with a focus on:
+- **Clean Minimalism**: Uncluttered interfaces with plenty of white space
+- **Vibrant Colors**: Energetic teal and orange palette reflecting the social nature
+- **Intuitive Navigation**: Familiar patterns for easy user adoption
+- **Visual Hierarchy**: Clear information architecture with proper typography
 
-# OR using Yarn
-yarn ios
-```
+## 🔧 Development Notes
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### Code Quality
+- **TypeScript**: Full type coverage for better development experience
+- **ESLint**: Code linting for consistent code style
+- **Prettier**: Code formatting for clean, readable code
+- **Component Architecture**: Reusable, modular components
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+### Performance Considerations
+- **Optimized Images**: Efficient image loading and caching
+- **Lazy Loading**: Load screens and components as needed
+- **State Management**: Efficient data flow and state updates
+- **Memory Management**: Proper cleanup and resource management
 
-## Step 3: Modify your app
+## 🚀 Future Enhancements
 
-Now that you have successfully run the app, let's make changes!
+### Phase 1 (Current)
+- ✅ Authentication flow
+- ✅ Core screen layouts  
+- ✅ Navigation structure
+- ✅ Design system implementation
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+### Phase 2 (Planned)
+- [ ] Backend integration
+- [ ] Real-time messaging
+- [ ] Push notifications
+- [ ] Event booking system
+- [ ] Map integration with real data
+- [ ] User-generated content
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+### Phase 3 (Future)
+- [ ] Advanced search and filtering
+- [ ] Social features (following, recommendations)
+- [ ] Event analytics for organizers
+- [ ] In-app payments
+- [ ] Multi-language support
+- [ ] Dark mode implementation
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 🤝 Contributing
 
-## Congratulations! :tada:
+We welcome contributions! Please follow these steps:
 
-You've successfully run and modified your React Native App. :partying_face:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### Now what?
+### Development Guidelines
+- Follow TypeScript best practices
+- Maintain consistent code formatting
+- Write meaningful commit messages
+- Test your changes thoroughly
+- Update documentation as needed
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+## 📄 License
 
-# Troubleshooting
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## 📞 Contact
 
-# Learn More
+**Project Maintainer**: JT-tanui
+**Repository**: [https://github.com/JT-tanui/Sypot2](https://github.com/JT-tanui/Sypot2)
 
-To learn more about React Native, take a look at the following resources:
+---
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+**Built with ❤️ using React Native and TypeScript**
+
+*Find Your Vibe, Find Your People* 🎉
