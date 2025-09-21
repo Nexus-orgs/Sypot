@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sypot Chat</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0df2cc",
+            "background-light": "#f5f8f8",
+            "background-dark": "#10221f",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<div class="flex flex-col h-screen justify-between">
+<header class="bg-background-light dark:bg-background-dark shadow-sm sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+<div class="container mx-auto px-4">
+<div class="flex items-center justify-between h-16">
+<button class="p-2 -ml-2 text-slate-700 dark:text-slate-300">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+</svg>
+</button>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWkNtSnlvkedi_htqNBwNheo-nQOik-Y3EAdQmuLk2TKM-E0sIQIYxhl4C7PszOksnp51QRT0O5JeIJlwZxdA2AZNmcQ8Q1jbpoTlkaeHBmTEhBpAfSQW6txZeylvfnRD3ahoM3UXIKT81apkOVYPetjgXRbeg4na2eJ-SZWZCl7dL1YHIA4UlW8ttlSc_27fRK5xikAkggOy02KuRzq9leoYcKTIRKeIVLj4B5oWB9yBP-uTZtDJH3X8SuhsOzMsum_opPSn38Qg");'></div>
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">Liam</h2>
+</div>
+<div class="w-8"></div>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto p-4 space-y-6">
+<div class="flex items-end gap-3">
+<div class="w-8 h-8 rounded-full bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWkNtSnlvkedi_htqNBwNheo-nQOik-Y3EAdQmuLk2TKM-E0sIQIYxhl4C7PszOksnp51QRT0O5JeIJlwZxdA2AZNmcQ8Q1jbpoTlkaeHBmTEhBpAfSQW6txZeylvfnRD3ahoM3UXIKT81apkOVYPetjgXRbeg4na2eJ-SZWZCl7dL1YHIA4UlW8ttlSc_27fRK5xikAkggOy02KuRzq9leoYcKTIRKeIVLj4B5oWB9yBP-uTZtDJH3X8SuhsOzMsum_opPSn38Qg");'></div>
+<div class="max-w-[70%]">
+<div class="bg-slate-200 dark:bg-slate-700 rounded-lg p-3">
+<p class="text-sm text-slate-800 dark:text-slate-200">Hey! I'm so excited for the concert tonight. Are you still planning on meeting up beforehand?</p>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">10:30 AM</p>
+</div>
+</div>
+<div class="flex items-end gap-3 justify-end">
+<div class="max-w-[70%]">
+<div class="bg-primary rounded-lg p-3">
+<p class="text-sm text-slate-900">Absolutely! I was thinking we could grab a quick bite around 7:30. Does that work for you?</p>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1 text-right">10:31 AM</p>
+</div>
+</div>
+<div class="flex items-end gap-3">
+<div class="w-8 h-8 rounded-full bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlxszU0-tDuEA8WvoVulLP4ngYCocvN-UbPpTcwmghIRApOJGdH34Y__950bKrx0b4LDQ9ZDAVq3MfbajkfoDzfiGCWnOzAa4R6eceHWlZPGLYTWUUh-MomNj4jZfUhsFjAPGaHr1J1FJ5vg9rPcjY4YiFh_05UO4xsqlHwAuHNWwOluV6ZRFoRsd6d_xLej-Z6Bv6zGs-rpNqAq0HAAehHFdTBA21oeoM_r6-bfKEMZCs3tzoYAflSuOdO5dLrhWDV9SVrxDv4oY");'></div>
+<div class="max-w-[70%]">
+<div class="bg-slate-200 dark:bg-slate-700 rounded-lg p-3">
+<p class="text-sm text-slate-800 dark:text-slate-200">Perfect! There's a new taco place a few blocks from the venue. Heard it's amazing.</p>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">10:32 AM</p>
+</div>
+</div>
+<div class="flex items-end gap-3 justify-end">
+<div class="max-w-[70%]">
+<div class="bg-primary rounded-lg p-3">
+<p class="text-sm text-slate-900">Sounds delicious! Let's do it. See you then!</p>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1 text-right">10:33 AM</p>
+</div>
+</div>
+</main>
+<footer class="sticky bottom-0 bg-background-light dark:bg-background-dark">
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-2">
+<input class="flex-1 w-full px-4 py-3 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 placeholder-slate-500 dark:placeholder-slate-400 border-transparent focus:border-primary focus:ring-primary" placeholder="Message..." type="text"/>
+<button class="p-3 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"></path></svg>
+</button>
+<button class="p-3 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM80,108a12,12,0,1,1,12,12A12,12,0,0,1,80,108Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,176,108Zm-1.07,48c-10.29,17.79-27.4,28-46.93,28s-36.63-10.2-46.92-28a8,8,0,1,1,13.84-8c7.47,12.91,19.21,20,33.08,20s25.61-7.1,33.07-20a8,8,0,0,1,13.86,8Z"></path></svg>
+</button>
+<button class="bg-primary text-slate-900 font-bold p-3 rounded-full hover:bg-primary/80">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M232,127.89a16,16,0,0,1-16.21,16L39.9,159.45a16,16,0,0,1-15.82-20.34L45.45,43.23a16,16,0,0,1,20.34-15.82L220.1,43.08a16,16,0,0,1,15.82,20.34l-21.37,95.88A15.93,15.93,0,0,1,216,128.08a16,16,0,0,1-1.78-.11L96.34,112.4,112,56,48,80l24,72,136.22-15.14A.21.21,0,0,1,208.23,136.8L229.6,41a.21.21,0,0,0,0-.23.21.21,0,0,0-.23,0l-154.31-15.6a.21.21,0,0,0-.23,0,.21.21,0,0,0,0,.23L53.53,131.25a.21.21,0,0,0,0,.23.21.21,0,0,0,.23,0L191.79,144.2A.21.21,0,0,1,192,144a.2.2,0,0,1,.19.14l.05,0Z"></path></svg>
+</button>
+</div>
+</div>
+<nav class="bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 px-4 pt-2 pb-4">
+<div class="flex justify-around">
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"></path></svg>
+<span class="text-xs font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+<span class="text-xs font-medium">Explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208Zm-32-80a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path></svg>
+<span class="text-xs font-medium">Create</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary dark:text-primary" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24ZM84,140a12,12,0,1,1,12-12A12,12,0,0,1,84,140Zm44,0a12,12,0,1,1,12-12A12,12,0,0,1,128,140Zm44,0a12,12,0,1,1,12-12A12,12,0,0,1,172,140Z"></path></svg>
+<span class="text-xs font-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path></svg>
+<span class="text-xs font-medium">Profile</span>
+</a>
+</div>
+</nav>
+</footer>
+</div>
+
+</body></html>
