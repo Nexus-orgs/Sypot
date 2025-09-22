@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { 
   Search, MoreVertical, Paperclip, Smile, Send, Mic, Camera,
   Phone, Video, ArrowLeft, Check, CheckCheck, Clock, Image,
-  File, MapPin, User, Settings, Archive, Star, Trash2
+  File, MapPin, User, Settings, Archive, Star, Trash2, MessageSquare
 } from "lucide-react";
 import {
   DropdownMenu,

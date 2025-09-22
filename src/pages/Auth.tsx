@@ -32,12 +32,14 @@ import {
 } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import { SEO } from "@/components/SEO"
+import { mockAuth } from "@/lib/mock-auth"
 
 const Auth = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [socialLoading, setSocialLoading] = useState<string | null>(null)
   const [showPassword, setShowPassword] = useState(false)
   const [activeTab, setActiveTab] = useState<"signin" | "signup">("signin")
+  const [isMockAuth] = useState(mockAuth.isEnabled())
 
   // Sign In State
   const [signInEmail, setSignInEmail] = useState("")
@@ -415,6 +417,38 @@ const Auth = () => {
                     )}
                   </Button>
                 </form>
+
+                {/* Quick login buttons for testing (only show in dev mode) */}
+                {isMockAuth && (
+                  <div className="space-y-3 pt-4 border-t">
+                    <p className="text-sm text-muted-foreground text-center">Quick Test Logins</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {mockAuth.getQuickLoginButtons().map((quickLogin) => (
+                        <Button
+                          key={quickLogin.email}
+                          type="button"
+                          variant="outline"
+                          size="sm"
+                          onClick={() => {
+                            setSignInEmail(quickLogin.email)
+                            setSignInPassword(quickLogin.password)
+                            setTimeout(() => {
+                              handleSignIn(new Event('submit') as any)
+                            }, 100)
+                          }}
+                          disabled={isLoading}
+                          className="text-xs"
+                        >
+                          {quickLogin.userType === 'visitor' && <User className="mr-1 h-3 w-3" />}
+                          {quickLogin.userType === 'event_organizer' && <Calendar className="mr-1 h-3 w-3" />}
+                          {quickLogin.userType === 'business_owner' && <Building2 className="mr-1 h-3 w-3" />}
+                          {quickLogin.userType === 'admin' && <Shield className="mr-1 h-3 w-3" />}
+                          {quickLogin.label.split(' (')[0]}
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </TabsContent>
 
               {/* Sign Up Tab */}

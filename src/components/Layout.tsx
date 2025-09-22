@@ -71,11 +71,11 @@ export const Layout = ({ children, fullWidth = false, noFooter = false, noPaddin
   ];
 
   const organizerMenuItems = [
-    { path: '/organizer', icon: LayoutDashboard, label: 'Dashboard' },
+    { path: '/organizer-dashboard', icon: LayoutDashboard, label: 'Dashboard' },
     { path: '/create-event', icon: Plus, label: 'Create Event' },
-    { path: '/organizer/manage-events', icon: Calendar, label: 'Manage Events' },
-    { path: '/organizer/attendees', icon: Users, label: 'Attendees' },
-    { path: '/organizer/ticketing', icon: Ticket, label: 'Ticketing' },
+    { path: '/manage-events', icon: Calendar, label: 'Manage Events' },
+    { path: '/attendee-management', icon: Users, label: 'Attendees' },
+    { path: '/ticketing-dashboard', icon: Ticket, label: 'Ticketing' },
   ];
 
   const businessMenuItems = [
@@ -168,7 +168,7 @@ export const Layout = ({ children, fullWidth = false, noFooter = false, noPaddin
               )}
 
               {/* Create Event Button */}
-              {user && (profile?.user_type === 'organizer' || profile?.user_type === 'admin') && (
+              {user && (profile?.user_type === 'event_organizer' || profile?.user_type === 'admin') && (
                 <Button
                   onClick={() => navigate('/create-event')}
                   size="sm"
@@ -221,10 +221,10 @@ export const Layout = ({ children, fullWidth = false, noFooter = false, noPaddin
                     ))}
                     
                     {/* Organizer Menu Items */}
-                    {(profile?.user_type === 'organizer' || profile?.user_type === 'admin') && (
+                    {(profile?.user_type === 'event_organizer' || profile?.user_type === 'admin') && (
                       <>
                         <DropdownMenuSeparator />
-                        <DropdownMenuLabel>Organizer</DropdownMenuLabel>
+                        <DropdownMenuLabel>Event Organizer</DropdownMenuLabel>
                         {organizerMenuItems.map((item) => (
                           <DropdownMenuItem
                             key={item.path}
@@ -239,10 +239,10 @@ export const Layout = ({ children, fullWidth = false, noFooter = false, noPaddin
                     )}
                     
                     {/* Business Menu Items */}
-                    {(profile?.user_type === 'business' || profile?.user_type === 'admin') && (
+                    {(profile?.user_type === 'business_owner' || profile?.user_type === 'admin') && (
                       <>
                         <DropdownMenuSeparator />
-                        <DropdownMenuLabel>Business</DropdownMenuLabel>
+                        <DropdownMenuLabel>Business Owner</DropdownMenuLabel>
                         {businessMenuItems.map((item) => (
                           <DropdownMenuItem
                             key={item.path}
