@@ -1,14 +1,107 @@
+# Robots.txt for Sypot
+# This file tells search engine crawlers which pages to index
+
+# Allow all crawlers to access most content
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /features
+Allow: /pricing
+Allow: /events
+Allow: /explore
+Allow: /discover
+Allow: /help
+Allow: /contact
+Allow: /blog
+Allow: /press
+Allow: /careers
+Allow: /privacy
+Allow: /terms
+Allow: /cookie-policy
+Allow: /accessibility
+Allow: /safety
+Allow: /guidelines
+Allow: /business-solutions
+Allow: /partner-program
+Allow: /success-stories
+Allow: /case-studies
+Allow: /resources
+
+# Block access to sensitive areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /dashboard/
+Disallow: /organizer-dashboard/
+Disallow: /business-dashboard/
+Disallow: /profile/
+Disallow: /settings/
+Disallow: /checkout/
+Disallow: /payment/
+Disallow: /my-bookings/
+Disallow: /my-events/
+Disallow: /chat/
+Disallow: /notifications/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /temp/
+Disallow: /private/
+Disallow: /test/
+
+# Specific crawler rules
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
-User-agent: Twitterbot
+User-agent: Slurp
 Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
 
 User-agent: facebookexternalhit
 Allow: /
+Crawl-delay: 0
 
-User-agent: *
+User-agent: Twitterbot
 Allow: /
+Crawl-delay: 0
+
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: WhatsApp
+Allow: /
+Crawl-delay: 0
+
+User-agent: Applebot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot-SA
+Disallow: /
+
+# Sitemap location
+Sitemap: https://sypot.com/sitemap.xml
+Sitemap: https://sypot.com/sitemap-events.xml
+Sitemap: https://sypot.com/sitemap-businesses.xml
