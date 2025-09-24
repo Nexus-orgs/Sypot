@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sypot</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df2db",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#102220",
+                        "text-light": "#111817",
+                        "text-dark": "#f5f8f8",
+                        "subtle-light": "#608a86",
+                        "subtle-dark": "#a0c5c1"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex flex-col min-h-screen">
+<main class="flex-grow">
+<header class="sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10 px-4 pt-4 pb-2">
+<div class="flex items-center justify-between">
+<h1 class="text-text-light dark:text-text-dark text-xl font-bold">Sypot</h1>
+<button class="text-text-light dark:text-text-dark">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</button>
+</div>
+</header>
+<h2 class="text-text-light dark:text-text-dark text-2xl font-bold px-4 pb-3 pt-5">For You</h2>
+<div class="space-y-6 pb-6">
+<div class="flex flex-col">
+<div class="px-4">
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCGErDhCIVpVwHUTIyfn6_MTWo76Ii3kodYGaRa58n94lox7r19roUsKeQ3HVeDcn3wq5ZcX9QrlPODLD4OTCtvcGl-fFazPsuOUm-TRobVID56FEd4O72a4RBkvHAwWrLT3YhhZ7nxlirQmdCbRbQ_-RYYaEeNdOnkdHYam2m__nj6jayIiGkHwqEsN8SWzHqZDMAz1XHG_t0RoHbieLgOfoMkXdMl6I1w5jMrUcQrW5cpa2JZpY1jv4uttPPjIOw8mNeatwsnoR0");'></div>
+</div>
+<div class="px-4 pt-3 pb-2">
+<h3 class="text-text-light dark:text-text-dark text-lg font-bold">Summer Music Festival</h3>
+<p class="text-subtle-light dark:text-subtle-dark text-base">Central Park, New York</p>
+<p class="text-subtle-light dark:text-subtle-dark text-base">Fri, Jul 12 · 7:00 PM</p>
+</div>
+<div class="flex justify-start gap-2 px-4">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 text-subtle-light dark:text-subtle-dark">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,177.57-51.77-32.35a8,8,0,0,0-8.48,0L72,209.57V48H184Z"></path></svg>
+<span class="text-sm font-semibold">Save</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 text-subtle-light dark:text-subtle-dark">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,109.66l-48,48a8,8,0,0,1-11.32-11.32L204.69,112H165a88,88,0,0,0-85.23,66,8,8,0,0,1-15.5-4A103.94,103.94,0,0,1,165,96h39.71L170.34,61.66a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,229.66,109.66ZM192,208H40V88a8,8,0,0,0-16,0V208a16,16,0,0,0,16,16H192a8,8,0,0,0,0-16Z"></path></svg>
+<span class="text-sm font-semibold">Share</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="px-4">
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAIAbsirTW7BawEbCjgs-wYOT-ByGbbaZqjITPDJ3p6FjL7LhWyBaf_KryQmRFn6p2MwFqJ9HNvTsnXwHd-uEOKbK6w5SJx3TWdZfiNXewtcDORSmd_m5HhrtJ2n33f6gsIN4HCsubapIB6Ik8FJ94RtDmsE4RGv3jux8MG2f_zN8oLPdSc8h_Faf7vQ1Ku-UegbL3elGNFLdnwavXCgcunnIteiMNSGL9jThoP1sBp4sPmeh6Q6r-sfTGn8dI1qdvKM7YeUSLn_J8");'></div>
+</div>
+<div class="px-4 pt-3 pb-2">
+<h3 class="text-text-light dark:text-text-dark text-lg font-bold">Artisan Market</h3>
+<p class="text-subtle-light dark:text-subtle-dark text-base">Downtown, Los Angeles</p>
+<p class="text-subtle-light dark:text-subtle-dark text-base">Sat, Jul 13 · 10:00 AM</p>
+</div>
+<div class="flex justify-start gap-2 px-4">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 text-subtle-light dark:text-subtle-dark">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,177.57-51.77-32.35a8,8,0,0,0-8.48,0L72,209.57V48H184Z"></path></svg>
+<span class="text-sm font-semibold">Save</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 text-subtle-light dark:text-subtle-dark">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,109.66l-48,48a8,8,0,0,1-11.32-11.32L204.69,112H165a88,88,0,0,0-85.23,66,8,8,0,0,1-15.5-4A103.94,103.94,0,0,1,165,96h39.71L170.34,61.66a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,229.66,109.66ZM192,208H40V88a8,8,0,0,0-16,0V208a16,16,0,0,0,16,16H192a8,8,0,0,0,0-16Z"></path></svg>
+<span class="text-sm font-semibold">Share</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="px-4">
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBWC0TIP0-1MKkxgo6cs4yswgIdBVOXL3Q1vKr6CX3TZjz_ZmfKFV8ygUc7UYvRgOJFH0AFSY7BHI94aX7bpBxZTOwnf1NpEWKV9GLLa79H94LrcjqI78eCKfkAyqh9V4609dF90SAsATnFhbzF8VZx6L-JTIJtu0QOu2kCyI5nhjWIE1hStKUdEHvtTgP1UKVMstFwTs7Lca2Tl11aMtB9TTMIPM2B7L58IJNxwUlSVLL_TcwFQasBL1LCNzR6TGZRgDMgN3lES_Y");'></div>
+</div>
+<div class="px-4 pt-3 pb-2">
+<h3 class="text-text-light dark:text-text-dark text-lg font-bold">Beach Volleyball Tournament</h3>
+<p class="text-subtle-light dark:text-subtle-dark text-base">Santa Monica Beach, CA</p>
+<p class="text-subtle-light dark:text-subtle-dark text-base">Sun, Jul 14 · 2:00 PM</p>
+</div>
+<div class="flex justify-start gap-2 px-4">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 text-subtle-light dark:text-subtle-dark">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,177.57-51.77-32.35a8,8,0,0,0-8.48,0L72,209.57V48H184Z"></path></svg>
+<span class="text-sm font-semibold">Save</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 text-subtle-light dark:text-subtle-dark">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,109.66l-48,48a8,8,0,0,1-11.32-11.32L204.69,112H165a88,88,0,0,0-85.23,66,8,8,0,0,1-15.5-4A103.94,103.94,0,0,1,165,96h39.71L170.34,61.66a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,229.66,109.66ZM192,208H40V88a8,8,0,0,0-16,0V208a16,16,0,0,0,16,16H192a8,8,0,0,0,0-16Z"></path></svg>
+<span class="text-sm font-semibold">Share</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<nav class="sticky bottom-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-t border-primary/20 dark:border-primary/30">
+<div class="flex justify-around px-4 pt-2 pb-3">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0l.11.11,80,75.48A16,16,0,0,1,224,115.55Z"></path></svg>
+<span class="text-xs font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-subtle-light dark:text-subtle-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+<span class="text-xs font-medium">Explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-subtle-light dark:text-subtle-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208Zm-32-80a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path></svg>
+<span class="text-xs font-medium">Create</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-subtle-light dark:text-subtle-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"></path></svg>
+<span class="text-xs font-medium">Chat</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-subtle-light dark:text-subtle-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path></svg>
+<span class="text-xs font-medium">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+
+</body></html>

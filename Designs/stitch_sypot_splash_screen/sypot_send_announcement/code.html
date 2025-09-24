@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sypot - Announcement Composer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#0df2cc",
+                "background-light": "#f5f8f8",
+                "background-dark": "#10221f",
+              },
+              fontFamily: {
+                "display": ["Plus Jakarta Sans"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<div class="flex flex-col h-screen justify-between">
+<header class="p-4 border-b border-slate-200 dark:border-slate-800">
+<div class="container mx-auto flex items-center justify-between">
+<button class="p-2 rounded-full hover:bg-slate-200/60 dark:hover:bg-slate-800/60">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h1 class="text-lg font-bold text-center flex-1">Announcement for<br/><span class="text-primary">[Event Name]</span></h1>
+<div class="w-10"></div> 
+</div>
+</header>
+<main class="flex-grow p-4 overflow-y-auto">
+<div class="container mx-auto">
+<div class="relative">
+<textarea class="w-full h-64 p-4 bg-slate-200/60 dark:bg-slate-800/60 rounded-xl border border-transparent focus:border-primary focus:ring-1 focus:ring-primary transition-colors duration-300 resize-none" id="announcement-text" maxlength="500" placeholder="Write your announcement here..."></textarea>
+<div class="absolute bottom-4 right-4 text-sm text-slate-500 dark:text-slate-400" id="char-counter">0 / 500</div>
+</div>
+<p class="text-center mt-4 text-sm text-slate-500 dark:text-slate-400">
+                    Sending to <span class="font-bold text-slate-800 dark:text-slate-200">150</span> attendees
+                </p>
+</div>
+</main>
+<footer class="p-4 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800">
+<div class="container mx-auto grid grid-cols-2 gap-4">
+<button class="w-full py-3 px-4 rounded-xl bg-slate-200/60 dark:bg-slate-800/60 text-slate-800 dark:text-slate-200 font-bold hover:bg-slate-300/80 dark:hover:bg-slate-700/80 transition-colors duration-300">
+                    Cancel
+                </button>
+<button class="w-full py-3 px-4 rounded-xl bg-primary text-background-dark font-bold hover:opacity-90 transition-opacity duration-300">
+                    Send Announcement
+                </button>
+</div>
+</footer>
+</div>
+<script>
+        const textarea = document.getElementById('announcement-text');
+        const charCounter = document.getElementById('char-counter');
+        const maxLength = textarea.getAttribute('maxlength');
+        textarea.addEventListener('input', () => {
+            const currentLength = textarea.value.length;
+            charCounter.textContent = `${currentLength} / ${maxLength}`;
+        });
+    </script>
+
+</body></html>
