@@ -5,12 +5,31 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Svg, { Path } from 'react-native-svg';
 import { theme } from '../styles/theme';
 
-// Import screens
+// Import all screens
+import TestMenuScreen from '../screens/TestMenuScreen';
 import SplashScreen from '../screens/SplashScreen';
 import LoginScreen from '../screens/LoginScreen';
 import HomeScreen from '../screens/HomeScreen';
 import ExploreScreen from '../screens/ExploreScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import MessagesScreen from '../screens/MessagesScreen';
+import CreateEventScreen from '../screens/CreateEventScreen';
+import EventDetailsScreen from '../screens/EventDetailsScreen';
+import SettingsScreen from '../screens/SettingsScreen';
+
+// Placeholder screens (we'll create these shortly)
+import EditProfileScreen from '../screens/EditProfileScreen';
+import MyBookingsScreen from '../screens/MyBookingsScreen';
+import NotificationsScreen from '../screens/NotificationsScreen';
+import MapViewScreen from '../screens/MapViewScreen';
+import FriendsScreen from '../screens/FriendsScreen';
+import HelpScreen from '../screens/HelpScreen';
+import OnboardingInterestsScreen from '../screens/OnboardingInterestsScreen';
+import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
+import AchievementsScreen from '../screens/AchievementsScreen';
+import OrganizerDashboardScreen from '../screens/OrganizerDashboardScreen';
+import TicketPurchaseScreen from '../screens/TicketPurchaseScreen';
+import ChatScreen from '../screens/ChatScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -76,25 +95,19 @@ function MainTabs() {
         },
         tabBarLabelStyle: {
           fontSize: 12,
-          fontWeight: "500",
+          fontWeight: '500',
         },
         headerShown: false,
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Explore" component={ExploreScreen} />
-      <Tab.Screen 
-        name="Create" 
-        component={HomeScreen} // Placeholder, will create CreateEventScreen later
-        options={{
-          tabBarLabel: 'Create',
-        }}
-      />
+      <Tab.Screen name="Create" component={CreateEventScreen} />
       <Tab.Screen 
         name="Messages" 
-        component={HomeScreen} // Placeholder, will create MessagesScreen later
+        component={MessagesScreen}
         options={{
-          tabBarBadge: 3, // Example badge
+          tabBarBadge: 3,
         }}
       />
       <Tab.Screen name="Profile" component={ProfileScreen} />
@@ -107,7 +120,7 @@ function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Splash"
+        initialRouteName="TestMenu"
         screenOptions={{
           headerShown: false,
           cardStyleInterpolator: ({ current, layouts }) => {
@@ -126,9 +139,38 @@ function AppNavigator() {
           },
         }}
       >
+        {/* Test Menu - Remove this in production */}
+        <Stack.Screen name="TestMenu" component={TestMenuScreen} />
+        
+        {/* Auth Screens */}
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+        <Stack.Screen name="OnboardingInterests" component={OnboardingInterestsScreen} />
+        
+        {/* Main App */}
         <Stack.Screen name="MainTabs" component={MainTabs} />
+        
+        {/* Individual Screens (for testing) */}
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Explore" component={ExploreScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Messages" component={MessagesScreen} />
+        <Stack.Screen name="CreateEvent" component={CreateEventScreen} />
+        
+        {/* Detail Screens */}
+        <Stack.Screen name="EventDetails" component={EventDetailsScreen} />
+        <Stack.Screen name="Settings" component={SettingsScreen} />
+        <Stack.Screen name="EditProfile" component={EditProfileScreen} />
+        <Stack.Screen name="Chat" component={ChatScreen} />
+        <Stack.Screen name="MyBookings" component={MyBookingsScreen} />
+        <Stack.Screen name="Notifications" component={NotificationsScreen} />
+        <Stack.Screen name="MapView" component={MapViewScreen} />
+        <Stack.Screen name="Friends" component={FriendsScreen} />
+        <Stack.Screen name="Help" component={HelpScreen} />
+        <Stack.Screen name="Achievements" component={AchievementsScreen} />
+        <Stack.Screen name="OrganizerDashboard" component={OrganizerDashboardScreen} />
+        <Stack.Screen name="TicketPurchase" component={TicketPurchaseScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

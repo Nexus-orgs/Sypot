@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -15,19 +15,24 @@ import Svg, { Path } from 'react-native-svg';
 import { theme } from '../styles/theme';
 
 const LoginScreen = ({ navigation }) => {
-  const [emailOrPhone, setEmailOrPhone] = useState('');
+  const [emailOrPhone, setEmailOrPhone] = useState('demo@sypot.com');
+
+  // Auto-login after 1 second for testing
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      handleContinue();
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleContinue = () => {
-    if (!emailOrPhone.trim()) {
-      Alert.alert('Error', 'Please enter your email or phone number');
-      return;
-    }
-    // Navigate to home for now
+    // Dormant login - directly navigate to main app
     navigation.replace('MainTabs');
   };
 
   const handleSocialLogin = (provider) => {
-    Alert.alert('Social Login', `${provider} login will be implemented`);
+    // Dormant login - directly navigate to main app
+    navigation.replace('MainTabs');
   };
 
   const GoogleIcon = () => (

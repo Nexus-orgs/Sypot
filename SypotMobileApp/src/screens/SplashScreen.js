@@ -35,10 +35,10 @@ const SplashScreen = ({ navigation }) => {
       }),
     ]).start();
 
-    // Navigate to login after 3 seconds
+    // Navigate to TestMenu after 2 seconds (change to 'Login' in production)
     const timer = setTimeout(() => {
-      navigation.replace('Login');
-    }, 3000);
+      navigation.replace('TestMenu');
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, [fadeAnim, scaleAnim, navigation]);
