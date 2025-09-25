@@ -1,9 +1,12 @@
-# OSX
-#
+# macOS
 .DS_Store
 
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
 # Xcode
-#
 build/
 *.pbxuser
 !default.pbxuser
@@ -20,31 +23,48 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+*.xcworkspace
+xcshareddata/
 ios/.xcode.env.local
+ios/Pods/
+ios/build/
 
 # Android/IntelliJ
-#
 build/
-.idea
-.gradle
+.idea/
+.gradle/
 local.properties
 *.iml
+*.ipr
+*.iws
 *.hprof
 .cxx/
+android/.cxx/
+android/app/build/
+**/build/
+captures/
+
+# Android signing artifacts
 *.keystore
+*.jks
+*.keystore.properties
 !debug.keystore
 
-# node.js
-#
+# Node.js
 node_modules/
-npm-debug.log
-yarn-error.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
 
 # Bundle artifacts
 *.jsbundle
 
 # CocoaPods
 /ios/Pods/
+**/Pods/
+vendor/bundle/
 
 # Temporary files created by Metro
 .metro-health-check*
@@ -55,35 +75,7 @@ web-build/
 dist/
 
 # Flipper
-# Files to ignore when using Flipper
-# Flipper folder
 Flipper/
-
-# Bundle artifact
-*.jsbundle
-
-# Ruby / CocoaPods
-**/Pods/
-vendor/bundle/
-
-# Watchman
-.watchmanconfig
-
-# Android
-*.apk
-*.aab
-
-# Fastlane
-*/fastlane/report.xml
-*/fastlane/Preview.html
-*/fastlane/screenshots
-*/fastlane/test_output
-
-# Jest
-coverage/
-
-# Detox
-/e2e/*.log
 
 # Yarn
 .yarn/*
@@ -93,18 +85,26 @@ coverage/
 !.yarn/versions
 .pnp.*
 
-# VS Code
+# VS Code / IDEs
 .vscode/
+*.swp
+*.swo
 
 # Environment variables
 .env
+.env.*
 .env.local
 .env.production
 .env.development
+secrets.json
 
 # Log files
 *.log
+*.tmp
 logs/
+cache/
+coverage/
+output.json
 
 # Runtime data
 pids
@@ -121,3 +121,42 @@ coverage/
 
 # TypeScript cache
 *.tsbuildinfo
+
+# Fastlane
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots
+*/fastlane/test_output
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output
+
+# Jest
+coverage/
+
+# Detox
+/e2e/*.log
+
+# Google services / secrets
+google-services.json
+**/GoogleService-Info.plist
+keystore.properties
+
+# Flutter (for completeness)
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub/
+.pub-cache/
+.flutter-credentials
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/Generated.xcconfig
+
+# React Native specifics
+android/app/build/
+ios/build/
+
+# Watchman
+.watchmanconfig
