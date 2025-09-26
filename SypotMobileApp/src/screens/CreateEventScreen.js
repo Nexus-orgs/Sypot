@@ -12,6 +12,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
 import { theme } from '../styles/theme';
+import { validateRequired, validateDate, validateTime, validatePrice, validateNumber } from '../utils/validation';
 
 const CreateEventScreen = ({ navigation }) => {
   const [eventData, setEventData] = useState({
@@ -46,10 +47,39 @@ const CreateEventScreen = ({ navigation }) => {
   );
 
   const handleCreateEvent = () => {
-    if (!eventData.title || !eventData.location || !eventData.date) {
-      Alert.alert('Error', 'Please fill in all required fields');
+    // Validate form
+    const errors = {};
+    
+    const titleError = validateRequired(eventData.title, 'Event title');
+    if (titleError) errors.title = titleError;
+    
+    const locationError = validateRequired(eventData.location, 'Location');
+    if (locationError) errors.location = locationError;
+    
+    const dateError = validateDate(eventData.date);
+    if (dateError) errors.date = dateError;
+    
+    if (eventData.time) {
+      const timeError = validateTime(eventData.time);
+      if (timeError) errors.time = timeError;
+    }
+    
+    if (eventData.price) {
+      const priceError = validatePrice(eventData.price);
+      if (priceError) errors.price = priceError;
+    }
+    
+    if (eventData.maxAttendees) {
+      const attendeesError = validateNumber(eventData.maxAttendees, 1, 10000);
+      if (attendeesError) errors.maxAttendees = attendeesError;
+    }
+    
+    if (Object.keys(errors).length > 0) {
+      const errorMessage = Object.values(errors).join('\n');
+      Alert.alert('Validation Error', errorMessage);
       return;
     }
+    
     Alert.alert('Success', 'Event created successfully!', [
       { text: 'OK', onPress: () => navigation.goBack() }
     ]);

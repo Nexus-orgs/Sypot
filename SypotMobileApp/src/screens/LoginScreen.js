@@ -13,19 +13,31 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
 import { theme } from '../styles/theme';
+import { validateEmail, validatePhone } from '../utils/validation';
 
 const LoginScreen = ({ navigation }) => {
   const [emailOrPhone, setEmailOrPhone] = useState('demo@sypot.com');
 
-  // Auto-login after 1 second for testing
+  // Auto-login after 2 seconds for testing
   useEffect(() => {
     const timer = setTimeout(() => {
-      handleContinue();
-    }, 1000);
+      // Skip validation for auto-login
+      navigation.replace('MainTabs');
+    }, 2000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [navigation]);
 
   const handleContinue = () => {
+    // Validate email/phone
+    const emailError = validateEmail(emailOrPhone);
+    const phoneError = validatePhone(emailOrPhone);
+    
+    // If it's not a valid email and not a valid phone, show error
+    if (emailError && phoneError && emailOrPhone !== 'demo@sypot.com') {
+      Alert.alert('Validation Error', 'Please enter a valid email or phone number');
+      return;
+    }
+    
     // Dormant login - directly navigate to main app
     navigation.replace('MainTabs');
   };
