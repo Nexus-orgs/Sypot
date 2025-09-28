@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sypot Help</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script id="tailwind-config">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sypot Help</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: 'class',
         theme: {
@@ -21,130 +28,261 @@
             fontFamily: {
               display: ['Plus Jakarta Sans'],
             },
-            borderRadius: { DEFAULT: '0.5rem', lg: '1rem', xl: '1.5rem', full: '9999px' },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
           },
         },
       };
     </script>
-<style>
+    <style>
       .material-symbols-outlined {
         font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
-<div class="flex h-screen flex-col">
-<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-<div class="mx-auto flex max-w-md items-center justify-between p-4">
-<button class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-gray-800 dark:text-gray-200">
-<span class="material-symbols-outlined">arrow_back</span>
-</button>
-<h1 class="text-xl font-bold">Help &amp; Support</h1>
-<div class="h-10 w-10"></div>
-</div>
-</header>
-<main class="flex-1 overflow-y-auto pb-28">
-<div class="mx-auto max-w-md px-4">
-<div class="relative mb-6">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">search</span>
-<input class="w-full rounded-lg border-2 border-transparent bg-white dark:bg-gray-800 py-3 pl-12 pr-4 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 focus:border-primary focus:ring-primary" placeholder="Search for help..." type="text"/>
-</div>
-<section class="mb-8">
-<h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Popular topics</h2>
-<div class="grid grid-cols-2 gap-4">
-<a class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white dark:bg-gray-800 p-4 text-center shadow-sm transition-transform hover:scale-105" href="#">
-<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary" style="font-size: 28px">confirmation_number</span>
-</div>
-<h3 class="font-bold text-gray-800 dark:text-gray-200">Tickets</h3>
-</a>
-<a class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white dark:bg-gray-800 p-4 text-center shadow-sm transition-transform hover:scale-105" href="#">
-<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary" style="font-size: 28px">event</span>
-</div>
-<h3 class="font-bold text-gray-800 dark:text-gray-200">Events</h3>
-</a>
-<a class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white dark:bg-gray-800 p-4 text-center shadow-sm transition-transform hover:scale-105" href="#">
-<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary" style="font-size: 28px">location_on</span>
-</div>
-<h3 class="font-bold text-gray-800 dark:text-gray-200">Locations</h3>
-</a>
-<a class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white dark:bg-gray-800 p-4 text-center shadow-sm transition-transform hover:scale-105" href="#">
-<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary" style="font-size: 28px">payment</span>
-</div>
-<h3 class="font-bold text-gray-800 dark:text-gray-200">Payments</h3>
-</a>
-<a class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white dark:bg-gray-800 p-4 text-center shadow-sm transition-transform hover:scale-105" href="#">
-<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary" style="font-size: 28px">help_outline</span>
-</div>
-<h3 class="font-bold text-gray-800 dark:text-gray-200">General</h3>
-</a>
-<a class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white dark:bg-gray-800 p-4 text-center shadow-sm transition-transform hover:scale-105" href="#">
-<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary" style="font-size: 28px">forum</span>
-</div>
-<h3 class="font-bold text-gray-800 dark:text-gray-200">Community</h3>
-</a>
-</div>
-</section>
-<section>
-<h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Contact us</h2>
-<div class="space-y-4">
-<a class="flex items-center justify-between rounded-xl bg-white dark:bg-gray-800 p-4 shadow-sm" href="#">
-<div class="flex items-center gap-4">
-<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary">email</span>
-</div>
-<span class="font-semibold text-gray-800 dark:text-gray-200">Email us</span>
-</div>
-<span class="material-symbols-outlined text-gray-400 dark:text-gray-500">chevron_right</span>
-</a>
-<a class="flex items-center justify-between rounded-xl bg-white dark:bg-gray-800 p-4 shadow-sm" href="#">
-<div class="flex items-center gap-4">
-<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary">chat</span>
-</div>
-<span class="font-semibold text-gray-800 dark:text-gray-200">Live Chat</span>
-</div>
-<span class="material-symbols-outlined text-gray-400 dark:text-gray-500">chevron_right</span>
-</a>
-</div>
-</section>
-</div>
-</main>
-<nav class="fixed bottom-0 left-0 right-0 z-10 border-t border-gray-200/50 bg-background-light/80 dark:border-gray-800/50 dark:bg-background-dark/80 backdrop-blur-sm">
-<div class="mx-auto flex max-w-md items-center justify-around pb-2 pt-1">
-<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
-<span class="material-symbols-outlined">home</span>
-<span class="text-xs font-medium">Home</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
-<span class="material-symbols-outlined">explore</span>
-<span class="text-xs font-medium">Explore</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
-<span class="material-symbols-outlined">add_box</span>
-<span class="text-xs font-medium">Create</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
-<span class="material-symbols-outlined">chat_bubble</span>
-<span class="text-xs font-medium">Chat</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-primary" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
-<span class="text-xs font-medium">Profile</span>
-</a>
-</div>
-</nav>
-</div>
-
-
-</body></html>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200"
+  >
+    <div class="flex h-screen flex-col">
+      <header
+        class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
+      >
+        <div class="mx-auto flex max-w-md items-center justify-between p-4">
+          <button
+            class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-gray-800 dark:text-gray-200"
+          >
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+          <h1 class="text-xl font-bold">Help &amp; Support</h1>
+          <div class="h-10 w-10"></div>
+        </div>
+      </header>
+      <main class="flex-1 overflow-y-auto pb-28">
+        <div class="mx-auto max-w-md px-4">
+          <div class="relative mb-6">
+            <span
+              class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500"
+              >search</span
+            >
+            <input
+              class="w-full rounded-lg border-2 border-transparent bg-white dark:bg-gray-800 py-3 pl-12 pr-4 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 focus:border-primary focus:ring-primary"
+              placeholder="Search for help..."
+              type="text"
+            />
+          </div>
+          <section class="mb-8">
+            <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+              Popular topics
+            </h2>
+            <div class="grid grid-cols-2 gap-4">
+              <a
+                class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white dark:bg-gray-800 p-4 text-center shadow-sm transition-transform hover:scale-105"
+                href="#"
+              >
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary"
+                    style="font-size: 28px"
+                    >confirmation_number</span
+                  >
+                </div>
+                <h3 class="font-bold text-gray-800 dark:text-gray-200">
+                  Tickets
+                </h3>
+              </a>
+              <a
+                class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white dark:bg-gray-800 p-4 text-center shadow-sm transition-transform hover:scale-105"
+                href="#"
+              >
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary"
+                    style="font-size: 28px"
+                    >event</span
+                  >
+                </div>
+                <h3 class="font-bold text-gray-800 dark:text-gray-200">
+                  Events
+                </h3>
+              </a>
+              <a
+                class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white dark:bg-gray-800 p-4 text-center shadow-sm transition-transform hover:scale-105"
+                href="#"
+              >
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary"
+                    style="font-size: 28px"
+                    >location_on</span
+                  >
+                </div>
+                <h3 class="font-bold text-gray-800 dark:text-gray-200">
+                  Locations
+                </h3>
+              </a>
+              <a
+                class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white dark:bg-gray-800 p-4 text-center shadow-sm transition-transform hover:scale-105"
+                href="#"
+              >
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary"
+                    style="font-size: 28px"
+                    >payment</span
+                  >
+                </div>
+                <h3 class="font-bold text-gray-800 dark:text-gray-200">
+                  Payments
+                </h3>
+              </a>
+              <a
+                class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white dark:bg-gray-800 p-4 text-center shadow-sm transition-transform hover:scale-105"
+                href="#"
+              >
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary"
+                    style="font-size: 28px"
+                    >help_outline</span
+                  >
+                </div>
+                <h3 class="font-bold text-gray-800 dark:text-gray-200">
+                  General
+                </h3>
+              </a>
+              <a
+                class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white dark:bg-gray-800 p-4 text-center shadow-sm transition-transform hover:scale-105"
+                href="#"
+              >
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary"
+                    style="font-size: 28px"
+                    >forum</span
+                  >
+                </div>
+                <h3 class="font-bold text-gray-800 dark:text-gray-200">
+                  Community
+                </h3>
+              </a>
+            </div>
+          </section>
+          <section>
+            <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+              Contact us
+            </h2>
+            <div class="space-y-4">
+              <a
+                class="flex items-center justify-between rounded-xl bg-white dark:bg-gray-800 p-4 shadow-sm"
+                href="#"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >email</span
+                    >
+                  </div>
+                  <span class="font-semibold text-gray-800 dark:text-gray-200"
+                    >Email us</span
+                  >
+                </div>
+                <span
+                  class="material-symbols-outlined text-gray-400 dark:text-gray-500"
+                  >chevron_right</span
+                >
+              </a>
+              <a
+                class="flex items-center justify-between rounded-xl bg-white dark:bg-gray-800 p-4 shadow-sm"
+                href="#"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >chat</span
+                    >
+                  </div>
+                  <span class="font-semibold text-gray-800 dark:text-gray-200"
+                    >Live Chat</span
+                  >
+                </div>
+                <span
+                  class="material-symbols-outlined text-gray-400 dark:text-gray-500"
+                  >chevron_right</span
+                >
+              </a>
+            </div>
+          </section>
+        </div>
+      </main>
+      <nav
+        class="fixed bottom-0 left-0 right-0 z-10 border-t border-gray-200/50 bg-background-light/80 dark:border-gray-800/50 dark:bg-background-dark/80 backdrop-blur-sm"
+      >
+        <div
+          class="mx-auto flex max-w-md items-center justify-around pb-2 pt-1"
+        >
+          <a
+            class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-xs font-medium">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">explore</span>
+            <span class="text-xs font-medium">Explore</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">add_box</span>
+            <span class="text-xs font-medium">Create</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">chat_bubble</span>
+            <span class="text-xs font-medium">Chat</span>
+          </a>
+          <a class="flex flex-col items-center gap-1 text-primary" href="#">
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: 'FILL' 1"
+              >person</span
+            >
+            <span class="text-xs font-medium">Profile</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>

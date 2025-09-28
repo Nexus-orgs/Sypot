@@ -1,101 +1,168 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sypot - Map View</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#0df2db",
-                        "background-light": "#f5f8f8",
-                        "background-dark": "#102220",
-                    },
-                    fontFamily: {
-                        "display": ["Plus Jakarta Sans"]
-                    },
-                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
-                },
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sypot - Map View</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0df2db',
+              'background-light': '#f5f8f8',
+              'background-dark': '#102220',
             },
-        }
+            fontFamily: {
+              display: ['Plus Jakarta Sans'],
+            },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex h-screen w-full flex-col overflow-hidden">
-<div class="flex-1 relative">
-<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCWYW62sq4sIcUwTcF1C80Hd2bTaJo2mhXScaomgaseT2M3CRaPfw61YAiasMMFhSgczcPZYNuSrb0d6usVGrxhbAT7d1WT4GAvG0-HyYTFWfjitmj7L3bTqkJoQ7amPCPC5xYathYudl0CFuzZirLhy5jBoygx10Y143D_T6mC2PaVmsCRsfw6-UpAk8K4f-sHjoiavVk7ftlV5qQkCb73rEcHfCd7fcPwt3VDWE6qWB97oRAGYhQA1NXa3TBxIELjXNw6XeMqL8E");'>
-</div>
-<div class="absolute inset-0 flex flex-col justify-between p-4 pb-0">
-<div class="relative mt-4">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-background-dark/60 dark:text-background-light/60">search</span>
-<input class="w-full h-12 pl-12 pr-4 rounded-full border-none bg-background-light/90 dark:bg-background-dark/80 backdrop-blur-sm text-background-dark dark:text-background-light placeholder-background-dark/60 dark:placeholder-background-light/60 focus:ring-2 focus:ring-primary" placeholder="Search events, places..." type="text"/>
-</div>
-<div class="flex flex-col items-end gap-3 self-end mb-4">
-<div class="flex flex-col gap-px rounded-xl overflow-hidden bg-background-light/90 dark:bg-background-dark/80 backdrop-blur-sm shadow-lg">
-<button class="flex size-12 items-center justify-center text-background-dark dark:text-background-light hover:bg-primary/20">
-<span class="material-symbols-outlined">add</span>
-</button>
-<button class="flex size-12 items-center justify-center text-background-dark dark:text-background-light hover:bg-primary/20">
-<span class="material-symbols-outlined">remove</span>
-</button>
-</div>
-<button class="flex size-12 items-center justify-center rounded-xl bg-background-light/90 dark:bg-background-dark/80 backdrop-blur-sm shadow-lg text-background-dark dark:text-background-light hover:bg-primary/20">
-<span class="material-symbols-outlined">near_me</span>
-</button>
-</div>
-</div>
-<div class="absolute bottom-24 left-4 right-4 bg-background-light dark:bg-background-dark p-3 rounded-xl shadow-2xl">
-<div class="flex items-center gap-4">
-<div class="flex-1">
-<p class="text-sm font-medium text-primary">1.2 mi away</p>
-<h3 class="font-bold text-lg text-background-dark dark:text-background-light mt-1">Artisan Coffee Tasting</h3>
-<p class="text-sm text-background-dark/70 dark:text-background-light/70 mt-1">Sat, Aug 12 · 10:00 AM</p>
-</div>
-<div class="w-20 h-20 rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwUDF2o8kvPv-xwIv9hef8CqU1as-2jdQmp31UrkHz06H1ZqLGHz4cTRmStrQD931QiaC_nTnWeorM8m9PscuzuyiVTrAk7zmH16eSMsnEtKE5U8NwUxUzdYqJdubPVCZFRZg3OYriTp4Ch_ytmBdx4wcYUJR7RrZSsF5idqroXt21MC4Hclrt80bCvkARy6InNnmW1SDFQIIbxuyJvSphKA8ZUMtpsu-OiUYMmipsfxoMRdv7ij2SluYshgZ_nFTQa5q4P5jPEks");'></div>
-</div>
-</div>
-</div>
-<div class="bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-xl border-t border-background-dark/10 dark:border-background-light/10">
-<div class="flex justify-around items-center px-2 pt-2 pb-5">
-<a class="flex flex-col items-center gap-1 w-1/5 text-background-dark/60 dark:text-background-light/60" href="#">
-<span class="material-symbols-outlined">home</span>
-<p class="text-xs font-medium">Home</p>
-</a>
-<a class="flex flex-col items-center gap-1 w-1/5 text-primary" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">explore</span>
-<p class="text-xs font-bold">Explore</p>
-</a>
-<a class="flex flex-col items-center gap-1 w-1/5 text-background-dark/60 dark:text-background-light/60" href="#">
-<span class="material-symbols-outlined">add_circle</span>
-<p class="text-xs font-medium">Create</p>
-</a>
-<a class="flex flex-col items-center gap-1 w-1/5 text-background-dark/60 dark:text-background-light/60" href="#">
-<span class="material-symbols-outlined">chat_bubble</span>
-<p class="text-xs font-medium">Chat</p>
-</a>
-<a class="flex flex-col items-center gap-1 w-1/5 text-background-dark/60 dark:text-background-light/60" href="#">
-<span class="material-symbols-outlined">person</span>
-<p class="text-xs font-medium">Profile</p>
-</a>
-</div>
-</div>
-</div>
-
-</body></html>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex h-screen w-full flex-col overflow-hidden">
+      <div class="flex-1 relative">
+        <div
+          class="absolute inset-0 bg-cover bg-center"
+          style="
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWYW62sq4sIcUwTcF1C80Hd2bTaJo2mhXScaomgaseT2M3CRaPfw61YAiasMMFhSgczcPZYNuSrb0d6usVGrxhbAT7d1WT4GAvG0-HyYTFWfjitmj7L3bTqkJoQ7amPCPC5xYathYudl0CFuzZirLhy5jBoygx10Y143D_T6mC2PaVmsCRsfw6-UpAk8K4f-sHjoiavVk7ftlV5qQkCb73rEcHfCd7fcPwt3VDWE6qWB97oRAGYhQA1NXa3TBxIELjXNw6XeMqL8E');
+          "
+        ></div>
+        <div class="absolute inset-0 flex flex-col justify-between p-4 pb-0">
+          <div class="relative mt-4">
+            <span
+              class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-background-dark/60 dark:text-background-light/60"
+              >search</span
+            >
+            <input
+              class="w-full h-12 pl-12 pr-4 rounded-full border-none bg-background-light/90 dark:bg-background-dark/80 backdrop-blur-sm text-background-dark dark:text-background-light placeholder-background-dark/60 dark:placeholder-background-light/60 focus:ring-2 focus:ring-primary"
+              placeholder="Search events, places..."
+              type="text"
+            />
+          </div>
+          <div class="flex flex-col items-end gap-3 self-end mb-4">
+            <div
+              class="flex flex-col gap-px rounded-xl overflow-hidden bg-background-light/90 dark:bg-background-dark/80 backdrop-blur-sm shadow-lg"
+            >
+              <button
+                class="flex size-12 items-center justify-center text-background-dark dark:text-background-light hover:bg-primary/20"
+              >
+                <span class="material-symbols-outlined">add</span>
+              </button>
+              <button
+                class="flex size-12 items-center justify-center text-background-dark dark:text-background-light hover:bg-primary/20"
+              >
+                <span class="material-symbols-outlined">remove</span>
+              </button>
+            </div>
+            <button
+              class="flex size-12 items-center justify-center rounded-xl bg-background-light/90 dark:bg-background-dark/80 backdrop-blur-sm shadow-lg text-background-dark dark:text-background-light hover:bg-primary/20"
+            >
+              <span class="material-symbols-outlined">near_me</span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="absolute bottom-24 left-4 right-4 bg-background-light dark:bg-background-dark p-3 rounded-xl shadow-2xl"
+        >
+          <div class="flex items-center gap-4">
+            <div class="flex-1">
+              <p class="text-sm font-medium text-primary">1.2 mi away</p>
+              <h3
+                class="font-bold text-lg text-background-dark dark:text-background-light mt-1"
+              >
+                Artisan Coffee Tasting
+              </h3>
+              <p
+                class="text-sm text-background-dark/70 dark:text-background-light/70 mt-1"
+              >
+                Sat, Aug 12 · 10:00 AM
+              </p>
+            </div>
+            <div
+              class="w-20 h-20 rounded-lg bg-cover bg-center"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwUDF2o8kvPv-xwIv9hef8CqU1as-2jdQmp31UrkHz06H1ZqLGHz4cTRmStrQD931QiaC_nTnWeorM8m9PscuzuyiVTrAk7zmH16eSMsnEtKE5U8NwUxUzdYqJdubPVCZFRZg3OYriTp4Ch_ytmBdx4wcYUJR7RrZSsF5idqroXt21MC4Hclrt80bCvkARy6InNnmW1SDFQIIbxuyJvSphKA8ZUMtpsu-OiUYMmipsfxoMRdv7ij2SluYshgZ_nFTQa5q4P5jPEks');
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-xl border-t border-background-dark/10 dark:border-background-light/10"
+      >
+        <div class="flex justify-around items-center px-2 pt-2 pb-5">
+          <a
+            class="flex flex-col items-center gap-1 w-1/5 text-background-dark/60 dark:text-background-light/60"
+            href="#"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <p class="text-xs font-medium">Home</p>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 w-1/5 text-primary"
+            href="#"
+          >
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: 'FILL' 1"
+              >explore</span
+            >
+            <p class="text-xs font-bold">Explore</p>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 w-1/5 text-background-dark/60 dark:text-background-light/60"
+            href="#"
+          >
+            <span class="material-symbols-outlined">add_circle</span>
+            <p class="text-xs font-medium">Create</p>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 w-1/5 text-background-dark/60 dark:text-background-light/60"
+            href="#"
+          >
+            <span class="material-symbols-outlined">chat_bubble</span>
+            <p class="text-xs font-medium">Chat</p>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 w-1/5 text-background-dark/60 dark:text-background-light/60"
+            href="#"
+          >
+            <span class="material-symbols-outlined">person</span>
+            <p class="text-xs font-medium">Profile</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

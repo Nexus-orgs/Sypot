@@ -12,7 +12,13 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { colors, spacing, typography, borderRadius, shadows } from '../../utils/theme';
+import {
+  colors,
+  spacing,
+  typography,
+  borderRadius,
+  shadows,
+} from '../../utils/theme';
 import Card from '../../components/Card';
 
 interface SettingsState {
@@ -28,7 +34,7 @@ interface SettingsState {
 
 export default function SettingsScreen() {
   const navigation = useNavigation();
-  
+
   const [settings, setSettings] = useState<SettingsState>({
     pushNotifications: true,
     eventReminders: true,
@@ -43,21 +49,17 @@ export default function SettingsScreen() {
   const toggleSetting = (key: keyof SettingsState) => {
     setSettings(prev => ({
       ...prev,
-      [key]: !prev[key]
+      [key]: !prev[key],
     }));
   };
 
   const handleLanguageChange = () => {
-    Alert.alert(
-      'Language',
-      'Select your preferred language',
-      [
-        { text: 'English', onPress: () => console.log('English selected') },
-        { text: 'Spanish', onPress: () => console.log('Spanish selected') },
-        { text: 'French', onPress: () => console.log('French selected') },
-        { text: 'Cancel', style: 'cancel' },
-      ]
-    );
+    Alert.alert('Language', 'Select your preferred language', [
+      { text: 'English', onPress: () => console.log('English selected') },
+      { text: 'Spanish', onPress: () => console.log('Spanish selected') },
+      { text: 'French', onPress: () => console.log('French selected') },
+      { text: 'Cancel', style: 'cancel' },
+    ]);
   };
 
   const handleDataExport = () => {
@@ -67,7 +69,7 @@ export default function SettingsScreen() {
       [
         { text: 'Cancel', style: 'cancel' },
         { text: 'Export', onPress: () => console.log('Data export requested') },
-      ]
+      ],
     );
   };
 
@@ -77,14 +79,14 @@ export default function SettingsScreen() {
       'This will clear all cached data and may improve app performance. Continue?',
       [
         { text: 'Cancel', style: 'cancel' },
-        { 
-          text: 'Clear', 
+        {
+          text: 'Clear',
           style: 'destructive',
           onPress: () => {
             Alert.alert('Success', 'Cache cleared successfully.');
-          }
+          },
         },
-      ]
+      ],
     );
   };
 
@@ -94,25 +96,28 @@ export default function SettingsScreen() {
       'Are you sure you want to delete your account? This action cannot be undone.',
       [
         { text: 'Cancel', style: 'cancel' },
-        { 
-          text: 'Delete', 
+        {
+          text: 'Delete',
           style: 'destructive',
           onPress: () => {
-            Alert.alert('Account Deleted', 'Your account has been scheduled for deletion.');
-          }
+            Alert.alert(
+              'Account Deleted',
+              'Your account has been scheduled for deletion.',
+            );
+          },
         },
-      ]
+      ],
     );
   };
 
-  const SettingsItem = ({ 
-    icon, 
-    title, 
-    description, 
-    value, 
-    onToggle, 
+  const SettingsItem = ({
+    icon,
+    title,
+    description,
+    value,
+    onToggle,
     showArrow = false,
-    onPress 
+    onPress,
   }: {
     icon: string;
     title: string;
@@ -122,7 +127,7 @@ export default function SettingsScreen() {
     showArrow?: boolean;
     onPress?: () => void;
   }) => (
-    <TouchableOpacity 
+    <TouchableOpacity
       style={styles.settingsItem}
       onPress={onPress}
       disabled={!onPress && !onToggle}
@@ -142,38 +147,36 @@ export default function SettingsScreen() {
           thumbColor={value ? 'white' : colors.neutral100}
         />
       )}
-      {showArrow && (
-        <Text style={styles.settingsArrow}>›</Text>
-      )}
+      {showArrow && <Text style={styles.settingsArrow}>›</Text>}
     </TouchableOpacity>
   );
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={colors.backgroundLight} />
-      
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={colors.backgroundLight}
+      />
+
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
           <Text style={styles.backButtonText}>←</Text>
         </TouchableOpacity>
-        
+
         <Text style={styles.headerTitle}>Settings</Text>
-        
+
         <View style={styles.placeholder} />
       </View>
 
-      <ScrollView 
-        style={styles.content}
-        showsVerticalScrollIndicator={false}
-      >
+      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         {/* Notifications */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>Notifications</Text>
-          
+
           <SettingsItem
             icon="🔔"
             title="Push Notifications"
@@ -181,7 +184,7 @@ export default function SettingsScreen() {
             value={settings.pushNotifications}
             onToggle={() => toggleSetting('pushNotifications')}
           />
-          
+
           <SettingsItem
             icon="📅"
             title="Event Reminders"
@@ -189,7 +192,7 @@ export default function SettingsScreen() {
             value={settings.eventReminders}
             onToggle={() => toggleSetting('eventReminders')}
           />
-          
+
           <SettingsItem
             icon="💬"
             title="Message Notifications"
@@ -197,7 +200,7 @@ export default function SettingsScreen() {
             value={settings.messageNotifications}
             onToggle={() => toggleSetting('messageNotifications')}
           />
-          
+
           <SettingsItem
             icon="📧"
             title="Email Notifications"
@@ -210,7 +213,7 @@ export default function SettingsScreen() {
         {/* Privacy & Security */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>Privacy & Security</Text>
-          
+
           <SettingsItem
             icon="📍"
             title="Location Services"
@@ -218,7 +221,7 @@ export default function SettingsScreen() {
             value={settings.locationServices}
             onToggle={() => toggleSetting('locationServices')}
           />
-          
+
           <SettingsItem
             icon="👁️"
             title="Show Activity"
@@ -226,28 +229,38 @@ export default function SettingsScreen() {
             value={settings.showActivity}
             onToggle={() => toggleSetting('showActivity')}
           />
-          
+
           <SettingsItem
             icon="🔒"
             title="Privacy Settings"
             description="Manage who can see your information"
             showArrow
-            onPress={() => Alert.alert('Privacy', 'Privacy settings will open detailed options.')}
+            onPress={() =>
+              Alert.alert(
+                'Privacy',
+                'Privacy settings will open detailed options.',
+              )
+            }
           />
-          
+
           <SettingsItem
             icon="🛡️"
             title="Security"
             description="Two-factor authentication, passwords"
             showArrow
-            onPress={() => Alert.alert('Security', 'Security settings will open password and 2FA options.')}
+            onPress={() =>
+              Alert.alert(
+                'Security',
+                'Security settings will open password and 2FA options.',
+              )
+            }
           />
         </Card>
 
         {/* App Preferences */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>App Preferences</Text>
-          
+
           <SettingsItem
             icon="🌙"
             title="Dark Mode"
@@ -255,7 +268,7 @@ export default function SettingsScreen() {
             value={settings.darkMode}
             onToggle={() => toggleSetting('darkMode')}
           />
-          
+
           <SettingsItem
             icon="🌍"
             title="Language"
@@ -263,7 +276,7 @@ export default function SettingsScreen() {
             showArrow
             onPress={handleLanguageChange}
           />
-          
+
           <SettingsItem
             icon="🎯"
             title="Auto-Join Events"
@@ -276,15 +289,20 @@ export default function SettingsScreen() {
         {/* Data & Storage */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>Data & Storage</Text>
-          
+
           <SettingsItem
             icon="📊"
             title="Data Usage"
             description="See how much data the app uses"
             showArrow
-            onPress={() => Alert.alert('Data Usage', 'Data usage details: 45.2 MB this month')}
+            onPress={() =>
+              Alert.alert(
+                'Data Usage',
+                'Data usage details: 45.2 MB this month',
+              )
+            }
           />
-          
+
           <SettingsItem
             icon="💾"
             title="Cache Size"
@@ -292,7 +310,7 @@ export default function SettingsScreen() {
             showArrow
             onPress={handleClearCache}
           />
-          
+
           <SettingsItem
             icon="📤"
             title="Export Data"
@@ -305,7 +323,7 @@ export default function SettingsScreen() {
         {/* Support */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>Support</Text>
-          
+
           <SettingsItem
             icon="❓"
             title="Help Center"
@@ -313,7 +331,7 @@ export default function SettingsScreen() {
             showArrow
             onPress={() => Alert.alert('Help', 'Opening help center...')}
           />
-          
+
           <SettingsItem
             icon="📞"
             title="Contact Support"
@@ -321,15 +339,17 @@ export default function SettingsScreen() {
             showArrow
             onPress={() => Alert.alert('Support', 'Opening contact form...')}
           />
-          
+
           <SettingsItem
             icon="⭐"
             title="Rate App"
             description="Rate Sypot on the App Store"
             showArrow
-            onPress={() => Alert.alert('Rate App', 'Opening App Store rating...')}
+            onPress={() =>
+              Alert.alert('Rate App', 'Opening App Store rating...')
+            }
           />
-          
+
           <SettingsItem
             icon="📋"
             title="Send Feedback"
@@ -342,15 +362,20 @@ export default function SettingsScreen() {
         {/* About */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>About</Text>
-          
+
           <SettingsItem
             icon="ℹ️"
             title="App Version"
             description="1.0.0 (Build 100)"
             showArrow
-            onPress={() => Alert.alert('Version', 'You are using the latest version of Sypot.')}
+            onPress={() =>
+              Alert.alert(
+                'Version',
+                'You are using the latest version of Sypot.',
+              )
+            }
           />
-          
+
           <SettingsItem
             icon="📄"
             title="Terms of Service"
@@ -358,42 +383,44 @@ export default function SettingsScreen() {
             showArrow
             onPress={() => Alert.alert('Terms', 'Opening terms of service...')}
           />
-          
+
           <SettingsItem
             icon="🔒"
             title="Privacy Policy"
             description="Learn how we protect your data"
             showArrow
-            onPress={() => Alert.alert('Privacy Policy', 'Opening privacy policy...')}
+            onPress={() =>
+              Alert.alert('Privacy Policy', 'Opening privacy policy...')
+            }
           />
         </Card>
 
         {/* Account Actions */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>Account Actions</Text>
-          
+
           <SettingsItem
             icon="🚪"
             title="Sign Out"
             description="Sign out of your account"
             showArrow
-            onPress={() => Alert.alert(
-              'Sign Out',
-              'Are you sure you want to sign out?',
-              [
+            onPress={() =>
+              Alert.alert('Sign Out', 'Are you sure you want to sign out?', [
                 { text: 'Cancel', style: 'cancel' },
                 { text: 'Sign Out', onPress: () => console.log('Sign out') },
-              ]
-            )}
+              ])
+            }
           />
-          
-          <TouchableOpacity 
+
+          <TouchableOpacity
             style={[styles.settingsItem, styles.dangerItem]}
             onPress={handleDeleteAccount}
           >
             <Text style={styles.settingsIcon}>🗑️</Text>
             <View style={styles.settingsContent}>
-              <Text style={[styles.settingsTitle, styles.dangerText]}>Delete Account</Text>
+              <Text style={[styles.settingsTitle, styles.dangerText]}>
+                Delete Account
+              </Text>
               <Text style={styles.settingsDescription}>
                 Permanently delete your account and all data
               </Text>

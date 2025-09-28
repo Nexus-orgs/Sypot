@@ -1,6 +1,24 @@
-pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
-plugins { id("com.facebook.react.settings") }
-extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
+// Ensure pluginManagement knows where to look for plugins so the included
+// build at ../node_modules/@react-native/gradle-plugin can provide the
+// `com.facebook.react.*` plugins.
+pluginManagement {
+	repositories {
+		gradlePluginPortal()
+		mavenCentral()
+		google()
+	}
+	includeBuild("../node_modules/@react-native/gradle-plugin")
+}
+
+// Apply the react settings plugin provided by the included build. If the
+// plugin isn't available, continue gracefully with a warning. Use the
+// Groovy-style `apply plugin` which is supported in settings.gradle.
+try {
+	apply plugin: 'com.facebook.react.settings'
+	extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
+} catch (e) {
+	logger.warn("Could not apply com.facebook.react.settings plugin: ${e.message}")
+}
 rootProject.name = 'SypotApp'
 include ':app'
 includeBuild('../node_modules/@react-native/gradle-plugin')

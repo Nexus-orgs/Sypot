@@ -12,7 +12,13 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { colors, spacing, typography, borderRadius, shadows } from '../../utils/theme';
+import {
+  colors,
+  spacing,
+  typography,
+  borderRadius,
+  shadows,
+} from '../../utils/theme';
 import { Event } from '../../types/navigation';
 import { mockEvents } from '../../services/mockData';
 import Card from '../../components/Card';
@@ -29,7 +35,7 @@ interface Booking extends Event {
 
 export default function MyBookingsScreen() {
   const navigation = useNavigation();
-  
+
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
@@ -44,17 +50,22 @@ export default function MyBookingsScreen() {
       setLoading(true);
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       // Create mock bookings from events
-      const mockBookings: Booking[] = mockEvents.slice(0, 4).map((event, index) => ({
-        ...event,
-        bookingId: `BK${Date.now() + index}`,
-        bookingDate: new Date(),
-        ticketNumber: `TK${Math.random().toString(36).substr(2, 8).toUpperCase()}`,
-        status: index === 3 ? 'cancelled' : 'confirmed',
-        qrCode: `QR${Math.random().toString(36).substr(2, 12)}`,
-      }));
-      
+      const mockBookings: Booking[] = mockEvents
+        .slice(0, 4)
+        .map((event, index) => ({
+          ...event,
+          bookingId: `BK${Date.now() + index}`,
+          bookingDate: new Date(),
+          ticketNumber: `TK${Math.random()
+            .toString(36)
+            .substr(2, 8)
+            .toUpperCase()}`,
+          status: index === 3 ? 'cancelled' : 'confirmed',
+          qrCode: `QR${Math.random().toString(36).substr(2, 12)}`,
+        }));
+
       setBookings(mockBookings);
     } catch (error) {
       console.error('Error loading bookings:', error);
@@ -87,27 +98,34 @@ export default function MyBookingsScreen() {
           text: 'Yes, Cancel',
           style: 'destructive',
           onPress: () => {
-            setBookings(prev => prev.map(b => 
-              b.bookingId === booking.bookingId 
-                ? { ...b, status: 'cancelled' }
-                : b
-            ));
-            Alert.alert('Cancelled', 'Your booking has been cancelled successfully.');
-          }
-        }
-      ]
+            setBookings(prev =>
+              prev.map(b =>
+                b.bookingId === booking.bookingId
+                  ? { ...b, status: 'cancelled' }
+                  : b,
+              ),
+            );
+            Alert.alert(
+              'Cancelled',
+              'Your booking has been cancelled successfully.',
+            );
+          },
+        },
+      ],
     );
   };
 
   const handleViewTicket = (booking: Booking) => {
     Alert.alert(
       'Digital Ticket',
-      `Event: ${booking.title}\nTicket: ${booking.ticketNumber}\nStatus: ${booking.status.toUpperCase()}`,
+      `Event: ${booking.title}\nTicket: ${
+        booking.ticketNumber
+      }\nStatus: ${booking.status.toUpperCase()}`,
       [
         { text: 'Share Ticket', onPress: () => console.log('Share ticket') },
         { text: 'Download', onPress: () => console.log('Download ticket') },
-        { text: 'Close' }
-      ]
+        { text: 'Close' },
+      ],
     );
   };
 
@@ -122,7 +140,9 @@ export default function MyBookingsScreen() {
   };
 
   const formatPrice = (price?: number) => {
-    if (!price) return 'Free';
+    if (!price) {
+      return 'Free';
+    }
     return `$${price}`;
   };
 
@@ -145,15 +165,26 @@ export default function MyBookingsScreen() {
         <View style={styles.eventImagePlaceholder}>
           <Text style={styles.eventImageText}>🎫</Text>
         </View>
-        
+
         <View style={styles.bookingInfo}>
-          <Text style={styles.eventTitle} numberOfLines={2}>{booking.title}</Text>
+          <Text style={styles.eventTitle} numberOfLines={2}>
+            {booking.title}
+          </Text>
           <Text style={styles.eventDate}>{formatDate(booking.date)}</Text>
-          <Text style={styles.eventLocation} numberOfLines={1}>{booking.location}</Text>
-          
+          <Text style={styles.eventLocation} numberOfLines={1}>
+            {booking.location}
+          </Text>
+
           <View style={styles.statusContainer}>
-            <View style={[styles.statusBadge, { backgroundColor: getStatusColor(booking.status) }]}>
-              <Text style={styles.statusText}>{booking.status.toUpperCase()}</Text>
+            <View
+              style={[
+                styles.statusBadge,
+                { backgroundColor: getStatusColor(booking.status) },
+              ]}
+            >
+              <Text style={styles.statusText}>
+                {booking.status.toUpperCase()}
+              </Text>
             </View>
             <Text style={styles.ticketNumber}>#{booking.ticketNumber}</Text>
           </View>
@@ -168,7 +199,7 @@ export default function MyBookingsScreen() {
           onPress={() => handleViewTicket(booking)}
           style={styles.actionButton}
         />
-        
+
         {booking.status === 'confirmed' && activeTab === 'upcoming' && (
           <Button
             title="Cancel"
@@ -179,7 +210,7 @@ export default function MyBookingsScreen() {
             textStyle={styles.cancelButtonText}
           />
         )}
-        
+
         {booking.status === 'confirmed' && (
           <Button
             title="Share"
@@ -198,14 +229,11 @@ export default function MyBookingsScreen() {
       <Text style={styles.emptyStateEmoji}>
         {type === 'upcoming' ? '📅' : '📜'}
       </Text>
-      <Text style={styles.emptyStateTitle}>
-        No {type} bookings
-      </Text>
+      <Text style={styles.emptyStateTitle}>No {type} bookings</Text>
       <Text style={styles.emptyStateText}>
-        {type === 'upcoming' 
-          ? 'You haven\'t booked any upcoming events yet. Explore events to find something exciting!'
-          : 'You don\'t have any past event bookings to show.'
-        }
+        {type === 'upcoming'
+          ? "You haven't booked any upcoming events yet. Explore events to find something exciting!"
+          : "You don't have any past event bookings to show."}
       </Text>
       {type === 'upcoming' && (
         <Button
@@ -223,22 +251,27 @@ export default function MyBookingsScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={colors.backgroundLight} />
-      
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={colors.backgroundLight}
+      />
+
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
           <Text style={styles.backButtonText}>←</Text>
         </TouchableOpacity>
-        
+
         <Text style={styles.headerTitle}>My Bookings</Text>
-        
-        <TouchableOpacity 
+
+        <TouchableOpacity
           style={styles.filterButton}
-          onPress={() => Alert.alert('Filter', 'Booking filters will be implemented.')}
+          onPress={() =>
+            Alert.alert('Filter', 'Booking filters will be implemented.')
+          }
         >
           <Text style={styles.filterButtonText}>⚙️</Text>
         </TouchableOpacity>
@@ -247,31 +280,29 @@ export default function MyBookingsScreen() {
       {/* Tab Selector */}
       <View style={styles.tabContainer}>
         <TouchableOpacity
-          style={[
-            styles.tab,
-            activeTab === 'upcoming' && styles.activeTab
-          ]}
+          style={[styles.tab, activeTab === 'upcoming' && styles.activeTab]}
           onPress={() => setActiveTab('upcoming')}
         >
-          <Text style={[
-            styles.tabText,
-            activeTab === 'upcoming' && styles.activeTabText
-          ]}>
+          <Text
+            style={[
+              styles.tabText,
+              activeTab === 'upcoming' && styles.activeTabText,
+            ]}
+          >
             Upcoming ({bookings.filter(b => b.date > new Date()).length})
           </Text>
         </TouchableOpacity>
-        
+
         <TouchableOpacity
-          style={[
-            styles.tab,
-            activeTab === 'past' && styles.activeTab
-          ]}
+          style={[styles.tab, activeTab === 'past' && styles.activeTab]}
           onPress={() => setActiveTab('past')}
         >
-          <Text style={[
-            styles.tabText,
-            activeTab === 'past' && styles.activeTabText
-          ]}>
+          <Text
+            style={[
+              styles.tabText,
+              activeTab === 'past' && styles.activeTabText,
+            ]}
+          >
             Past ({bookings.filter(b => b.date <= new Date()).length})
           </Text>
         </TouchableOpacity>
@@ -317,7 +348,7 @@ export default function MyBookingsScreen() {
               </Card>
             </View>
 
-            {filteredBookings.map((booking) => (
+            {filteredBookings.map(booking => (
               <BookingCard key={booking.bookingId} booking={booking} />
             ))}
           </>

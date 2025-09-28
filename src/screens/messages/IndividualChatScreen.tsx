@@ -31,7 +31,7 @@ export default function IndividualChatScreen() {
   const navigation = useNavigation();
   const route = useRoute();
   const { chatId, userName } = route.params as RouteParams;
-  
+
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputText, setInputText] = useState('');
   const [loading, setLoading] = useState(true);
@@ -47,7 +47,7 @@ export default function IndividualChatScreen() {
       setLoading(true);
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 800));
-      
+
       // Create sample conversation with the user
       const chatMessages: ChatMessage[] = [
         {
@@ -61,7 +61,7 @@ export default function IndividualChatScreen() {
         },
         {
           id: 'msg2',
-          text: 'Yes! I already got my tickets. Can\'t wait! 🎵',
+          text: "Yes! I already got my tickets. Can't wait! 🎵",
           userId: 'currentUser',
           userName: 'You',
           timestamp: new Date('2024-07-25T14:32:00'),
@@ -78,7 +78,7 @@ export default function IndividualChatScreen() {
         },
         {
           id: 'msg4',
-          text: 'Definitely! Let\'s coordinate closer to the event. I\'m really excited about the headliner!',
+          text: "Definitely! Let's coordinate closer to the event. I'm really excited about the headliner!",
           userId: 'currentUser',
           userName: 'You',
           timestamp: new Date('2024-07-25T14:37:00'),
@@ -86,7 +86,7 @@ export default function IndividualChatScreen() {
         },
         {
           id: 'msg5',
-          text: 'Same here! I\'ve been following them for years. This will be my first time seeing them live.',
+          text: "Same here! I've been following them for years. This will be my first time seeing them live.",
           userId: 'user1',
           userName: userName,
           timestamp: new Date('2024-07-25T14:40:00'),
@@ -94,7 +94,7 @@ export default function IndividualChatScreen() {
           isOwn: false,
         },
       ];
-      
+
       setMessages(chatMessages);
     } catch (error) {
       console.error('Error loading messages:', error);
@@ -104,7 +104,9 @@ export default function IndividualChatScreen() {
   };
 
   const sendMessage = () => {
-    if (!inputText.trim()) return;
+    if (!inputText.trim()) {
+      return;
+    }
 
     const newMessage: ChatMessage = {
       id: `msg_${Date.now()}`,
@@ -117,7 +119,7 @@ export default function IndividualChatScreen() {
 
     setMessages(prev => [...prev, newMessage]);
     setInputText('');
-    
+
     // Auto-scroll to bottom
     setTimeout(() => {
       flatListRef.current?.scrollToEnd({ animated: true });
@@ -126,13 +128,13 @@ export default function IndividualChatScreen() {
     // Simulate response (optional)
     setTimeout(() => {
       const responses = [
-        "That sounds great!",
-        "Absolutely! 🎉",
+        'That sounds great!',
+        'Absolutely! 🎉',
         "I'm looking forward to it!",
         "Can't wait!",
-        "Sounds like a plan!",
+        'Sounds like a plan!',
       ];
-      
+
       const responseMessage: ChatMessage = {
         id: `msg_${Date.now() + 1}`,
         text: responses[Math.floor(Math.random() * responses.length)],
@@ -142,9 +144,9 @@ export default function IndividualChatScreen() {
         avatar: '👩‍💼',
         isOwn: false,
       };
-      
+
       setMessages(prev => [...prev, responseMessage]);
-      
+
       setTimeout(() => {
         flatListRef.current?.scrollToEnd({ animated: true });
       }, 100);
@@ -160,10 +162,14 @@ export default function IndividualChatScreen() {
 
   const renderMessage = ({ item }: { item: ChatMessage }) => {
     return (
-      <View style={[
-        styles.messageContainer,
-        item.isOwn ? styles.ownMessageContainer : styles.otherMessageContainer
-      ]}>
+      <View
+        style={[
+          styles.messageContainer,
+          item.isOwn
+            ? styles.ownMessageContainer
+            : styles.otherMessageContainer,
+        ]}
+      >
         {!item.isOwn && (
           <View style={styles.avatar}>
             <Text style={styles.avatarText}>
@@ -171,21 +177,27 @@ export default function IndividualChatScreen() {
             </Text>
           </View>
         )}
-        
-        <View style={[
-          styles.messageBubble,
-          item.isOwn ? styles.ownMessageBubble : styles.otherMessageBubble
-        ]}>
-          <Text style={[
-            styles.messageText,
-            item.isOwn ? styles.ownMessageText : styles.otherMessageText
-          ]}>
+
+        <View
+          style={[
+            styles.messageBubble,
+            item.isOwn ? styles.ownMessageBubble : styles.otherMessageBubble,
+          ]}
+        >
+          <Text
+            style={[
+              styles.messageText,
+              item.isOwn ? styles.ownMessageText : styles.otherMessageText,
+            ]}
+          >
             {item.text}
           </Text>
-          <Text style={[
-            styles.messageTime,
-            item.isOwn ? styles.ownMessageTime : styles.otherMessageTime
-          ]}>
+          <Text
+            style={[
+              styles.messageTime,
+              item.isOwn ? styles.ownMessageTime : styles.otherMessageTime,
+            ]}
+          >
             {formatTime(item.timestamp)}
           </Text>
         </View>
@@ -194,31 +206,34 @@ export default function IndividualChatScreen() {
   };
 
   const handleMoreOptions = () => {
-    Alert.alert(
-      'Chat Options',
-      'What would you like to do?',
-      [
-        { text: 'View Profile', onPress: () => console.log('View profile') },
-        { text: 'Mute Notifications', onPress: () => console.log('Mute') },
-        { text: 'Block User', style: 'destructive', onPress: () => console.log('Block') },
-        { text: 'Cancel', style: 'cancel' },
-      ]
-    );
+    Alert.alert('Chat Options', 'What would you like to do?', [
+      { text: 'View Profile', onPress: () => console.log('View profile') },
+      { text: 'Mute Notifications', onPress: () => console.log('Mute') },
+      {
+        text: 'Block User',
+        style: 'destructive',
+        onPress: () => console.log('Block'),
+      },
+      { text: 'Cancel', style: 'cancel' },
+    ]);
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={colors.backgroundLight} />
-      
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={colors.backgroundLight}
+      />
+
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
           <Text style={styles.backButtonText}>←</Text>
         </TouchableOpacity>
-        
+
         <View style={styles.headerInfo}>
           <View style={styles.headerAvatar}>
             <Text style={styles.headerAvatarText}>
@@ -230,17 +245,14 @@ export default function IndividualChatScreen() {
             <Text style={styles.headerStatus}>Active now</Text>
           </View>
         </View>
-        
-        <TouchableOpacity 
-          style={styles.moreButton}
-          onPress={handleMoreOptions}
-        >
+
+        <TouchableOpacity style={styles.moreButton} onPress={handleMoreOptions}>
           <Text style={styles.moreButtonText}>⋯</Text>
         </TouchableOpacity>
       </View>
 
       {/* Messages */}
-      <KeyboardAvoidingView 
+      <KeyboardAvoidingView
         style={styles.chatContainer}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 0}
@@ -258,7 +270,9 @@ export default function IndividualChatScreen() {
             style={styles.messagesList}
             contentContainerStyle={styles.messagesContent}
             showsVerticalScrollIndicator={false}
-            onContentSizeChange={() => flatListRef.current?.scrollToEnd({ animated: false })}
+            onContentSizeChange={() =>
+              flatListRef.current?.scrollToEnd({ animated: false })
+            }
           />
         )}
 
@@ -274,19 +288,23 @@ export default function IndividualChatScreen() {
               multiline
               maxLength={1000}
             />
-            
-            <TouchableOpacity 
+
+            <TouchableOpacity
               style={styles.attachButton}
-              onPress={() => Alert.alert('Attach', 'File attachment coming soon!')}
+              onPress={() =>
+                Alert.alert('Attach', 'File attachment coming soon!')
+              }
             >
               <Text style={styles.attachButtonText}>📎</Text>
             </TouchableOpacity>
           </View>
-          
-          <TouchableOpacity 
+
+          <TouchableOpacity
             style={[
               styles.sendButton,
-              inputText.trim() ? styles.sendButtonActive : styles.sendButtonInactive
+              inputText.trim()
+                ? styles.sendButtonActive
+                : styles.sendButtonInactive,
             ]}
             onPress={sendMessage}
             disabled={!inputText.trim()}

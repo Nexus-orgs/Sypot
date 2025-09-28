@@ -1,154 +1,260 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sypot Attendee Management</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#0df2cc",
-            "background-light": "#f5f8f8",
-            "background-dark": "#10221f",
-          },
-          fontFamily: {
-            "display": ["Plus Jakarta Sans"]
-          },
-          borderRadius: {
-            "DEFAULT": "0.5rem",
-            "lg": "1rem",
-            "xl": "1.5rem",
-            "full": "9999px"
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sypot Attendee Management</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0df2cc',
+              'background-light': '#f5f8f8',
+              'background-dark': '#10221f',
+            },
+            fontFamily: {
+              display: ['Plus Jakarta Sans'],
+            },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
           },
         },
-      },
-    }
-  </script>
-<style>
-    .material-symbols-outlined {
-      font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-gray-100">
-<div class="flex flex-col min-h-screen">
-<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-<div class="flex items-center p-4">
-<button class="p-2 -ml-2 text-gray-900 dark:text-gray-100">
-<span class="material-symbols-outlined">arrow_back</span>
-</button>
-<h1 class="flex-1 text-center text-lg font-bold">Attendee Management</h1>
-<div class="w-10"></div>
-</div>
-</header>
-<main class="flex-grow p-4 space-y-6">
-<div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400">search</span>
-<input class="w-full h-14 pl-12 pr-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-primary focus:border-primary text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400" placeholder="Search by name or ticket ID" type="text"/>
-</div>
-<div class="flex space-x-2 pb-2 overflow-x-auto">
-<button class="px-4 py-2 rounded-full bg-primary text-gray-900 text-sm font-medium">All</button>
-<button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium">Checked In</button>
-<button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium">Not Checked In</button>
-<button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium">Pending</button>
-</div>
-<div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
-<div class="flex items-center justify-between mb-2">
-<h2 class="text-base font-bold text-gray-900 dark:text-gray-100">Event Capacity</h2>
-<span class="text-sm font-bold text-gray-900 dark:text-gray-100">120 <span class="font-normal text-gray-500 dark:text-gray-400">/ 200</span></span>
-</div>
-<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-<div class="bg-primary h-2 rounded-full" style="width: 60%;"></div>
-</div>
-<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Checked In vs. Total Attendees</p>
-</div>
-<div class="space-y-4">
-<div class="flex items-center p-4 rounded-lg bg-primary/20 dark:bg-primary/30">
-<div class="p-3 rounded-full bg-primary/30 dark:bg-primary/40">
-<span class="material-symbols-outlined text-primary">qr_code_scanner</span>
-</div>
-<p class="ml-4 flex-1 text-base font-medium text-gray-900 dark:text-gray-100">Scan Attendee QR Code</p>
-<span class="material-symbols-outlined text-gray-900 dark:text-gray-100">arrow_forward_ios</span>
-</div>
-<div class="flex items-center justify-between">
-<h2 class="text-lg font-bold text-gray-900 dark:text-gray-100">Attendees</h2>
-<span class="text-sm font-medium text-primary">View All</span>
-</div>
-<div class="space-y-3">
-<div class="flex items-center gap-4 p-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800">
-<img alt="Liam Carter" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB895dmu7TrfjqJYo0gX_RXxWPlZEaB713Gqd7hQw5U8bV4ZwFbkTMlztJv3QkT-z9Qg2Y0btid3tgJSZgoHsyKY3MPNqN-CvFEuCQdC95PylwrG9M69_vqxqomUcXVKVpHnfJ5hceB-9nRF8MVJmk_fp_ixMYywQJ_6UALTiLZwav-AYKoVRBXsUn_VEmccESg4dgow4Z2yKB5qZjAk5-uAssE5SYbDVcOrbzByyp6966PzhZZmsUn4TBwDgrT31C2e2dOlx3Ou1g"/>
-<div class="flex-1">
-<p class="font-bold text-gray-900 dark:text-gray-100">Liam Carter</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">General Admission</p>
-</div>
-<div class="flex items-center gap-2 text-green-500">
-<span class="material-symbols-outlined text-lg">check_circle</span>
-<span class="text-xs font-bold uppercase">Checked In</span>
-</div>
-</div>
-<div class="flex items-center gap-4 p-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800">
-<img alt="Olivia Bennett" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMQLC032q14Ju2ErW8mdJ_YMzktWFapdJFlOvLBXub5-3hNMJIjJJjg9J6YQi2xKeCJ0H5vz2rqjeviKrOjSFafokjFz0MjCkgqJyBJI6mUsK5wv4Mi0f6qyQVkaw2v8I-q8233NHcVHZ6eZt6MvqCxcUDLrL0cDIIGxq1ZgGaE4C_yJ3yBp5lQcZ-XYcHgxS9AdRf4YGAKxBcRdHlxyu45ya5bCTdUXP-k4hmjWtdfTlSq6hYYYa-x6p_AeV1XNeF6e1a2AA9pXo"/>
-<div class="flex-1">
-<p class="font-bold text-gray-900 dark:text-gray-100">Olivia Bennett</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">VIP</p>
-</div>
-<div class="flex items-center gap-2 text-gray-400 dark:text-gray-500">
-<span class="material-symbols-outlined text-lg">radio_button_unchecked</span>
-<span class="text-xs font-bold uppercase">Waiting</span>
-</div>
-</div>
-<div class="flex items-center gap-4 p-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800">
-<img alt="Ethan Harper" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsXgFBZd40MJKkbWFPQt5YZVIeO1AoEAqMmhu-OZDQ_IHE4WvUT_BL45ef19vGOp9WWMxpOIf3cK6TFUsSq3mnjOk5bKoZO1MrRsvJqfgUWaPAVuem4hmfduJITQDhd2EpAN38748qWShqufwbKjwNrO2wixI-LnTJVvyKLZyef7dLaqEr79zWwGJvbQ89-ZgkGklf2agFrFI_1zwCS2UdsCCc6FEqQDUYNrgIkl2vgzD1WN454CSERLjFIE9iHTTHUt13N4ffXpk"/>
-<div class="flex-1">
-<p class="font-bold text-gray-900 dark:text-gray-100">Ethan Harper</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">General Admission</p>
-</div>
-<div class="flex items-center gap-2 text-green-500">
-<span class="material-symbols-outlined text-lg">check_circle</span>
-<span class="text-xs font-bold uppercase">Checked In</span>
-</div>
-</div>
-<div class="flex items-center gap-4 p-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800">
-<img alt="Ava Morgan" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAl1q5reToN7SENk82B5oD2ONa_JWb-Jo13VjfIVC6Mhdoze9KV8dvEtPjcDWrzmkW9DkUoUr9oZMFv3dpWjfFfRb4GU9cSXmcIvCZrEjIlcZrMH4Xzzstk30fjhZkIH1rC2dTGKYlAavx-SM7xalusoq200586MHQm1fwgCsPhMZEvHZfogN197qb2veoDWh1BG3dQjp0AS40Ar4f0Pcv2dz28pXganXc0_MF9YzDqfpNfCTz7b6PNphNqQBMucFDLoB587xlDcE"/>
-<div class="flex-1">
-<p class="font-bold text-gray-900 dark:text-gray-100">Ava Morgan</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">VIP</p>
-</div>
-<div class="flex items-center gap-2 text-gray-400 dark:text-gray-500">
-<span class="material-symbols-outlined text-lg">radio_button_unchecked</span>
-<span class="text-xs font-bold uppercase">Waiting</span>
-</div>
-</div>
-</div>
-</div>
-</main>
-<footer class="sticky bottom-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 border-t border-gray-200 dark:border-gray-800">
-<button class="w-full flex items-center justify-center h-14 px-6 rounded-lg bg-primary text-gray-900 font-bold text-base tracking-wide">
-<span class="material-symbols-outlined mr-2">person_add</span>
-<span>Add Attendee</span>
-</button>
-</footer>
-</div>
-
-</body></html>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-gray-100"
+  >
+    <div class="flex flex-col min-h-screen">
+      <header
+        class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
+      >
+        <div class="flex items-center p-4">
+          <button class="p-2 -ml-2 text-gray-900 dark:text-gray-100">
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+          <h1 class="flex-1 text-center text-lg font-bold">
+            Attendee Management
+          </h1>
+          <div class="w-10"></div>
+        </div>
+      </header>
+      <main class="flex-grow p-4 space-y-6">
+        <div class="relative">
+          <span
+            class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400"
+            >search</span
+          >
+          <input
+            class="w-full h-14 pl-12 pr-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-primary focus:border-primary text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400"
+            placeholder="Search by name or ticket ID"
+            type="text"
+          />
+        </div>
+        <div class="flex space-x-2 pb-2 overflow-x-auto">
+          <button
+            class="px-4 py-2 rounded-full bg-primary text-gray-900 text-sm font-medium"
+          >
+            All
+          </button>
+          <button
+            class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium"
+          >
+            Checked In
+          </button>
+          <button
+            class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium"
+          >
+            Not Checked In
+          </button>
+          <button
+            class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium"
+          >
+            Pending
+          </button>
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+          <div class="flex items-center justify-between mb-2">
+            <h2 class="text-base font-bold text-gray-900 dark:text-gray-100">
+              Event Capacity
+            </h2>
+            <span class="text-sm font-bold text-gray-900 dark:text-gray-100"
+              >120
+              <span class="font-normal text-gray-500 dark:text-gray-400"
+                >/ 200</span
+              ></span
+            >
+          </div>
+          <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+            <div class="bg-primary h-2 rounded-full" style="width: 60%"></div>
+          </div>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+            Checked In vs. Total Attendees
+          </p>
+        </div>
+        <div class="space-y-4">
+          <div
+            class="flex items-center p-4 rounded-lg bg-primary/20 dark:bg-primary/30"
+          >
+            <div class="p-3 rounded-full bg-primary/30 dark:bg-primary/40">
+              <span class="material-symbols-outlined text-primary"
+                >qr_code_scanner</span
+              >
+            </div>
+            <p
+              class="ml-4 flex-1 text-base font-medium text-gray-900 dark:text-gray-100"
+            >
+              Scan Attendee QR Code
+            </p>
+            <span
+              class="material-symbols-outlined text-gray-900 dark:text-gray-100"
+              >arrow_forward_ios</span
+            >
+          </div>
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-bold text-gray-900 dark:text-gray-100">
+              Attendees
+            </h2>
+            <span class="text-sm font-medium text-primary">View All</span>
+          </div>
+          <div class="space-y-3">
+            <div
+              class="flex items-center gap-4 p-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800"
+            >
+              <img
+                alt="Liam Carter"
+                class="h-12 w-12 rounded-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB895dmu7TrfjqJYo0gX_RXxWPlZEaB713Gqd7hQw5U8bV4ZwFbkTMlztJv3QkT-z9Qg2Y0btid3tgJSZgoHsyKY3MPNqN-CvFEuCQdC95PylwrG9M69_vqxqomUcXVKVpHnfJ5hceB-9nRF8MVJmk_fp_ixMYywQJ_6UALTiLZwav-AYKoVRBXsUn_VEmccESg4dgow4Z2yKB5qZjAk5-uAssE5SYbDVcOrbzByyp6966PzhZZmsUn4TBwDgrT31C2e2dOlx3Ou1g"
+              />
+              <div class="flex-1">
+                <p class="font-bold text-gray-900 dark:text-gray-100">
+                  Liam Carter
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                  General Admission
+                </p>
+              </div>
+              <div class="flex items-center gap-2 text-green-500">
+                <span class="material-symbols-outlined text-lg"
+                  >check_circle</span
+                >
+                <span class="text-xs font-bold uppercase">Checked In</span>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-4 p-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800"
+            >
+              <img
+                alt="Olivia Bennett"
+                class="h-12 w-12 rounded-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMQLC032q14Ju2ErW8mdJ_YMzktWFapdJFlOvLBXub5-3hNMJIjJJjg9J6YQi2xKeCJ0H5vz2rqjeviKrOjSFafokjFz0MjCkgqJyBJI6mUsK5wv4Mi0f6qyQVkaw2v8I-q8233NHcVHZ6eZt6MvqCxcUDLrL0cDIIGxq1ZgGaE4C_yJ3yBp5lQcZ-XYcHgxS9AdRf4YGAKxBcRdHlxyu45ya5bCTdUXP-k4hmjWtdfTlSq6hYYYa-x6p_AeV1XNeF6e1a2AA9pXo"
+              />
+              <div class="flex-1">
+                <p class="font-bold text-gray-900 dark:text-gray-100">
+                  Olivia Bennett
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">VIP</p>
+              </div>
+              <div
+                class="flex items-center gap-2 text-gray-400 dark:text-gray-500"
+              >
+                <span class="material-symbols-outlined text-lg"
+                  >radio_button_unchecked</span
+                >
+                <span class="text-xs font-bold uppercase">Waiting</span>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-4 p-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800"
+            >
+              <img
+                alt="Ethan Harper"
+                class="h-12 w-12 rounded-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsXgFBZd40MJKkbWFPQt5YZVIeO1AoEAqMmhu-OZDQ_IHE4WvUT_BL45ef19vGOp9WWMxpOIf3cK6TFUsSq3mnjOk5bKoZO1MrRsvJqfgUWaPAVuem4hmfduJITQDhd2EpAN38748qWShqufwbKjwNrO2wixI-LnTJVvyKLZyef7dLaqEr79zWwGJvbQ89-ZgkGklf2agFrFI_1zwCS2UdsCCc6FEqQDUYNrgIkl2vgzD1WN454CSERLjFIE9iHTTHUt13N4ffXpk"
+              />
+              <div class="flex-1">
+                <p class="font-bold text-gray-900 dark:text-gray-100">
+                  Ethan Harper
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                  General Admission
+                </p>
+              </div>
+              <div class="flex items-center gap-2 text-green-500">
+                <span class="material-symbols-outlined text-lg"
+                  >check_circle</span
+                >
+                <span class="text-xs font-bold uppercase">Checked In</span>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-4 p-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800"
+            >
+              <img
+                alt="Ava Morgan"
+                class="h-12 w-12 rounded-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAl1q5reToN7SENk82B5oD2ONa_JWb-Jo13VjfIVC6Mhdoze9KV8dvEtPjcDWrzmkW9DkUoUr9oZMFv3dpWjfFfRb4GU9cSXmcIvCZrEjIlcZrMH4Xzzstk30fjhZkIH1rC2dTGKYlAavx-SM7xalusoq200586MHQm1fwgCsPhMZEvHZfogN197qb2veoDWh1BG3dQjp0AS40Ar4f0Pcv2dz28pXganXc0_MF9YzDqfpNfCTz7b6PNphNqQBMucFDLoB587xlDcE"
+              />
+              <div class="flex-1">
+                <p class="font-bold text-gray-900 dark:text-gray-100">
+                  Ava Morgan
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">VIP</p>
+              </div>
+              <div
+                class="flex items-center gap-2 text-gray-400 dark:text-gray-500"
+              >
+                <span class="material-symbols-outlined text-lg"
+                  >radio_button_unchecked</span
+                >
+                <span class="text-xs font-bold uppercase">Waiting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer
+        class="sticky bottom-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 border-t border-gray-200 dark:border-gray-800"
+      >
+        <button
+          class="w-full flex items-center justify-center h-14 px-6 rounded-lg bg-primary text-gray-900 font-bold text-base tracking-wide"
+        >
+          <span class="material-symbols-outlined mr-2">person_add</span>
+          <span>Add Attendee</span>
+        </button>
+      </footer>
+    </div>
+  </body>
+</html>

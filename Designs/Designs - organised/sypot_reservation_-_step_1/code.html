@@ -1,130 +1,420 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
       tailwind.config = {
-        darkMode: "class",
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              primary: "#0df2cc",
-              "background-light": "#f5f8f8",
-              "background-dark": "#10221f",
-              "content-light": "#111817",
-              "content-dark": "#e8fdfa",
-              "subtle-light": "#f0f5f4",
-              "subtle-dark": "#1a3834",
+              primary: '#0df2cc',
+              'background-light': '#f5f8f8',
+              'background-dark': '#10221f',
+              'content-light': '#111817',
+              'content-dark': '#e8fdfa',
+              'subtle-light': '#f0f5f4',
+              'subtle-dark': '#1a3834',
             },
             fontFamily: {
-              display: ["Plus Jakarta Sans"],
+              display: ['Plus Jakarta Sans'],
             },
             borderRadius: {
-              DEFAULT: "0.5rem",
-              lg: "1rem",
-              xl: "1.5rem",
-              full: "9999px",
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
             },
           },
         },
       };
     </script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<title>Sypot Reservation</title>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>Sypot Reservation</title>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display">
-<div class="flex h-screen flex-col">
-<header class="flex-shrink-0 border-b border-subtle-light dark:border-subtle-dark p-4">
-<h1 class="text-center text-lg font-bold text-content-light dark:text-content-dark">The Hidden Gem</h1>
-</header>
-<main class="flex-grow overflow-y-auto p-4">
-<section class="mb-6">
-<h2 class="mb-4 text-xl font-bold text-content-light dark:text-content-dark">Select Date</h2>
-<div class="mx-auto max-w-sm rounded-lg bg-background-light dark:bg-background-dark p-4 shadow-sm">
-<div class="mb-4 flex items-center justify-between">
-<button class="rounded-full p-2 hover:bg-subtle-light dark:hover:bg-subtle-dark">
-<span class="material-symbols-outlined text-content-light dark:text-content-dark">chevron_left</span>
-</button>
-<h3 class="text-base font-bold text-content-light dark:text-content-dark">October 2024</h3>
-<button class="rounded-full p-2 hover:bg-subtle-light dark:hover:bg-subtle-dark">
-<span class="material-symbols-outlined text-content-light dark:text-content-dark">chevron_right</span>
-</button>
-</div>
-<div class="grid grid-cols-7 gap-1 text-center">
-<div class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50">S</div>
-<div class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50">M</div>
-<div class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50">T</div>
-<div class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50">W</div>
-<div class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50">T</div>
-<div class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50">F</div>
-<div class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50">S</div>
-<div class="col-start-4">
-<button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">1</button>
-</div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">2</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">3</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">4</button></div>
-<div>
-<button class="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-background-dark">5</button>
-</div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">6</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">7</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">8</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">9</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">10</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">11</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">12</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">13</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">14</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">15</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">16</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">17</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">18</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">19</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">20</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">21</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">22</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">23</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">24</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">25</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">26</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">27</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">28</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">29</button></div>
-<div><button class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark">30</button></div>
-</div>
-</div>
-</section>
-<section class="mb-6">
-<h2 class="mb-4 text-xl font-bold text-content-light dark:text-content-dark">Select Time</h2>
-<div class="grid grid-cols-3 gap-3 sm:grid-cols-4">
-<button class="rounded-lg bg-subtle-light dark:bg-subtle-dark py-3 px-2 text-center text-sm font-semibold text-content-light dark:text-content-dark hover:bg-primary/20 dark:hover:bg-primary/30">6:00 PM</button>
-<button class="rounded-lg bg-primary text-background-dark py-3 px-2 text-center text-sm font-bold">6:30 PM</button>
-<button class="rounded-lg bg-subtle-light dark:bg-subtle-dark py-3 px-2 text-center text-sm font-semibold text-content-light dark:text-content-dark hover:bg-primary/20 dark:hover:bg-primary/30">7:00 PM</button>
-<button class="rounded-lg bg-subtle-light dark:bg-subtle-dark py-3 px-2 text-center text-sm font-semibold text-content-light dark:text-content-dark hover:bg-primary/20 dark:hover:bg-primary/30">7:30 PM</button>
-<button class="rounded-lg bg-subtle-light dark:bg-subtle-dark py-3 px-2 text-center text-sm font-semibold text-content-light dark:text-content-dark hover:bg-primary/20 dark:hover:bg-primary/30">8:00 PM</button>
-<button class="rounded-lg bg-subtle-light dark:bg-subtle-dark py-3 px-2 text-center text-sm font-semibold text-content-light dark:text-content-dark hover:bg-primary/20 dark:hover:bg-primary/30">8:30 PM</button>
-</div>
-</section>
-<section>
-<h2 class="mb-4 text-xl font-bold text-content-light dark:text-content-dark">Party Size</h2>
-<div class="flex items-center gap-4 rounded-lg bg-subtle-light dark:bg-subtle-dark p-3">
-<button class="flex h-10 w-10 items-center justify-center rounded-full bg-background-light dark:bg-background-dark text-lg font-bold text-content-light dark:text-content-dark">-</button>
-<span class="flex-1 text-center text-lg font-bold text-content-light dark:text-content-dark">2 Guests</span>
-<button class="flex h-10 w-10 items-center justify-center rounded-full bg-background-light dark:bg-background-dark text-lg font-bold text-content-light dark:text-content-dark">+</button>
-</div>
-</section>
-</main>
-<footer class="flex-shrink-0 border-t border-subtle-light dark:border-subtle-dark bg-background-light dark:bg-background-dark p-4">
-<button class="w-full rounded-xl bg-primary py-4 text-center text-base font-bold text-background-dark shadow-lg shadow-primary/20 transition-transform active:scale-95">Find a Table</button>
-</footer>
-</div>
-
-</body></html>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="flex h-screen flex-col">
+      <header
+        class="flex-shrink-0 border-b border-subtle-light dark:border-subtle-dark p-4"
+      >
+        <h1
+          class="text-center text-lg font-bold text-content-light dark:text-content-dark"
+        >
+          The Hidden Gem
+        </h1>
+      </header>
+      <main class="flex-grow overflow-y-auto p-4">
+        <section class="mb-6">
+          <h2
+            class="mb-4 text-xl font-bold text-content-light dark:text-content-dark"
+          >
+            Select Date
+          </h2>
+          <div
+            class="mx-auto max-w-sm rounded-lg bg-background-light dark:bg-background-dark p-4 shadow-sm"
+          >
+            <div class="mb-4 flex items-center justify-between">
+              <button
+                class="rounded-full p-2 hover:bg-subtle-light dark:hover:bg-subtle-dark"
+              >
+                <span
+                  class="material-symbols-outlined text-content-light dark:text-content-dark"
+                  >chevron_left</span
+                >
+              </button>
+              <h3
+                class="text-base font-bold text-content-light dark:text-content-dark"
+              >
+                October 2024
+              </h3>
+              <button
+                class="rounded-full p-2 hover:bg-subtle-light dark:hover:bg-subtle-dark"
+              >
+                <span
+                  class="material-symbols-outlined text-content-light dark:text-content-dark"
+                  >chevron_right</span
+                >
+              </button>
+            </div>
+            <div class="grid grid-cols-7 gap-1 text-center">
+              <div
+                class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50"
+              >
+                S
+              </div>
+              <div
+                class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50"
+              >
+                M
+              </div>
+              <div
+                class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50"
+              >
+                T
+              </div>
+              <div
+                class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50"
+              >
+                W
+              </div>
+              <div
+                class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50"
+              >
+                T
+              </div>
+              <div
+                class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50"
+              >
+                F
+              </div>
+              <div
+                class="text-sm font-semibold text-content-light/50 dark:text-content-dark/50"
+              >
+                S
+              </div>
+              <div class="col-start-4">
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  1
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  2
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  3
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  4
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-background-dark"
+                >
+                  5
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  6
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  7
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  8
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  9
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  10
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  11
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  12
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  13
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  14
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  15
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  16
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  17
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  18
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  19
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  20
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  21
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  22
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  23
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  24
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  25
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  26
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  27
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  28
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  29
+                </button>
+              </div>
+              <div>
+                <button
+                  class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark"
+                >
+                  30
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mb-6">
+          <h2
+            class="mb-4 text-xl font-bold text-content-light dark:text-content-dark"
+          >
+            Select Time
+          </h2>
+          <div class="grid grid-cols-3 gap-3 sm:grid-cols-4">
+            <button
+              class="rounded-lg bg-subtle-light dark:bg-subtle-dark py-3 px-2 text-center text-sm font-semibold text-content-light dark:text-content-dark hover:bg-primary/20 dark:hover:bg-primary/30"
+            >
+              6:00 PM
+            </button>
+            <button
+              class="rounded-lg bg-primary text-background-dark py-3 px-2 text-center text-sm font-bold"
+            >
+              6:30 PM
+            </button>
+            <button
+              class="rounded-lg bg-subtle-light dark:bg-subtle-dark py-3 px-2 text-center text-sm font-semibold text-content-light dark:text-content-dark hover:bg-primary/20 dark:hover:bg-primary/30"
+            >
+              7:00 PM
+            </button>
+            <button
+              class="rounded-lg bg-subtle-light dark:bg-subtle-dark py-3 px-2 text-center text-sm font-semibold text-content-light dark:text-content-dark hover:bg-primary/20 dark:hover:bg-primary/30"
+            >
+              7:30 PM
+            </button>
+            <button
+              class="rounded-lg bg-subtle-light dark:bg-subtle-dark py-3 px-2 text-center text-sm font-semibold text-content-light dark:text-content-dark hover:bg-primary/20 dark:hover:bg-primary/30"
+            >
+              8:00 PM
+            </button>
+            <button
+              class="rounded-lg bg-subtle-light dark:bg-subtle-dark py-3 px-2 text-center text-sm font-semibold text-content-light dark:text-content-dark hover:bg-primary/20 dark:hover:bg-primary/30"
+            >
+              8:30 PM
+            </button>
+          </div>
+        </section>
+        <section>
+          <h2
+            class="mb-4 text-xl font-bold text-content-light dark:text-content-dark"
+          >
+            Party Size
+          </h2>
+          <div
+            class="flex items-center gap-4 rounded-lg bg-subtle-light dark:bg-subtle-dark p-3"
+          >
+            <button
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-background-light dark:bg-background-dark text-lg font-bold text-content-light dark:text-content-dark"
+            >
+              -
+            </button>
+            <span
+              class="flex-1 text-center text-lg font-bold text-content-light dark:text-content-dark"
+              >2 Guests</span
+            >
+            <button
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-background-light dark:bg-background-dark text-lg font-bold text-content-light dark:text-content-dark"
+            >
+              +
+            </button>
+          </div>
+        </section>
+      </main>
+      <footer
+        class="flex-shrink-0 border-t border-subtle-light dark:border-subtle-dark bg-background-light dark:bg-background-dark p-4"
+      >
+        <button
+          class="w-full rounded-xl bg-primary py-4 text-center text-base font-bold text-background-dark shadow-lg shadow-primary/20 transition-transform active:scale-95"
+        >
+          Find a Table
+        </button>
+      </footer>
+    </div>
+  </body>
+</html>

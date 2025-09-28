@@ -1,117 +1,216 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<title>Sypot Event Details</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <title>Sypot Event Details</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
       tailwind.config = {
-        darkMode: "class",
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              primary: "#0df2db",
-              "background-light": "#f5f8f8",
-              "background-dark": "#102220",
+              primary: '#0df2db',
+              'background-light': '#f5f8f8',
+              'background-dark': '#102220',
             },
             fontFamily: {
-              display: ["Plus Jakarta Sans"],
+              display: ['Plus Jakarta Sans'],
             },
-            borderRadius: { DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px" },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
           },
         },
       };
     </script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden">
-<div class="flex-grow">
-<div class="absolute top-0 z-10 flex w-full items-center justify-between p-4">
-<button class="flex size-10 items-center justify-center rounded-full bg-background-light/80 text-background-dark backdrop-blur-sm dark:bg-background-dark/80 dark:text-background-light">
-<span class="material-symbols-outlined"> arrow_back </span>
-</button>
-<button class="flex size-10 items-center justify-center rounded-full bg-background-light/80 text-background-dark backdrop-blur-sm dark:bg-background-dark/80 dark:text-background-light">
-<span class="material-symbols-outlined"> share </span>
-</button>
-</div>
-<div class="h-96 w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmLAGQsXn2Bs6hP1uWJLj-hptBWzzp-6Rbe564iqN6QOBsKXB0QsOq__eX_lmhIxacPlTqObaiVoWpzqHrlRudbvXEaNIMprqY1QQWMxNy8sKA2zgakBl4KSqoHidLV8PqTS_e1xmFrJI149m7kGpZDPHRuZrEaqp7Shytx4ACRrIIWfv2WJ0KeSATN5ZhYTFJ0W44yWnpZg3SUbRAPIO-DTvgXka0mWoQgnN92LzXI1FQoiJsF39alDJQLMKmOpt39vxz01onw6U");'></div>
-<div class="rounded-t-xl bg-background-light p-6 dark:bg-background-dark">
-<h1 class="text-3xl font-bold text-background-dark dark:text-background-light">Indie Rock Night</h1>
-<p class="mt-2 text-base text-background-dark/70 dark:text-background-light/70">
-            Join us for an electrifying night of indie rock music featuring local bands and emerging artists. Experience the raw energy and unique sounds of the indie scene.
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden"
+    >
+      <div class="flex-grow">
+        <div
+          class="absolute top-0 z-10 flex w-full items-center justify-between p-4"
+        >
+          <button
+            class="flex size-10 items-center justify-center rounded-full bg-background-light/80 text-background-dark backdrop-blur-sm dark:bg-background-dark/80 dark:text-background-light"
+          >
+            <span class="material-symbols-outlined"> arrow_back </span>
+          </button>
+          <button
+            class="flex size-10 items-center justify-center rounded-full bg-background-light/80 text-background-dark backdrop-blur-sm dark:bg-background-dark/80 dark:text-background-light"
+          >
+            <span class="material-symbols-outlined"> share </span>
+          </button>
+        </div>
+        <div
+          class="h-96 w-full bg-cover bg-center"
+          style="
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmLAGQsXn2Bs6hP1uWJLj-hptBWzzp-6Rbe564iqN6QOBsKXB0QsOq__eX_lmhIxacPlTqObaiVoWpzqHrlRudbvXEaNIMprqY1QQWMxNy8sKA2zgakBl4KSqoHidLV8PqTS_e1xmFrJI149m7kGpZDPHRuZrEaqp7Shytx4ACRrIIWfv2WJ0KeSATN5ZhYTFJ0W44yWnpZg3SUbRAPIO-DTvgXka0mWoQgnN92LzXI1FQoiJsF39alDJQLMKmOpt39vxz01onw6U');
+          "
+        ></div>
+        <div
+          class="rounded-t-xl bg-background-light p-6 dark:bg-background-dark"
+        >
+          <h1
+            class="text-3xl font-bold text-background-dark dark:text-background-light"
+          >
+            Indie Rock Night
+          </h1>
+          <p
+            class="mt-2 text-base text-background-dark/70 dark:text-background-light/70"
+          >
+            Join us for an electrifying night of indie rock music featuring
+            local bands and emerging artists. Experience the raw energy and
+            unique sounds of the indie scene.
           </p>
-<div class="mt-6 space-y-4">
-<div class="flex items-center gap-4">
-<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
-<span class="material-symbols-outlined"> calendar_month </span>
-</div>
-<div>
-<p class="font-bold text-background-dark dark:text-background-light">Fri, Jul 12, 8:00 PM</p>
-<p class="text-sm text-background-dark/60 dark:text-background-light/60">Date &amp; Time</p>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
-<span class="material-symbols-outlined"> location_on </span>
-</div>
-<div>
-<p class="font-bold text-background-dark dark:text-background-light">The Underground, 123 Main St</p>
-<p class="text-sm text-background-dark/60 dark:text-background-light/60">Location</p>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="h-12 w-12 shrink-0 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVBIi3Yx7W0C7nYWjIUkHkNVfTcEQLMu3dasfohCpunQiDhZons1ZTiCo5XzLETcc_dz7h0uOncklMUh83DMgKqXh6pTE1OsopfpcThUp3Jq4ZQhUnMETWCshFxhFiJ1k4GQrhbGzM9Tbs-HYw2M97rVw67eAsfMAUYYMkzensotIlDxt3NDKCXgZ0s2_DINa2MIBTralji9fjOqorqwA07uaQuD0F4VYqwLI_M4MGhtTOitfXCPy5Tlcz9o3-wyViGf6rHhTdk5o");'></div>
-<div>
-<p class="font-bold text-background-dark dark:text-background-light">Local Music Scene</p>
-<p class="text-sm text-background-dark/60 dark:text-background-light/60">Organizer</p>
-</div>
-</div>
-</div>
-<div class="my-6 border-t border-background-light-dark/10 dark:border-background-dark-light/10"></div>
-<div>
-<h2 class="text-xl font-bold text-background-dark dark:text-background-light">About this event</h2>
-<p class="mt-2 text-base text-background-dark/70 dark:text-background-light/70">
-              This event is for music lovers who appreciate the indie genre. Expect a night filled with original music, good vibes, and a chance to discover new talent. Please note, this is
-              an 18+ event.
+          <div class="mt-6 space-y-4">
+            <div class="flex items-center gap-4">
+              <div
+                class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary"
+              >
+                <span class="material-symbols-outlined"> calendar_month </span>
+              </div>
+              <div>
+                <p
+                  class="font-bold text-background-dark dark:text-background-light"
+                >
+                  Fri, Jul 12, 8:00 PM
+                </p>
+                <p
+                  class="text-sm text-background-dark/60 dark:text-background-light/60"
+                >
+                  Date &amp; Time
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary"
+              >
+                <span class="material-symbols-outlined"> location_on </span>
+              </div>
+              <div>
+                <p
+                  class="font-bold text-background-dark dark:text-background-light"
+                >
+                  The Underground, 123 Main St
+                </p>
+                <p
+                  class="text-sm text-background-dark/60 dark:text-background-light/60"
+                >
+                  Location
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="h-12 w-12 shrink-0 rounded-full bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVBIi3Yx7W0C7nYWjIUkHkNVfTcEQLMu3dasfohCpunQiDhZons1ZTiCo5XzLETcc_dz7h0uOncklMUh83DMgKqXh6pTE1OsopfpcThUp3Jq4ZQhUnMETWCshFxhFiJ1k4GQrhbGzM9Tbs-HYw2M97rVw67eAsfMAUYYMkzensotIlDxt3NDKCXgZ0s2_DINa2MIBTralji9fjOqorqwA07uaQuD0F4VYqwLI_M4MGhtTOitfXCPy5Tlcz9o3-wyViGf6rHhTdk5o');
+                "
+              ></div>
+              <div>
+                <p
+                  class="font-bold text-background-dark dark:text-background-light"
+                >
+                  Local Music Scene
+                </p>
+                <p
+                  class="text-sm text-background-dark/60 dark:text-background-light/60"
+                >
+                  Organizer
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="my-6 border-t border-background-light-dark/10 dark:border-background-dark-light/10"
+          ></div>
+          <div>
+            <h2
+              class="text-xl font-bold text-background-dark dark:text-background-light"
+            >
+              About this event
+            </h2>
+            <p
+              class="mt-2 text-base text-background-dark/70 dark:text-background-light/70"
+            >
+              This event is for music lovers who appreciate the indie genre.
+              Expect a night filled with original music, good vibes, and a
+              chance to discover new talent. Please note, this is an 18+ event.
             </p>
-</div>
-</div>
-</div>
-<div class="sticky bottom-0 bg-background-light/80 pb-safe dark:bg-background-dark/80 backdrop-blur-sm">
-<div class="px-6 py-4">
-<button class="w-full rounded-xl bg-primary py-4 text-center font-bold text-background-dark">RSVP</button>
-</div>
-<div class="flex justify-around border-t border-background-dark/10 py-2 dark:border-background-light/10">
-<a class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60" href="#">
-<span class="material-symbols-outlined"> home </span>
-<span class="text-xs font-medium">Home</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-primary" href="#">
-<span class="material-symbols-outlined"> search </span>
-<span class="text-xs font-medium">Explore</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60" href="#">
-<span class="material-symbols-outlined"> add_circle </span>
-<span class="text-xs font-medium">Create</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60" href="#">
-<span class="material-symbols-outlined"> chat_bubble </span>
-<span class="text-xs font-medium">Chat</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60" href="#">
-<span class="material-symbols-outlined"> person </span>
-<span class="text-xs font-medium">Profile</span>
-</a>
-</div>
-</div>
-</div>
-
-</body></html>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sticky bottom-0 bg-background-light/80 pb-safe dark:bg-background-dark/80 backdrop-blur-sm"
+      >
+        <div class="px-6 py-4">
+          <button
+            class="w-full rounded-xl bg-primary py-4 text-center font-bold text-background-dark"
+          >
+            RSVP
+          </button>
+        </div>
+        <div
+          class="flex justify-around border-t border-background-dark/10 py-2 dark:border-background-light/10"
+        >
+          <a
+            class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60"
+            href="#"
+          >
+            <span class="material-symbols-outlined"> home </span>
+            <span class="text-xs font-medium">Home</span>
+          </a>
+          <a class="flex flex-col items-center gap-1 text-primary" href="#">
+            <span class="material-symbols-outlined"> search </span>
+            <span class="text-xs font-medium">Explore</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60"
+            href="#"
+          >
+            <span class="material-symbols-outlined"> add_circle </span>
+            <span class="text-xs font-medium">Create</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60"
+            href="#"
+          >
+            <span class="material-symbols-outlined"> chat_bubble </span>
+            <span class="text-xs font-medium">Chat</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60"
+            href="#"
+          >
+            <span class="material-symbols-outlined"> person </span>
+            <span class="text-xs font-medium">Profile</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

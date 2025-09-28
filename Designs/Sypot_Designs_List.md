@@ -5,7 +5,9 @@ Generated: 2025-09-21
 This document lists all Sypot mobile app design screens found in the workspace under `Designs/stitch_sypot_splash_screen` and `Designs/Designs - organised`. Where appropriate I note which folder contains the final/refined version to use.
 
 ## Summary
+
 - Source folders inspected:
+
   - `Designs/stitch_sypot_splash_screen`
   - `Designs/Designs - organised`
 
@@ -16,12 +18,13 @@ This document lists all Sypot mobile app design screens found in the workspace u
 ## Full listing (by folder)
 
 ### Designs/stitch_sypot_splash_screen
+
 - sypot_achievements/
 - sypot_attendee_management_1/
 - sypot_attendee_management_2/
 - sypot_business/
-- sypot_business_profile_(lite)_1/
-- sypot_business_profile_(lite)_2/
+- sypot*business_profile*(lite)\_1/
+- sypot*business_profile*(lite)\_2/
 - sypot_create_event_page/
 - sypot_edit_profile_page_1/
 - sypot_edit_profile_page_2/
@@ -42,13 +45,13 @@ This document lists all Sypot mobile app design screens found in the workspace u
 - sypot_notifications_page/
 - sypot_onboarding_interests/
 - sypot_onboarding_interests_2/
-- sypot_organizer_dashboard_(lite)_1/
-- sypot_organizer_dashboard_(lite)_2/
-- sypot_organizer_dashboard_(lite)_3/
-- sypot_organizer_dashboard_(lite)_4/
-- sypot_reservation_-_confirmed!/
-- sypot_reservation_-_step_1/
-- sypot_reservation_-_step_2/
+- sypot*organizer_dashboard*(lite)\_1/
+- sypot*organizer_dashboard*(lite)\_2/
+- sypot*organizer_dashboard*(lite)\_3/
+- sypot*organizer_dashboard*(lite)\_4/
+- sypot*reservation*-\_confirmed!/
+- sypot*reservation*-\_step_1/
+- sypot*reservation*-\_step_2/
 - sypot_send_announcement/
 - sypot_settings_page/
 - sypot_splash_screen/
@@ -56,10 +59,11 @@ This document lists all Sypot mobile app design screens found in the workspace u
 - sypot_user_profile/
 
 ### Designs/Designs - organised
+
 - sypot_achievements/
 - sypot_attendee_management_2/
 - sypot_business/
-- sypot_business_profile_(lite)_2/
+- sypot*business_profile*(lite)\_2/
 - sypot_create_event_page/
 - sypot_edit_profile_page_2/
 - sypot_event_details_page_2/
@@ -78,11 +82,11 @@ This document lists all Sypot mobile app design screens found in the workspace u
 - sypot_notifications_page/
 - sypot_onboarding_interests/
 - sypot_onboarding_interests_2/
-- sypot_organizer_dashboard_(lite)_3/
-- sypot_organizer_dashboard_(lite)_4/
-- sypot_reservation_-_confirmed!/
-- sypot_reservation_-_step_1/
-- sypot_reservation_-_step_2/
+- sypot*organizer_dashboard*(lite)\_3/
+- sypot*organizer_dashboard*(lite)\_4/
+- sypot*reservation*-\_confirmed!/
+- sypot*reservation*-\_step_1/
+- sypot*reservation*-\_step_2/
 - sypot_send_announcement/
 - sypot_settings_page/
 - sypot_splash_screen/
@@ -92,6 +96,7 @@ This document lists all Sypot mobile app design screens found in the workspace u
 ---
 
 ## Final / Improved Screens (where to use)
+
 Use the folders inside `Designs/Designs - organised` when present — this folder contains the curated/most-up-to-date assets.
 
 Below is the final list (as requested) mapped to the folder that contains the final version (if present). If a final version isn't present in `Designs - organised`, the corresponding `stitch_sypot_splash_screen` folder is listed.
@@ -124,6 +129,7 @@ If you need, I can also list the filetypes inside each folder (PNG, JPG, Figma e
 ---
 
 ## Notes and next steps
+
 - I created this inventory at: `Designs/Sypot_Designs_List.md`.
 - Next: I can (choose one):
   - Extract asset file lists (image names and types) per screen.

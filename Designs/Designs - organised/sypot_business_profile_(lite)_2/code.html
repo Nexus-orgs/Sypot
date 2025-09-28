@@ -1,191 +1,363 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<title>Sypot - Business Profile</title>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#0df2cc",
-            "background-light": "#f5f8f8",
-            "background-dark": "#10221f",
-          },
-          fontFamily: {
-            "display": ["Plus Jakarta Sans"]
-          },
-          borderRadius: {
-            "DEFAULT": "0.5rem",
-            "lg": "1rem",
-            "xl": "1.5rem",
-            "full": "9999px"
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sypot - Business Profile</title>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0df2cc',
+              'background-light': '#f5f8f8',
+              'background-dark': '#10221f',
+            },
+            fontFamily: {
+              display: ['Plus Jakarta Sans'],
+            },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
           },
         },
-      },
-    }
-  </script>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-    .material-symbols-outlined.fill {
-      font-variation-settings: 'FILL' 1;
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+      .material-symbols-outlined.fill {
+        font-variation-settings: 'FILL' 1;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
-<div class="relative flex min-h-screen w-full flex-col justify-between">
-<div class="flex-grow">
-<header class="absolute top-0 left-0 right-0 z-10 flex items-center justify-between p-4">
-<button class="flex h-10 w-10 items-center justify-center rounded-full bg-white/80 dark:bg-black/20 backdrop-blur-sm">
-<span class="material-symbols-outlined text-gray-800 dark:text-white">arrow_back_ios_new</span>
-</button>
-<div class="flex items-center gap-2">
-<button class="flex h-10 w-10 items-center justify-center rounded-full bg-white/80 dark:bg-black/20 backdrop-blur-sm">
-<span class="material-symbols-outlined text-gray-800 dark:text-white">share</span>
-</button>
-<button class="flex h-10 w-10 items-center justify-center rounded-full bg-white/80 dark:bg-black/20 backdrop-blur-sm">
-<span class="material-symbols-outlined text-gray-800 dark:text-white">favorite_border</span>
-</button>
-</div>
-</header>
-<main class="pb-24">
-<div class="relative mb-4 h-64 w-full">
-<div class="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-1">
-<div class="col-span-1 row-span-2 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOZMYPjdGcTJikyBrwLsMEWNaUfLgP6GnHy1fiV9wknTt9F2zm8RaQhHW-lSd1txKYQHbtb1xGQ1aE-fzeayaEU2z6PnuKLsMeZO-pwctlfP1Hr2Ewwk9E_RphTD9_TRxCOkK0gazFwnSF0xlk5GVHVitctMw8h3WB3vRvWRR6tfb_XyZQeqA5mgdF5JgGnEIhOmWw8bcXYeCLS15Unb_peRrkJSKa_vnMGBBBYwTfKr_f_xQKiBl8IRuLFOch8b51kbaZ31dihso");'></div>
-<div class="col-span-1 row-span-1 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOZMYPjdGcTJikyBrwLsMEWNaUfLgP6GnHy1fiV9wknTt9F2zm8RaQhHW-lSd1txKYQHbtb1xGQ1aE-fzeayaEU2z6PnuKLsMeZO-pwctlfP1Hr2Ewwk9E_RphTD9_TRxCOkK0gazFwnSF0xlk5GVHVitctMw8h3WB3vRvWRR6tfb_XyZQeqA5mgdF5JgGnEIhOmWw8bcXYeCLS15Unb_peRrkJSKa_vnMGBBBYwTfKr_f_xQKiBl8IRuLFOch8b51kbaZ31dihso");'></div>
-<div class="col-span-1 row-span-1 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOZMYPjdGcTJikyBrwLsMEWNaUfLgP6GnHy1fiV9wknTt9F2zm8RaQhHW-lSd1txKYQHbtb1xGQ1aE-fzeayaEU2z6PnuKLsMeZO-pwctlfP1Hr2Ewwk9E_RphTD9_TRxCOkK0gazFwnSF0xlk5GVHVitctMw8h3WB3vRvWRR6tfb_XyZQeqA5mgdF5JgGnEIhOmWw8bcXYeCLS15Unb_peRrkJSKa_vnMGBBBYwTfKr_f_xQKiBl8IRuLFOch8b51kbaZ31dihso");'></div>
-</div>
-<button class="absolute bottom-4 right-4 rounded-lg bg-white/90 dark:bg-black/50 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-gray-900 dark:text-white">Show all photos</button>
-</div>
-<div class="px-4">
-<div class="flex items-start justify-between">
-<div>
-<h1 class="text-2xl font-bold text-gray-900 dark:text-white">The Spot</h1>
-<p class="text-gray-500 dark:text-gray-400">A vibrant hub for events and activities</p>
-</div>
-<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary shrink-0">
-<span class="material-symbols-outlined text-black">verified</span>
-</div>
-</div>
-<div class="mt-8 space-y-6">
-<div>
-<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Reviews</h3>
-<div class="space-y-4 rounded-lg bg-white dark:bg-black/20 p-4">
-<div class="flex items-center gap-3">
-<div class="flex items-center gap-0.5">
-<span class="material-symbols-outlined fill text-amber-400">star</span>
-<span class="material-symbols-outlined fill text-amber-400">star</span>
-<span class="material-symbols-outlined fill text-amber-400">star</span>
-<span class="material-symbols-outlined fill text-amber-400">star</span>
-<span class="material-symbols-outlined fill text-amber-400">star_half</span>
-</div>
-<p class="font-bold text-gray-900 dark:text-white">4.8</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">(1,283 reviews)</p>
-</div>
-<div class="space-y-4">
-<div class="border-t border-gray-200/50 dark:border-gray-800/50 pt-4">
-<div class="flex items-center gap-3 mb-2">
-<img alt="Reviewer photo" class="h-8 w-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOZMYPjdGcTJikyBrwLsMEWNaUfLgP6GnHy1fiV9wknTt9F2zm8RaQhHW-lSd1txKYQHbtb1xGQ1aE-fzeayaEU2z6PnuKLsMeZO-pwctlfP1Hr2Ewwk9E_RphTD9_TRxCOkK0gazFwnSF0xlk5GVHVitctMw8h3WB3vRvWRR6tfb_XyZQeqA5mgdF5JgGnEIhOmWw8bcXYeCLS15Unb_peRrkJSKa_vnMGBBBYwTfKr_f_xQKiBl8IRuLFOch8b51kbaZ31dihso"/>
-<div>
-<p class="font-semibold text-sm text-gray-900 dark:text-white">Alex Johnson</p>
-<p class="text-xs text-gray-500 dark:text-gray-400">2 days ago</p>
-</div>
-</div>
-<p class="text-sm text-gray-600 dark:text-gray-300">Amazing vibe and great music! The perfect place to hang out with friends on a weekend. Definitely coming back.</p>
-</div>
-<div class="border-t border-gray-200/50 dark:border-gray-800/50 pt-4">
-<div class="flex items-center gap-3 mb-2">
-<img alt="Reviewer photo" class="h-8 w-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhQD5hAf8JI0RdVPdX_mFSlKcjNAwRbACf2NBVXmw2BQvmZCZ1PWloIBabfVCbDeFKBhm1QFzL2uAZlh46VQi3YtDdtHlqdc7jokJVkMdKBUA4uDKRx2WaRJGUdBsh1to9SfO8Egl2vMRNSTYngVN32LYYQY5qFH7B0831uXTuM9Tq85iiAeYcxUTmxeoxA_TFGwB_vPM1bANDF1AL6GsI0j6-R5jbq1EIWpc1Mji5EKmmn_vQ-TEuhY1AN3TQXnbwLRgPbqkaEPk"/>
-<div>
-<p class="font-semibold text-sm text-gray-900 dark:text-white">Samantha Lee</p>
-<p class="text-xs text-gray-500 dark:text-gray-400">1 week ago</p>
-</div>
-</div>
-<p class="text-sm text-gray-600 dark:text-gray-300">Attended a workshop here and it was fantastic. The space is versatile and the staff were super helpful.</p>
-</div>
-</div>
-<button class="w-full text-center font-semibold text-primary py-2">Show all reviews</button>
-</div>
-</div>
-<div>
-<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">About</h3>
-<p class="text-gray-600 dark:text-gray-300">The Spot is a dynamic venue offering a diverse range of events, from live music to workshops, catering to a youthful, urban audience.</p>
-</div>
-<div>
-<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Location</h3>
-<div class="flex items-center gap-4 rounded-lg bg-white dark:bg-black/20 p-4">
-<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary">location_on</span>
-</div>
-<div>
-<p class="font-semibold text-gray-800 dark:text-gray-100">The Spot</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">123 Main Street, Cityville</p>
-</div>
-</div>
-</div>
-<div>
-<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Contact</h3>
-<div class="space-y-3">
-<div class="flex items-center gap-4 rounded-lg bg-white dark:bg-black/20 p-4">
-<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary">mail</span>
-</div>
-<div>
-<p class="font-semibold text-gray-800 dark:text-gray-100">Email</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">contact@thespot.com</p>
-</div>
-</div>
-<div class="flex items-center gap-4 rounded-lg bg-white dark:bg-black/20 p-4">
-<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary">call</span>
-</div>
-<div>
-<p class="font-semibold text-gray-800 dark:text-gray-100">Phone</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">(555) 123-4567</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-<nav class="fixed bottom-0 left-0 right-0 border-t border-gray-200/50 dark:border-gray-800/50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg">
-<div class="flex justify-around px-2 pt-2 pb-5">
-<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
-<span class="material-symbols-outlined">home</span>
-<span class="text-xs font-medium">Home</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
-<span class="material-symbols-outlined">explore</span>
-<span class="text-xs font-medium">Explore</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
-<div class="flex h-10 w-16 items-center justify-center rounded-xl bg-primary">
-<span class="material-symbols-outlined text-black">add</span>
-</div>
-</a>
-<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
-<span class="material-symbols-outlined">chat_bubble</span>
-<span class="text-xs font-medium">Chat</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-primary" href="#">
-<span class="material-symbols-outlined font-bold">person</span>
-<span class="text-xs font-bold">Profile</span>
-</a>
-</div>
-</nav>
-</div>
-
-</body></html>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200"
+  >
+    <div class="relative flex min-h-screen w-full flex-col justify-between">
+      <div class="flex-grow">
+        <header
+          class="absolute top-0 left-0 right-0 z-10 flex items-center justify-between p-4"
+        >
+          <button
+            class="flex h-10 w-10 items-center justify-center rounded-full bg-white/80 dark:bg-black/20 backdrop-blur-sm"
+          >
+            <span
+              class="material-symbols-outlined text-gray-800 dark:text-white"
+              >arrow_back_ios_new</span
+            >
+          </button>
+          <div class="flex items-center gap-2">
+            <button
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-white/80 dark:bg-black/20 backdrop-blur-sm"
+            >
+              <span
+                class="material-symbols-outlined text-gray-800 dark:text-white"
+                >share</span
+              >
+            </button>
+            <button
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-white/80 dark:bg-black/20 backdrop-blur-sm"
+            >
+              <span
+                class="material-symbols-outlined text-gray-800 dark:text-white"
+                >favorite_border</span
+              >
+            </button>
+          </div>
+        </header>
+        <main class="pb-24">
+          <div class="relative mb-4 h-64 w-full">
+            <div class="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-1">
+              <div
+                class="col-span-1 row-span-2 bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOZMYPjdGcTJikyBrwLsMEWNaUfLgP6GnHy1fiV9wknTt9F2zm8RaQhHW-lSd1txKYQHbtb1xGQ1aE-fzeayaEU2z6PnuKLsMeZO-pwctlfP1Hr2Ewwk9E_RphTD9_TRxCOkK0gazFwnSF0xlk5GVHVitctMw8h3WB3vRvWRR6tfb_XyZQeqA5mgdF5JgGnEIhOmWw8bcXYeCLS15Unb_peRrkJSKa_vnMGBBBYwTfKr_f_xQKiBl8IRuLFOch8b51kbaZ31dihso');
+                "
+              ></div>
+              <div
+                class="col-span-1 row-span-1 bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOZMYPjdGcTJikyBrwLsMEWNaUfLgP6GnHy1fiV9wknTt9F2zm8RaQhHW-lSd1txKYQHbtb1xGQ1aE-fzeayaEU2z6PnuKLsMeZO-pwctlfP1Hr2Ewwk9E_RphTD9_TRxCOkK0gazFwnSF0xlk5GVHVitctMw8h3WB3vRvWRR6tfb_XyZQeqA5mgdF5JgGnEIhOmWw8bcXYeCLS15Unb_peRrkJSKa_vnMGBBBYwTfKr_f_xQKiBl8IRuLFOch8b51kbaZ31dihso');
+                "
+              ></div>
+              <div
+                class="col-span-1 row-span-1 bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOZMYPjdGcTJikyBrwLsMEWNaUfLgP6GnHy1fiV9wknTt9F2zm8RaQhHW-lSd1txKYQHbtb1xGQ1aE-fzeayaEU2z6PnuKLsMeZO-pwctlfP1Hr2Ewwk9E_RphTD9_TRxCOkK0gazFwnSF0xlk5GVHVitctMw8h3WB3vRvWRR6tfb_XyZQeqA5mgdF5JgGnEIhOmWw8bcXYeCLS15Unb_peRrkJSKa_vnMGBBBYwTfKr_f_xQKiBl8IRuLFOch8b51kbaZ31dihso');
+                "
+              ></div>
+            </div>
+            <button
+              class="absolute bottom-4 right-4 rounded-lg bg-white/90 dark:bg-black/50 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-gray-900 dark:text-white"
+            >
+              Show all photos
+            </button>
+          </div>
+          <div class="px-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <h1 class="text-2xl font-bold text-gray-900 dark:text-white">
+                  The Spot
+                </h1>
+                <p class="text-gray-500 dark:text-gray-400">
+                  A vibrant hub for events and activities
+                </p>
+              </div>
+              <div
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-primary shrink-0"
+              >
+                <span class="material-symbols-outlined text-black"
+                  >verified</span
+                >
+              </div>
+            </div>
+            <div class="mt-8 space-y-6">
+              <div>
+                <h3
+                  class="text-lg font-bold text-gray-900 dark:text-white mb-3"
+                >
+                  Reviews
+                </h3>
+                <div class="space-y-4 rounded-lg bg-white dark:bg-black/20 p-4">
+                  <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-0.5">
+                      <span
+                        class="material-symbols-outlined fill text-amber-400"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined fill text-amber-400"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined fill text-amber-400"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined fill text-amber-400"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined fill text-amber-400"
+                        >star_half</span
+                      >
+                    </div>
+                    <p class="font-bold text-gray-900 dark:text-white">4.8</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                      (1,283 reviews)
+                    </p>
+                  </div>
+                  <div class="space-y-4">
+                    <div
+                      class="border-t border-gray-200/50 dark:border-gray-800/50 pt-4"
+                    >
+                      <div class="flex items-center gap-3 mb-2">
+                        <img
+                          alt="Reviewer photo"
+                          class="h-8 w-8 rounded-full"
+                          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOZMYPjdGcTJikyBrwLsMEWNaUfLgP6GnHy1fiV9wknTt9F2zm8RaQhHW-lSd1txKYQHbtb1xGQ1aE-fzeayaEU2z6PnuKLsMeZO-pwctlfP1Hr2Ewwk9E_RphTD9_TRxCOkK0gazFwnSF0xlk5GVHVitctMw8h3WB3vRvWRR6tfb_XyZQeqA5mgdF5JgGnEIhOmWw8bcXYeCLS15Unb_peRrkJSKa_vnMGBBBYwTfKr_f_xQKiBl8IRuLFOch8b51kbaZ31dihso"
+                        />
+                        <div>
+                          <p
+                            class="font-semibold text-sm text-gray-900 dark:text-white"
+                          >
+                            Alex Johnson
+                          </p>
+                          <p class="text-xs text-gray-500 dark:text-gray-400">
+                            2 days ago
+                          </p>
+                        </div>
+                      </div>
+                      <p class="text-sm text-gray-600 dark:text-gray-300">
+                        Amazing vibe and great music! The perfect place to hang
+                        out with friends on a weekend. Definitely coming back.
+                      </p>
+                    </div>
+                    <div
+                      class="border-t border-gray-200/50 dark:border-gray-800/50 pt-4"
+                    >
+                      <div class="flex items-center gap-3 mb-2">
+                        <img
+                          alt="Reviewer photo"
+                          class="h-8 w-8 rounded-full"
+                          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhQD5hAf8JI0RdVPdX_mFSlKcjNAwRbACf2NBVXmw2BQvmZCZ1PWloIBabfVCbDeFKBhm1QFzL2uAZlh46VQi3YtDdtHlqdc7jokJVkMdKBUA4uDKRx2WaRJGUdBsh1to9SfO8Egl2vMRNSTYngVN32LYYQY5qFH7B0831uXTuM9Tq85iiAeYcxUTmxeoxA_TFGwB_vPM1bANDF1AL6GsI0j6-R5jbq1EIWpc1Mji5EKmmn_vQ-TEuhY1AN3TQXnbwLRgPbqkaEPk"
+                        />
+                        <div>
+                          <p
+                            class="font-semibold text-sm text-gray-900 dark:text-white"
+                          >
+                            Samantha Lee
+                          </p>
+                          <p class="text-xs text-gray-500 dark:text-gray-400">
+                            1 week ago
+                          </p>
+                        </div>
+                      </div>
+                      <p class="text-sm text-gray-600 dark:text-gray-300">
+                        Attended a workshop here and it was fantastic. The space
+                        is versatile and the staff were super helpful.
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    class="w-full text-center font-semibold text-primary py-2"
+                  >
+                    Show all reviews
+                  </button>
+                </div>
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-bold text-gray-900 dark:text-white mb-2"
+                >
+                  About
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  The Spot is a dynamic venue offering a diverse range of
+                  events, from live music to workshops, catering to a youthful,
+                  urban audience.
+                </p>
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-bold text-gray-900 dark:text-white mb-3"
+                >
+                  Location
+                </h3>
+                <div
+                  class="flex items-center gap-4 rounded-lg bg-white dark:bg-black/20 p-4"
+                >
+                  <div
+                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >location_on</span
+                    >
+                  </div>
+                  <div>
+                    <p class="font-semibold text-gray-800 dark:text-gray-100">
+                      The Spot
+                    </p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                      123 Main Street, Cityville
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3
+                  class="text-lg font-bold text-gray-900 dark:text-white mb-3"
+                >
+                  Contact
+                </h3>
+                <div class="space-y-3">
+                  <div
+                    class="flex items-center gap-4 rounded-lg bg-white dark:bg-black/20 p-4"
+                  >
+                    <div
+                      class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20"
+                    >
+                      <span class="material-symbols-outlined text-primary"
+                        >mail</span
+                      >
+                    </div>
+                    <div>
+                      <p class="font-semibold text-gray-800 dark:text-gray-100">
+                        Email
+                      </p>
+                      <p class="text-sm text-gray-500 dark:text-gray-400">
+                        contact@thespot.com
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center gap-4 rounded-lg bg-white dark:bg-black/20 p-4"
+                  >
+                    <div
+                      class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20"
+                    >
+                      <span class="material-symbols-outlined text-primary"
+                        >call</span
+                      >
+                    </div>
+                    <div>
+                      <p class="font-semibold text-gray-800 dark:text-gray-100">
+                        Phone
+                      </p>
+                      <p class="text-sm text-gray-500 dark:text-gray-400">
+                        (555) 123-4567
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <nav
+        class="fixed bottom-0 left-0 right-0 border-t border-gray-200/50 dark:border-gray-800/50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg"
+      >
+        <div class="flex justify-around px-2 pt-2 pb-5">
+          <a
+            class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-xs font-medium">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">explore</span>
+            <span class="text-xs font-medium">Explore</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400"
+            href="#"
+          >
+            <div
+              class="flex h-10 w-16 items-center justify-center rounded-xl bg-primary"
+            >
+              <span class="material-symbols-outlined text-black">add</span>
+            </div>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">chat_bubble</span>
+            <span class="text-xs font-medium">Chat</span>
+          </a>
+          <a class="flex flex-col items-center gap-1 text-primary" href="#">
+            <span class="material-symbols-outlined font-bold">person</span>
+            <span class="text-xs font-bold">Profile</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>

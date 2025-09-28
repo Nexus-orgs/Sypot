@@ -1,148 +1,277 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sypot - Onboarding</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#0df2db",
-                        "background-light": "#f5f8f8",
-                        "background-dark": "#102220",
-                        "text-light": "#111817",
-                        "text-dark": "#ffffff",
-                        "subtle-light": "#e6eded",
-                        "subtle-dark": "#1a3835"
-                    },
-                    fontFamily: {
-                        "display": ["Plus Jakarta Sans", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                },
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sypot - Onboarding</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0df2db',
+              'background-light': '#f5f8f8',
+              'background-dark': '#102220',
+              'text-light': '#111817',
+              'text-dark': '#ffffff',
+              'subtle-light': '#e6eded',
+              'subtle-dark': '#1a3835',
             },
-        }
+            fontFamily: {
+              display: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
     </script>
-<style>
-        .interest-card {
-            border: 2px solid transparent;
-            transition: all 0.2s ease-in-out;
-        }
-        .interest-card.selected {
-            border-color: #0df2db;
-            background-color: rgba(13, 242, 219, 0.1);
-        }
-        .interest-card.selected .check-icon {
-            opacity: 1;
-            transform: scale(1);
-        }
-        .check-icon {
-            opacity: 0;
-            transform: scale(0.5);
-            transition: all 0.2s ease-in-out;
-        }
+    <style>
+      .interest-card {
+        border: 2px solid transparent;
+        transition: all 0.2s ease-in-out;
+      }
+      .interest-card.selected {
+        border-color: #0df2db;
+        background-color: rgba(13, 242, 219, 0.1);
+      }
+      .interest-card.selected .check-icon {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .check-icon {
+        opacity: 0;
+        transform: scale(0.5);
+        transition: all 0.2s ease-in-out;
+      }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden">
-<div class="flex-grow">
-<header class="flex items-center justify-end p-6">
-<button class="text-text-light/70 dark:text-text-dark/70 font-bold text-sm leading-normal">Skip</button>
-</header>
-<main class="px-6 pb-6">
-<div class="text-center mb-8">
-<h1 class="text-text-light dark:text-text-dark text-3xl font-extrabold leading-tight mb-2">What are you into?</h1>
-<p class="text-text-light/70 dark:text-text-dark/70 text-base font-normal leading-relaxed">Tell us what you like so we can recommend the best spots for you.</p>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<div class="interest-card relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer">
-<div class="w-12 h-12 rounded bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_gAxvQs6zjoCP92mjmyGkhmVV51n25bTjGTlRSJlkPjOUr5yOR4mOYNf1AUXZ5kID1vX6mWMFiAiVp4hEpy-1gFkibou98mRX3R8U_Zfu8pSDvG0MF-OGuOd9GBTvBtEd3a5gPqG2xd3lUCom_nizlQ3GQefXzxa31RTLjai8lMpZZeZ9RJhMJA4bUUaTBuz6AfuvTSPK2H9lTfNzNLnw5fhqXR-6PNpbAqg5bI0Dli_ygtgvetkCytxt5AZqmaJAmjr8_BX0aBg");'></div>
-<h2 class="text-text-light dark:text-text-dark text-base font-bold leading-tight">Music</h2>
-<div class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black">
-<span class="material-symbols-outlined text-sm">check</span>
-</div>
-</div>
-<div class="interest-card selected relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer">
-<div class="w-12 h-12 rounded bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKyy4YzeSOeDwoqsfU6FKfdKBcEtCnTQKFJOXXr2YLaK904XwXaBSlYZO6zZA-I12F-FNRbz-8bpzKsKI_60ZxNY8x-o0LigOW32d1FXmjWeh7TvPPY5VVp3BCUToXjhpzLjpJIH2IiBms3wR5LddYAFyhOojNnJfZma1HZ3SLOtIy4CAk_yE907eMbBCWffBYIImEUtajCdtt8oe8bcAV7TS5NESGCTFsoFbA73whIhzd3_r_J4v_pbBJNqfhoVXdCiQ0ObFcKpI");'></div>
-<h2 class="text-text-light dark:text-text-dark text-base font-bold leading-tight">Food</h2>
-<div class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black">
-<span class="material-symbols-outlined text-sm">check</span>
-</div>
-</div>
-<div class="interest-card selected relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer">
-<div class="w-12 h-12 rounded bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB8_sXDf2Xg72jZ3wr5Y42PDy8tn95AFLuSMo51K2kt-rgvgYvIP_cD9W30Mz9QN0rFCDs2sf_YrJytLgSzyvHUid89jcDvSgTFG5hbbFq-0m4RSBmsYSLPc2-1qBt6w3AlO-5RHRyovanFiV0xS4CRUNZDBXixbdCgLt1v6gB_qUXroC3jzdQv84gsRsAqHzC9uefyWurc5RvT-LBtrHiCyAmyYW_Y7i2dNYQ8aIg7YQDsPT_HwVs5vXhrBYcAHexQ5s30pK_-xlY");'></div>
-<h2 class="text-text-light dark:text-text-dark text-base font-bold leading-tight">Sports</h2>
-<div class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black">
-<span class="material-symbols-outlined text-sm">check</span>
-</div>
-</div>
-<div class="interest-card relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer">
-<div class="w-12 h-12 rounded bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCGhTHhzq01GJnwh7WJ6jQD9tidG65qYs9sKmWYNfwZGBP6HwaOsNpUsBdNoIbq36QX3BJUDs47C66oKAWhBzpNHPNCRtmr8SsmwyfnUDxMDs4wjnEJO0WXBHzDtL7ni3jS8n8goIBrFEjr3SOTujf_gWEzEhm8FhFCIt4eB6GrZrHnyqe2lRg5_fKgYTmFZnUO5syU1vzN487wXFClgvHIY6PdvvbD-Bzc4U2X-xHygwI8-cvhyei5vCUZO3X6LHEaCOclh7Qbk44");'></div>
-<h2 class="text-text-light dark:text-text-dark text-base font-bold leading-tight">Nightlife</h2>
-<div class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black">
-<span class="material-symbols-outlined text-sm">check</span>
-</div>
-</div>
-<div class="interest-card relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer">
-<div class="w-12 h-12 rounded bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzfoZyZtaLq6fRjwlVt1EBl8CZiC3gywu5dmMDUmpPZgLZbfvIPNwUoq0ZXwm3ImI-hm5CItZVsAwvoBkgwbUXVOeM431O_POC-zhVZlG6BWtZtMNeWMiynsHZCKSw0ExjZvNm5XdQ_zQyTEemZJA_v7KLAJspQtY8BfvU-MuGs3haxC9dDBJLvwShZjT9my-Tj-2JYjhJ1ldW7zU1vVS3r3r62Ic7Xd6iq738lq7g5EXzRMJflstLUMbCX8mq_DfdjGB-c_o0UUE");'></div>
-<h2 class="text-text-light dark:text-text-dark text-base font-bold leading-tight">Culture</h2>
-<div class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black">
-<span class="material-symbols-outlined text-sm">check</span>
-</div>
-</div>
-<div class="interest-card relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer">
-<div class="w-12 h-12 rounded bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5BagIBcJwGZt7G0jolhLD8N9mGlo1eBkj2kdYWZvoYxlNlSJAT4sZiW-HwVnAxmCjMONqoOHW7TlqRpzKoiKu96lLduRXnbWUT6OPQtu73X4G0VRYtJjtqjmzQnn8q_nAExdeX18nVUIBZVN8fLHZwdme7Cnim4_AD48zJD9iNXyzXN1JX-UOrXwI1HeIGl0mgEphjNVYuC76_3JgvsmaxzhhYidkrOAtm1pL7S7Yg9ab7le4FQM209LB2RZw80X-6FxFZwxrd4c");'></div>
-<h2 class="text-text-light dark:text-text-dark text-base font-bold leading-tight">Outdoors</h2>
-<div class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black">
-<span class="material-symbols-outlined text-sm">check</span>
-</div>
-</div>
-<div class="interest-card selected relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer">
-<div class="w-12 h-12 rounded bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCODIXf7W6Cr9TmKyvv9lTwMrTajuAtfPibzEXj4aQ6b9YD-uLAP-_iIEJ8ouaMyXteX7Kmha2E_O7U7LnoFokOoGkrfh7bf3ioGsR-PXCYwbFAVJBJtHIdhV76018jD2ZmvBmnogYl6BjrQ_HQN3-urCSb5qGDqA7weacbjIV6oOV0CzfaCMjvaZzoXydahcWoBT-zyylTCxsnPyfKWUpnMKB8TD2FOw-8g5NK8al5Zuds3NerXTXkZ77lHggY8A-zkv515Vx-8Ls");'></div>
-<h2 class="text-text-light dark:text-text-dark text-base font-bold leading-tight">Art</h2>
-<div class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black">
-<span class="material-symbols-outlined text-sm">check</span>
-</div>
-</div>
-<div class="interest-card relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer">
-<div class="w-12 h-12 rounded bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLSlNy2rFKONk4vCwGwhCJ4NnD3DQhA_KX1Wwo93WGrwwokFPgnjfvRYnrpLeXJ4Nwe1VvGmAA-_R_Z4apurohYQvd_C89sScgQpRGuQe9qiH-usehlNo3KgRGDRbu5OH8sG8zf9R3KZ-Kkc8y19_hZqPlaFom7HfVV4kCyHDlpiNJoLxNjLGnUfJADJp_ESsnhta2VMs6mjph76EzawRWA66LNj4uxcnd1fjaxHG-PTFBMqcIHB9NK0djkFRD8-vUiJ5HEXjqiwU");'></div>
-<h2 class="text-text-light dark:text-text-dark text-base font-bold leading-tight">Wellness</h2>
-<div class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black">
-<span class="material-symbols-outlined text-sm">check</span>
-</div>
-</div>
-</div>
-</main>
-</div>
-<footer class="sticky bottom-0 bg-background-light dark:bg-background-dark py-4 px-6">
-<button class="w-full h-14 flex items-center justify-center rounded-xl bg-primary text-background-dark font-bold text-base leading-normal shadow-lg shadow-primary/30">
-            Continue
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden"
+    >
+      <div class="flex-grow">
+        <header class="flex items-center justify-end p-6">
+          <button
+            class="text-text-light/70 dark:text-text-dark/70 font-bold text-sm leading-normal"
+          >
+            Skip
+          </button>
+        </header>
+        <main class="px-6 pb-6">
+          <div class="text-center mb-8">
+            <h1
+              class="text-text-light dark:text-text-dark text-3xl font-extrabold leading-tight mb-2"
+            >
+              What are you into?
+            </h1>
+            <p
+              class="text-text-light/70 dark:text-text-dark/70 text-base font-normal leading-relaxed"
+            >
+              Tell us what you like so we can recommend the best spots for you.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div
+              class="interest-card relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer"
+            >
+              <div
+                class="w-12 h-12 rounded bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_gAxvQs6zjoCP92mjmyGkhmVV51n25bTjGTlRSJlkPjOUr5yOR4mOYNf1AUXZ5kID1vX6mWMFiAiVp4hEpy-1gFkibou98mRX3R8U_Zfu8pSDvG0MF-OGuOd9GBTvBtEd3a5gPqG2xd3lUCom_nizlQ3GQefXzxa31RTLjai8lMpZZeZ9RJhMJA4bUUaTBuz6AfuvTSPK2H9lTfNzNLnw5fhqXR-6PNpbAqg5bI0Dli_ygtgvetkCytxt5AZqmaJAmjr8_BX0aBg');
+                "
+              ></div>
+              <h2
+                class="text-text-light dark:text-text-dark text-base font-bold leading-tight"
+              >
+                Music
+              </h2>
+              <div
+                class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black"
+              >
+                <span class="material-symbols-outlined text-sm">check</span>
+              </div>
+            </div>
+            <div
+              class="interest-card selected relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer"
+            >
+              <div
+                class="w-12 h-12 rounded bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAKyy4YzeSOeDwoqsfU6FKfdKBcEtCnTQKFJOXXr2YLaK904XwXaBSlYZO6zZA-I12F-FNRbz-8bpzKsKI_60ZxNY8x-o0LigOW32d1FXmjWeh7TvPPY5VVp3BCUToXjhpzLjpJIH2IiBms3wR5LddYAFyhOojNnJfZma1HZ3SLOtIy4CAk_yE907eMbBCWffBYIImEUtajCdtt8oe8bcAV7TS5NESGCTFsoFbA73whIhzd3_r_J4v_pbBJNqfhoVXdCiQ0ObFcKpI');
+                "
+              ></div>
+              <h2
+                class="text-text-light dark:text-text-dark text-base font-bold leading-tight"
+              >
+                Food
+              </h2>
+              <div
+                class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black"
+              >
+                <span class="material-symbols-outlined text-sm">check</span>
+              </div>
+            </div>
+            <div
+              class="interest-card selected relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer"
+            >
+              <div
+                class="w-12 h-12 rounded bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8_sXDf2Xg72jZ3wr5Y42PDy8tn95AFLuSMo51K2kt-rgvgYvIP_cD9W30Mz9QN0rFCDs2sf_YrJytLgSzyvHUid89jcDvSgTFG5hbbFq-0m4RSBmsYSLPc2-1qBt6w3AlO-5RHRyovanFiV0xS4CRUNZDBXixbdCgLt1v6gB_qUXroC3jzdQv84gsRsAqHzC9uefyWurc5RvT-LBtrHiCyAmyYW_Y7i2dNYQ8aIg7YQDsPT_HwVs5vXhrBYcAHexQ5s30pK_-xlY');
+                "
+              ></div>
+              <h2
+                class="text-text-light dark:text-text-dark text-base font-bold leading-tight"
+              >
+                Sports
+              </h2>
+              <div
+                class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black"
+              >
+                <span class="material-symbols-outlined text-sm">check</span>
+              </div>
+            </div>
+            <div
+              class="interest-card relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer"
+            >
+              <div
+                class="w-12 h-12 rounded bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGhTHhzq01GJnwh7WJ6jQD9tidG65qYs9sKmWYNfwZGBP6HwaOsNpUsBdNoIbq36QX3BJUDs47C66oKAWhBzpNHPNCRtmr8SsmwyfnUDxMDs4wjnEJO0WXBHzDtL7ni3jS8n8goIBrFEjr3SOTujf_gWEzEhm8FhFCIt4eB6GrZrHnyqe2lRg5_fKgYTmFZnUO5syU1vzN487wXFClgvHIY6PdvvbD-Bzc4U2X-xHygwI8-cvhyei5vCUZO3X6LHEaCOclh7Qbk44');
+                "
+              ></div>
+              <h2
+                class="text-text-light dark:text-text-dark text-base font-bold leading-tight"
+              >
+                Nightlife
+              </h2>
+              <div
+                class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black"
+              >
+                <span class="material-symbols-outlined text-sm">check</span>
+              </div>
+            </div>
+            <div
+              class="interest-card relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer"
+            >
+              <div
+                class="w-12 h-12 rounded bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBzfoZyZtaLq6fRjwlVt1EBl8CZiC3gywu5dmMDUmpPZgLZbfvIPNwUoq0ZXwm3ImI-hm5CItZVsAwvoBkgwbUXVOeM431O_POC-zhVZlG6BWtZtMNeWMiynsHZCKSw0ExjZvNm5XdQ_zQyTEemZJA_v7KLAJspQtY8BfvU-MuGs3haxC9dDBJLvwShZjT9my-Tj-2JYjhJ1ldW7zU1vVS3r3r62Ic7Xd6iq738lq7g5EXzRMJflstLUMbCX8mq_DfdjGB-c_o0UUE');
+                "
+              ></div>
+              <h2
+                class="text-text-light dark:text-text-dark text-base font-bold leading-tight"
+              >
+                Culture
+              </h2>
+              <div
+                class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black"
+              >
+                <span class="material-symbols-outlined text-sm">check</span>
+              </div>
+            </div>
+            <div
+              class="interest-card relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer"
+            >
+              <div
+                class="w-12 h-12 rounded bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5BagIBcJwGZt7G0jolhLD8N9mGlo1eBkj2kdYWZvoYxlNlSJAT4sZiW-HwVnAxmCjMONqoOHW7TlqRpzKoiKu96lLduRXnbWUT6OPQtu73X4G0VRYtJjtqjmzQnn8q_nAExdeX18nVUIBZVN8fLHZwdme7Cnim4_AD48zJD9iNXyzXN1JX-UOrXwI1HeIGl0mgEphjNVYuC76_3JgvsmaxzhhYidkrOAtm1pL7S7Yg9ab7le4FQM209LB2RZw80X-6FxFZwxrd4c');
+                "
+              ></div>
+              <h2
+                class="text-text-light dark:text-text-dark text-base font-bold leading-tight"
+              >
+                Outdoors
+              </h2>
+              <div
+                class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black"
+              >
+                <span class="material-symbols-outlined text-sm">check</span>
+              </div>
+            </div>
+            <div
+              class="interest-card selected relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer"
+            >
+              <div
+                class="w-12 h-12 rounded bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCODIXf7W6Cr9TmKyvv9lTwMrTajuAtfPibzEXj4aQ6b9YD-uLAP-_iIEJ8ouaMyXteX7Kmha2E_O7U7LnoFokOoGkrfh7bf3ioGsR-PXCYwbFAVJBJtHIdhV76018jD2ZmvBmnogYl6BjrQ_HQN3-urCSb5qGDqA7weacbjIV6oOV0CzfaCMjvaZzoXydahcWoBT-zyylTCxsnPyfKWUpnMKB8TD2FOw-8g5NK8al5Zuds3NerXTXkZ77lHggY8A-zkv515Vx-8Ls');
+                "
+              ></div>
+              <h2
+                class="text-text-light dark:text-text-dark text-base font-bold leading-tight"
+              >
+                Art
+              </h2>
+              <div
+                class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black"
+              >
+                <span class="material-symbols-outlined text-sm">check</span>
+              </div>
+            </div>
+            <div
+              class="interest-card relative flex items-center gap-3 rounded-lg border-2 border-subtle-light dark:border-subtle-dark bg-white dark:bg-subtle-dark/40 p-3 cursor-pointer"
+            >
+              <div
+                class="w-12 h-12 rounded bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLSlNy2rFKONk4vCwGwhCJ4NnD3DQhA_KX1Wwo93WGrwwokFPgnjfvRYnrpLeXJ4Nwe1VvGmAA-_R_Z4apurohYQvd_C89sScgQpRGuQe9qiH-usehlNo3KgRGDRbu5OH8sG8zf9R3KZ-Kkc8y19_hZqPlaFom7HfVV4kCyHDlpiNJoLxNjLGnUfJADJp_ESsnhta2VMs6mjph76EzawRWA66LNj4uxcnd1fjaxHG-PTFBMqcIHB9NK0djkFRD8-vUiJ5HEXjqiwU');
+                "
+              ></div>
+              <h2
+                class="text-text-light dark:text-text-dark text-base font-bold leading-tight"
+              >
+                Wellness
+              </h2>
+              <div
+                class="check-icon absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-black"
+              >
+                <span class="material-symbols-outlined text-sm">check</span>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer
+        class="sticky bottom-0 bg-background-light dark:bg-background-dark py-4 px-6"
+      >
+        <button
+          class="w-full h-14 flex items-center justify-center rounded-xl bg-primary text-background-dark font-bold text-base leading-normal shadow-lg shadow-primary/30"
+        >
+          Continue
         </button>
-</footer>
-</div>
-<script>
-    document.querySelectorAll('.interest-card').forEach(card => {
+      </footer>
+    </div>
+    <script>
+      document.querySelectorAll('.interest-card').forEach(card => {
         card.addEventListener('click', () => {
-            card.classList.toggle('selected');
+          card.classList.toggle('selected');
         });
-    });
-</script>
-
-</body></html>
+      });
+    </script>
+  </body>
+</html>

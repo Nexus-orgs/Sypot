@@ -1,129 +1,214 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<title>Sypot - Business Profile</title>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#0df2cc",
-            "background-light": "#f5f8f8",
-            "background-dark": "#10221f",
-          },
-          fontFamily: {
-            "display": ["Plus Jakarta Sans"]
-          },
-          borderRadius: {
-            "DEFAULT": "0.5rem",
-            "lg": "1rem",
-            "xl": "1.5rem",
-            "full": "9999px"
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sypot - Business Profile</title>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0df2cc',
+              'background-light': '#f5f8f8',
+              'background-dark': '#10221f',
+            },
+            fontFamily: {
+              display: ['Plus Jakarta Sans'],
+            },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
           },
         },
-      },
-    }
-  </script>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
-<div class="relative flex min-h-screen w-full flex-col justify-between">
-<div class="flex-grow">
-<header class="flex items-center justify-between p-4">
-<button class="flex h-10 w-10 items-center justify-center rounded-full bg-white/80 dark:bg-black/20 backdrop-blur-sm">
-<span class="material-symbols-outlined text-gray-800 dark:text-white">arrow_back_ios_new</span>
-</button>
-<h1 class="text-lg font-bold">Venue Profile</h1>
-<div class="w-10"></div> 
-</header>
-<main class="px-4 pb-24">
-<div class="flex flex-col items-center text-center">
-<div class="relative mb-4">
-<div class="h-32 w-32 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWzTgAyhFDFWYehtn2vG1czduVDZGKAhmJ34FckmmnicoT1VsH8Sp0m2Ex0luER9jTblAcJrWWTDUqU3PMQV3IJoMTJsR7MedWisY3E2NzzgBI66E3H6UYHzXJBt1Xo0EVzUPgpmSAE45sKZGtI5-2mnyLuMzVthZGsjF3pyaK6EXg1OHqkA0UXHcmlYhuM8Fc3fYANqVMixr25PedEah3QjR5ZBVbvpDT1yBblGB9OAOhWzILFz6d-bVmJk7Vgsuej3Hkx_Ey3GE");'></div>
-<div class="absolute -bottom-2 -right-2 flex h-10 w-10 items-center justify-center rounded-full border-4 border-background-light dark:border-background-dark bg-primary">
-<span class="material-symbols-outlined text-black">verified</span>
-</div>
-</div>
-<h2 class="text-2xl font-bold text-gray-900 dark:text-white">The Spot</h2>
-<p class="text-gray-500 dark:text-gray-400">A vibrant hub for events and activities</p>
-</div>
-<div class="mt-8 space-y-6">
-<div>
-<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">About</h3>
-<p class="text-gray-600 dark:text-gray-300">The Spot is a dynamic venue offering a diverse range of events, from live music to workshops, catering to a youthful, urban audience.</p>
-</div>
-<div>
-<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Location</h3>
-<div class="flex items-center gap-4 rounded-lg bg-white dark:bg-black/20 p-4">
-<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary">location_on</span>
-</div>
-<div>
-<p class="font-semibold text-gray-800 dark:text-gray-100">The Spot</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">123 Main Street, Cityville</p>
-</div>
-</div>
-</div>
-<div>
-<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Contact</h3>
-<div class="space-y-3">
-<div class="flex items-center gap-4 rounded-lg bg-white dark:bg-black/20 p-4">
-<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary">mail</span>
-</div>
-<div>
-<p class="font-semibold text-gray-800 dark:text-gray-100">Email</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">contact@thespot.com</p>
-</div>
-</div>
-<div class="flex items-center gap-4 rounded-lg bg-white dark:bg-black/20 p-4">
-<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
-<span class="material-symbols-outlined text-primary">call</span>
-</div>
-<div>
-<p class="font-semibold text-gray-800 dark:text-gray-100">Phone</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">(555) 123-4567</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-<nav class="fixed bottom-0 left-0 right-0 border-t border-gray-200/50 dark:border-gray-800/50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg">
-<div class="flex justify-around px-2 pt-2 pb-5">
-<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
-<span class="material-symbols-outlined">home</span>
-<span class="text-xs font-medium">Home</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
-<span class="material-symbols-outlined">explore</span>
-<span class="text-xs font-medium">Explore</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
-<div class="flex h-10 w-16 items-center justify-center rounded-xl bg-primary">
-<span class="material-symbols-outlined text-black">add</span>
-</div>
-</a>
-<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
-<span class="material-symbols-outlined">chat_bubble</span>
-<span class="text-xs font-medium">Chat</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-primary" href="#">
-<span class="material-symbols-outlined font-bold">person</span>
-<span class="text-xs font-bold">Profile</span>
-</a>
-</div>
-</nav>
-</div>
-
-</body></html>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200"
+  >
+    <div class="relative flex min-h-screen w-full flex-col justify-between">
+      <div class="flex-grow">
+        <header class="flex items-center justify-between p-4">
+          <button
+            class="flex h-10 w-10 items-center justify-center rounded-full bg-white/80 dark:bg-black/20 backdrop-blur-sm"
+          >
+            <span
+              class="material-symbols-outlined text-gray-800 dark:text-white"
+              >arrow_back_ios_new</span
+            >
+          </button>
+          <h1 class="text-lg font-bold">Venue Profile</h1>
+          <div class="w-10"></div>
+        </header>
+        <main class="px-4 pb-24">
+          <div class="flex flex-col items-center text-center">
+            <div class="relative mb-4">
+              <div
+                class="h-32 w-32 rounded-full bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWzTgAyhFDFWYehtn2vG1czduVDZGKAhmJ34FckmmnicoT1VsH8Sp0m2Ex0luER9jTblAcJrWWTDUqU3PMQV3IJoMTJsR7MedWisY3E2NzzgBI66E3H6UYHzXJBt1Xo0EVzUPgpmSAE45sKZGtI5-2mnyLuMzVthZGsjF3pyaK6EXg1OHqkA0UXHcmlYhuM8Fc3fYANqVMixr25PedEah3QjR5ZBVbvpDT1yBblGB9OAOhWzILFz6d-bVmJk7Vgsuej3Hkx_Ey3GE');
+                "
+              ></div>
+              <div
+                class="absolute -bottom-2 -right-2 flex h-10 w-10 items-center justify-center rounded-full border-4 border-background-light dark:border-background-dark bg-primary"
+              >
+                <span class="material-symbols-outlined text-black"
+                  >verified</span
+                >
+              </div>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+              The Spot
+            </h2>
+            <p class="text-gray-500 dark:text-gray-400">
+              A vibrant hub for events and activities
+            </p>
+          </div>
+          <div class="mt-8 space-y-6">
+            <div>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                About
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                The Spot is a dynamic venue offering a diverse range of events,
+                from live music to workshops, catering to a youthful, urban
+                audience.
+              </p>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">
+                Location
+              </h3>
+              <div
+                class="flex items-center gap-4 rounded-lg bg-white dark:bg-black/20 p-4"
+              >
+                <div
+                  class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20"
+                >
+                  <span class="material-symbols-outlined text-primary"
+                    >location_on</span
+                  >
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-800 dark:text-gray-100">
+                    The Spot
+                  </p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">
+                    123 Main Street, Cityville
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">
+                Contact
+              </h3>
+              <div class="space-y-3">
+                <div
+                  class="flex items-center gap-4 rounded-lg bg-white dark:bg-black/20 p-4"
+                >
+                  <div
+                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >mail</span
+                    >
+                  </div>
+                  <div>
+                    <p class="font-semibold text-gray-800 dark:text-gray-100">
+                      Email
+                    </p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                      contact@thespot.com
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-4 rounded-lg bg-white dark:bg-black/20 p-4"
+                >
+                  <div
+                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >call</span
+                    >
+                  </div>
+                  <div>
+                    <p class="font-semibold text-gray-800 dark:text-gray-100">
+                      Phone
+                    </p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                      (555) 123-4567
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <nav
+        class="fixed bottom-0 left-0 right-0 border-t border-gray-200/50 dark:border-gray-800/50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg"
+      >
+        <div class="flex justify-around px-2 pt-2 pb-5">
+          <a
+            class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-xs font-medium">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">explore</span>
+            <span class="text-xs font-medium">Explore</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400"
+            href="#"
+          >
+            <div
+              class="flex h-10 w-16 items-center justify-center rounded-xl bg-primary"
+            >
+              <span class="material-symbols-outlined text-black">add</span>
+            </div>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">chat_bubble</span>
+            <span class="text-xs font-medium">Chat</span>
+          </a>
+          <a class="flex flex-col items-center gap-1 text-primary" href="#">
+            <span class="material-symbols-outlined font-bold">person</span>
+            <span class="text-xs font-bold">Profile</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>

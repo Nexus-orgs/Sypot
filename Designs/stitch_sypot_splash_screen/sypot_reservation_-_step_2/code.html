@@ -1,125 +1,187 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sypot - Reservation Confirmation</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#0df2cc",
-            "background-light": "#f5f8f8",
-            "background-dark": "#10221f",
-            "surface-light": "#ffffff",
-            "surface-dark": "#18312c",
-            "text-primary-light": "#0d1c1a",
-            "text-primary-dark": "#e0f2ef",
-            "text-secondary-light": "#4f6762",
-            "text-secondary-dark": "#9ab8b2",
-            "input-bg-light": "#e9f0ef",
-            "input-bg-dark": "#20423c"
-          },
-          fontFamily: {
-            "display": ["Plus Jakarta Sans", "sans-serif"]
-          },
-          borderRadius: {
-            "DEFAULT": "0.75rem",
-            "lg": "1rem",
-            "xl": "1.5rem",
-            "full": "9999px"
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sypot - Reservation Confirmation</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0df2cc',
+              'background-light': '#f5f8f8',
+              'background-dark': '#10221f',
+              'surface-light': '#ffffff',
+              'surface-dark': '#18312c',
+              'text-primary-light': '#0d1c1a',
+              'text-primary-dark': '#e0f2ef',
+              'text-secondary-light': '#4f6762',
+              'text-secondary-dark': '#9ab8b2',
+              'input-bg-light': '#e9f0ef',
+              'input-bg-dark': '#20423c',
+            },
+            fontFamily: {
+              display: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.75rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
           },
         },
-      },
-    }
-  </script>
-<style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .material-symbols-outlined {
-      font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24
-    }
-  </style>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+      };
+    </script>
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-text-primary-light dark:text-text-primary-dark">
-<div class="flex flex-col min-h-screen">
-<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4">
-<div class="flex items-center justify-between">
-<button class="flex items-center justify-center w-10 h-10">
-<span class="material-symbols-outlined">arrow_back</span>
-</button>
-<h1 class="text-lg font-bold">Confirmation</h1>
-<div class="w-10 h-10"></div>
-</div>
-</header>
-<main class="flex-grow px-4 pb-4 space-y-6">
-<div class="p-5 rounded-xl bg-surface-light dark:bg-surface-dark">
-<h2 class="text-xl font-bold mb-4">Reservation Details</h2>
-<div class="space-y-3 text-base">
-<div class="flex items-center">
-<span class="material-symbols-outlined mr-3 text-text-secondary-light dark:text-text-secondary-dark">group</span>
-<span>Party of 2</span>
-</div>
-<div class="flex items-center">
-<span class="material-symbols-outlined mr-3 text-text-secondary-light dark:text-text-secondary-dark">calendar_month</span>
-<span>Sat, Jul 20</span>
-</div>
-<div class="flex items-center">
-<span class="material-symbols-outlined mr-3 text-text-secondary-light dark:text-text-secondary-dark">schedule</span>
-<span>7:30 PM</span>
-</div>
-<div class="flex items-center">
-<span class="material-symbols-outlined mr-3 text-text-secondary-light dark:text-text-secondary-dark">storefront</span>
-<span class="font-semibold">The Hidden Gem</span>
-</div>
-</div>
-</div>
-<div class="p-5 rounded-xl bg-surface-light dark:bg-surface-dark">
-<div class="flex justify-between items-center mb-4">
-<h2 class="text-xl font-bold">Your Information</h2>
-<button class="text-sm font-semibold text-primary">Edit</button>
-</div>
-<div class="space-y-4">
-<div>
-<label class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1" for="name">Name</label>
-<input class="form-input w-full rounded-lg border-none bg-input-bg-light dark:bg-input-bg-dark h-12 px-4 focus:ring-2 focus:ring-primary/50 text-text-primary-light dark:text-text-primary-dark" id="name" readonly="" type="text" value="John Doe"/>
-</div>
-<div>
-<label class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1" for="email">Email</label>
-<input class="form-input w-full rounded-lg border-none bg-input-bg-light dark:bg-input-bg-dark h-12 px-4 focus:ring-2 focus:ring-primary/50 text-text-primary-light dark:text-text-primary-dark" id="email" readonly="" type="email" value="johndoe@example.com"/>
-</div>
-<div>
-<label class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1" for="phone">Phone</label>
-<input class="form-input w-full rounded-lg border-none bg-input-bg-light dark:bg-input-bg-dark h-12 px-4 focus:ring-2 focus:ring-primary/50 text-text-primary-light dark:text-text-primary-dark" id="phone" readonly="" type="tel" value="+1 (123) 456-7890"/>
-</div>
-<div>
-<label class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1" for="requests">Special Requests</label>
-<textarea class="form-textarea w-full rounded-lg border-none bg-input-bg-light dark:bg-input-bg-dark p-4 focus:ring-2 focus:ring-primary/50 text-text-primary-light dark:text-text-primary-dark placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark" id="requests" placeholder="Add a note (optional)" rows="4"></textarea>
-</div>
-</div>
-</div>
-</main>
-<footer class="sticky bottom-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4">
-<button class="w-full h-14 bg-primary text-background-dark font-bold rounded-xl text-lg flex items-center justify-center transition-transform active:scale-95">
-        Confirm Reservation
-      </button>
-</footer>
-</div>
-
-</body></html>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-text-primary-light dark:text-text-primary-dark"
+  >
+    <div class="flex flex-col min-h-screen">
+      <header
+        class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4"
+      >
+        <div class="flex items-center justify-between">
+          <button class="flex items-center justify-center w-10 h-10">
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+          <h1 class="text-lg font-bold">Confirmation</h1>
+          <div class="w-10 h-10"></div>
+        </div>
+      </header>
+      <main class="flex-grow px-4 pb-4 space-y-6">
+        <div class="p-5 rounded-xl bg-surface-light dark:bg-surface-dark">
+          <h2 class="text-xl font-bold mb-4">Reservation Details</h2>
+          <div class="space-y-3 text-base">
+            <div class="flex items-center">
+              <span
+                class="material-symbols-outlined mr-3 text-text-secondary-light dark:text-text-secondary-dark"
+                >group</span
+              >
+              <span>Party of 2</span>
+            </div>
+            <div class="flex items-center">
+              <span
+                class="material-symbols-outlined mr-3 text-text-secondary-light dark:text-text-secondary-dark"
+                >calendar_month</span
+              >
+              <span>Sat, Jul 20</span>
+            </div>
+            <div class="flex items-center">
+              <span
+                class="material-symbols-outlined mr-3 text-text-secondary-light dark:text-text-secondary-dark"
+                >schedule</span
+              >
+              <span>7:30 PM</span>
+            </div>
+            <div class="flex items-center">
+              <span
+                class="material-symbols-outlined mr-3 text-text-secondary-light dark:text-text-secondary-dark"
+                >storefront</span
+              >
+              <span class="font-semibold">The Hidden Gem</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-5 rounded-xl bg-surface-light dark:bg-surface-dark">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold">Your Information</h2>
+            <button class="text-sm font-semibold text-primary">Edit</button>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <label
+                class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1"
+                for="name"
+                >Name</label
+              >
+              <input
+                class="form-input w-full rounded-lg border-none bg-input-bg-light dark:bg-input-bg-dark h-12 px-4 focus:ring-2 focus:ring-primary/50 text-text-primary-light dark:text-text-primary-dark"
+                id="name"
+                readonly=""
+                type="text"
+                value="John Doe"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1"
+                for="email"
+                >Email</label
+              >
+              <input
+                class="form-input w-full rounded-lg border-none bg-input-bg-light dark:bg-input-bg-dark h-12 px-4 focus:ring-2 focus:ring-primary/50 text-text-primary-light dark:text-text-primary-dark"
+                id="email"
+                readonly=""
+                type="email"
+                value="johndoe@example.com"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1"
+                for="phone"
+                >Phone</label
+              >
+              <input
+                class="form-input w-full rounded-lg border-none bg-input-bg-light dark:bg-input-bg-dark h-12 px-4 focus:ring-2 focus:ring-primary/50 text-text-primary-light dark:text-text-primary-dark"
+                id="phone"
+                readonly=""
+                type="tel"
+                value="+1 (123) 456-7890"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1"
+                for="requests"
+                >Special Requests</label
+              >
+              <textarea
+                class="form-textarea w-full rounded-lg border-none bg-input-bg-light dark:bg-input-bg-dark p-4 focus:ring-2 focus:ring-primary/50 text-text-primary-light dark:text-text-primary-dark placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark"
+                id="requests"
+                placeholder="Add a note (optional)"
+                rows="4"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer
+        class="sticky bottom-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4"
+      >
+        <button
+          class="w-full h-14 bg-primary text-background-dark font-bold rounded-xl text-lg flex items-center justify-center transition-transform active:scale-95"
+        >
+          Confirm Reservation
+        </button>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,135 +1,275 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sypot Friends</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#0df2cc",
-                        "background-light": "#f5f8f8",
-                        "background-dark": "#10221f",
-                    },
-                    fontFamily: {
-                        "display": ["Plus Jakarta Sans"]
-                    },
-                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
-                },
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sypot Friends</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0df2cc',
+              'background-light': '#f5f8f8',
+              'background-dark': '#10221f',
             },
-        }
+            fontFamily: {
+              display: ['Plus Jakarta Sans'],
+            },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
     </script>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex h-auto min-h-screen w-full flex-col justify-between">
-<div class="flex-grow pb-28">
-<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-<div class="flex items-center p-4 justify-between">
-<div class="w-10"></div>
-<h1 class="text-lg font-bold text-slate-900 dark:text-white flex-1 text-center">Friends</h1>
-<button class="flex items-center justify-center h-10 w-10 text-slate-900 dark:text-white">
-<span class="material-symbols-outlined text-2xl">person_add</span>
-</button>
-</div>
-<div class="px-4 pb-3">
-<div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400">search</span>
-<input class="w-full rounded-lg bg-white dark:bg-slate-800 border-none pl-10 pr-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:ring-2 focus:ring-primary" placeholder="Search friends" type="text"/>
-</div>
-</div>
-</header>
-<main class="px-4">
-<section class="mt-4">
-<h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Suggested</h2>
-<div class="space-y-2">
-<div class="flex items-center gap-4 rounded-lg p-3 bg-white dark:bg-slate-800/50">
-<img alt="Ethan" class="h-14 w-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5DofCAnt8tacAukpwGMOKcjLQms6m7uTOHbq4BIqHr6VURkKP4IOZeYZWf-zxabi0spGWm7ek2FoZoNuN7aVrQxEbA8-Y7f-fAzchQ0Im4NdO9klIRwFGf3ri5TefxdoAnyH5F5_Y_JI-eSHoa6a7S17oYxoeH3UGubiVYuaEpfiXXtLSkcrvUxwSnro21xIv2dDhFg3PdeLDJb3aNmz9WHEsk9hSmnxFNbtPU6niOj9WtV64cl2XhA3hE8uU5jmJOjwhGB_nO7o"/>
-<div class="flex-grow">
-<p class="font-semibold text-slate-900 dark:text-white">Ethan</p>
-<p class="text-sm text-slate-500 dark:text-slate-400">12 mutual friends</p>
-</div>
-<button class="bg-primary/20 text-primary font-bold py-2 px-4 rounded-full text-sm">Add</button>
-</div>
-<div class="flex items-center gap-4 rounded-lg p-3 bg-white dark:bg-slate-800/50">
-<img alt="Sophia" class="h-14 w-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr-n2zyG7TctbHUjWJ3QfpnFICXafcSRsVQsJzTHn4CmXTLuWemmuLRwbyHauB1EfXrZyHWCIZ8jCML1wWP9UDHrJnCAyvvY2AmQdlenbvLphkwd7AM18__QEM8GPyiHQOz_hiMWHqAd5duu65FyCHNeDSmDS6UEjmPbPOjPrXq9G8XZ3_LgtfFNNym2cDnB3W032yFYWyC8Y_aFlQFGP_SucTol0P1kRKyF1cMvYUaMbX1zstTqyDwpttW2srff373qQvtdxsf9w"/>
-<div class="flex-grow">
-<p class="font-semibold text-slate-900 dark:text-white">Sophia</p>
-<p class="text-sm text-slate-500 dark:text-slate-400">10 mutual friends</p>
-</div>
-<button class="bg-primary/20 text-primary font-bold py-2 px-4 rounded-full text-sm">Add</button>
-</div>
-<div class="flex items-center gap-4 rounded-lg p-3 bg-white dark:bg-slate-800/50">
-<img alt="Liam" class="h-14 w-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9nhCBw8Q-EYIwdmR1Ku5u--h5MEEEMHq0axdS7yPYXzi0p2RTgqIVcj_5kQ1PPr94luxhusx9fjm27ucb3PTnvhdgTw5-3V05ZwPNPQmPauOuXBsE4X-i0bUfP4zkd9MKAdp2yCMCNji_U-djOJmcjrigSHTDmeWoI3z38hypdc47_JMuFFvXkQ8zuyltTEam0XUhLKTh3cu82BOAHO3RjAvMUvkdhrFApTCj9nLyoozfoqmE6yZSR0RHXl_6RBAdxuO4_3wuApU"/>
-<div class="flex-grow">
-<p class="font-semibold text-slate-900 dark:text-white">Liam</p>
-<p class="text-sm text-slate-500 dark:text-slate-400">8 mutual friends</p>
-</div>
-<button class="bg-primary/20 text-primary font-bold py-2 px-4 rounded-full text-sm">Add</button>
-</div>
-</div>
-</section>
-<section class="mt-6">
-<h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">All Friends (124)</h2>
-<div class="space-y-3">
-<div class="flex items-center gap-4">
-<img alt="Ava" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh7FeQY7U9TjsJOQz4Fz2Ryl2NIZw3P3OGUL_8f1y3LHtap-Om83tIHN8l9EHF2g4hBkBtcj4OM6tesPKIkM39z8bMkhXAU023DHZ1O6QUe_z3vg9-KfHwguu53ecIxqVj3asLoEh1qYgc74d5HZLDYn5dLDOIb28J-MGSogSLcyS9YrnsTf6rmeRBsGXlNGjmS4LnxI0EHEKmUGgA5DY3rxg9XGAfuVcishhBwL-iHXEX4jqakw3TEOTwGtkaF8EojI9sU2N0Ic4"/>
-<p class="flex-grow font-medium text-slate-800 dark:text-slate-200">Ava</p>
-<button class="text-slate-400 dark:text-slate-500"><span class="material-symbols-outlined">more_horiz</span></button>
-</div>
-<div class="flex items-center gap-4">
-<img alt="Noah" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwT7KhGSqXPVXYDvKuxzRF1Wke1n-5uT3WDnklpRA83aABKzw8Ew3oj77SKQ7PPZtYtjbypRtsCVe-FNn521Ts4LG-wPl0gX09myi3B7PC6aHBSTbBAINumxEDkao7ILTiMW23_qnzgxUbVh9Msd2tSD_hgMzTLV6-rndrb91Mi_3AjXIlZyGUfYEJn6wKHa-vnFmcJom6-Vg2R64z1Jp4IDACdXmuo5VLtGVmDC8urM-Q_1WAzvp6MYJlFKtKsFU5kHtcqaqol-s"/>
-<p class="flex-grow font-medium text-slate-800 dark:text-slate-200">Noah</p>
-<button class="text-slate-400 dark:text-slate-500"><span class="material-symbols-outlined">more_horiz</span></button>
-</div>
-<div class="flex items-center gap-4">
-<img alt="Isabella" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQS1TREX8UYBWSJVEGBgd_f2N24IrZMPmOWrByTi5vZ-admaB__QbFPvyzI4pjatC-bNdeVcBDKYCvnvDysAjSnQj0pVgRLiV7yOVtc9j2wV3SP38nJ7w2hYMlJ7yWi_Vx3S2bo_ecFTChTj2B6BeRDJCTn4ExLf5Mob374ho2Yl9-VrA8W3ZoXhvA-LbkWQ_kt_ewFS9apomzxWOvERODg6OLLr4FPfgV0WwIkilBviv8phAgkfME06JI1eLs85evNRNMx5Y8ng8"/>
-<p class="flex-grow font-medium text-slate-800 dark:text-slate-200">Isabella</p>
-<button class="text-slate-400 dark:text-slate-500"><span class="material-symbols-outlined">more_horiz</span></button>
-</div>
-<div class="flex items-center gap-4">
-<img alt="Oliver" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZEbMd8VXWbAPl6PFywfXOrxgm6Rxo4Tqt8BtBZY0GaUlQEb7C2H2FsSknTCiCkSJLxezj2j1rlfOV0uKFAp8xurPt0PAfmUA26dtDefXCEcEKpTpbOfDlOw2zbhn1LDgn_aKBtbN8e0fKg8PUWycwwC6ZX35J9bHz1dSS4Hrk7isSpDul44gDcl1jAnZtoAy8pTUcfCoGyi6Vp6lrYtS0WhHHvm5xtY7n8Vv4dk7Y2DXCL3OpFsuztV6j3KS00iZTLXnkZBensWs"/>
-<p class="flex-grow font-medium text-slate-800 dark:text-slate-200">Oliver</p>
-<button class="text-slate-400 dark:text-slate-500"><span class="material-symbols-outlined">more_horiz</span></button>
-</div>
-</div>
-</section>
-</main>
-</div>
-<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-t border-slate-200 dark:border-slate-800 pb-safe-area-bottom">
-<div class="flex justify-around items-start h-full max-w-md mx-auto pt-2">
-<a class="flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
-<span class="material-symbols-outlined">home</span>
-<span class="text-xs font-medium">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
-<span class="material-symbols-outlined">explore</span>
-<span class="text-xs font-medium">Explore</span>
-</a>
-<a class="flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
-<span class="material-symbols-outlined text-3xl -mt-1">add_circle</span>
-</a>
-<a class="flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
-<span class="material-symbols-outlined">chat_bubble</span>
-<span class="text-xs font-medium">Chat</span>
-</a>
-<a class="flex flex-col items-center justify-center gap-1 text-primary" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
-<span class="text-xs font-bold">Profile</span>
-</a>
-</div>
-</nav>
-</div>
-
-</body></html>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col justify-between"
+    >
+      <div class="flex-grow pb-28">
+        <header
+          class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
+        >
+          <div class="flex items-center p-4 justify-between">
+            <div class="w-10"></div>
+            <h1
+              class="text-lg font-bold text-slate-900 dark:text-white flex-1 text-center"
+            >
+              Friends
+            </h1>
+            <button
+              class="flex items-center justify-center h-10 w-10 text-slate-900 dark:text-white"
+            >
+              <span class="material-symbols-outlined text-2xl">person_add</span>
+            </button>
+          </div>
+          <div class="px-4 pb-3">
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400"
+                >search</span
+              >
+              <input
+                class="w-full rounded-lg bg-white dark:bg-slate-800 border-none pl-10 pr-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:ring-2 focus:ring-primary"
+                placeholder="Search friends"
+                type="text"
+              />
+            </div>
+          </div>
+        </header>
+        <main class="px-4">
+          <section class="mt-4">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
+              Suggested
+            </h2>
+            <div class="space-y-2">
+              <div
+                class="flex items-center gap-4 rounded-lg p-3 bg-white dark:bg-slate-800/50"
+              >
+                <img
+                  alt="Ethan"
+                  class="h-14 w-14 rounded-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5DofCAnt8tacAukpwGMOKcjLQms6m7uTOHbq4BIqHr6VURkKP4IOZeYZWf-zxabi0spGWm7ek2FoZoNuN7aVrQxEbA8-Y7f-fAzchQ0Im4NdO9klIRwFGf3ri5TefxdoAnyH5F5_Y_JI-eSHoa6a7S17oYxoeH3UGubiVYuaEpfiXXtLSkcrvUxwSnro21xIv2dDhFg3PdeLDJb3aNmz9WHEsk9hSmnxFNbtPU6niOj9WtV64cl2XhA3hE8uU5jmJOjwhGB_nO7o"
+                />
+                <div class="flex-grow">
+                  <p class="font-semibold text-slate-900 dark:text-white">
+                    Ethan
+                  </p>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">
+                    12 mutual friends
+                  </p>
+                </div>
+                <button
+                  class="bg-primary/20 text-primary font-bold py-2 px-4 rounded-full text-sm"
+                >
+                  Add
+                </button>
+              </div>
+              <div
+                class="flex items-center gap-4 rounded-lg p-3 bg-white dark:bg-slate-800/50"
+              >
+                <img
+                  alt="Sophia"
+                  class="h-14 w-14 rounded-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr-n2zyG7TctbHUjWJ3QfpnFICXafcSRsVQsJzTHn4CmXTLuWemmuLRwbyHauB1EfXrZyHWCIZ8jCML1wWP9UDHrJnCAyvvY2AmQdlenbvLphkwd7AM18__QEM8GPyiHQOz_hiMWHqAd5duu65FyCHNeDSmDS6UEjmPbPOjPrXq9G8XZ3_LgtfFNNym2cDnB3W032yFYWyC8Y_aFlQFGP_SucTol0P1kRKyF1cMvYUaMbX1zstTqyDwpttW2srff373qQvtdxsf9w"
+                />
+                <div class="flex-grow">
+                  <p class="font-semibold text-slate-900 dark:text-white">
+                    Sophia
+                  </p>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">
+                    10 mutual friends
+                  </p>
+                </div>
+                <button
+                  class="bg-primary/20 text-primary font-bold py-2 px-4 rounded-full text-sm"
+                >
+                  Add
+                </button>
+              </div>
+              <div
+                class="flex items-center gap-4 rounded-lg p-3 bg-white dark:bg-slate-800/50"
+              >
+                <img
+                  alt="Liam"
+                  class="h-14 w-14 rounded-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9nhCBw8Q-EYIwdmR1Ku5u--h5MEEEMHq0axdS7yPYXzi0p2RTgqIVcj_5kQ1PPr94luxhusx9fjm27ucb3PTnvhdgTw5-3V05ZwPNPQmPauOuXBsE4X-i0bUfP4zkd9MKAdp2yCMCNji_U-djOJmcjrigSHTDmeWoI3z38hypdc47_JMuFFvXkQ8zuyltTEam0XUhLKTh3cu82BOAHO3RjAvMUvkdhrFApTCj9nLyoozfoqmE6yZSR0RHXl_6RBAdxuO4_3wuApU"
+                />
+                <div class="flex-grow">
+                  <p class="font-semibold text-slate-900 dark:text-white">
+                    Liam
+                  </p>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">
+                    8 mutual friends
+                  </p>
+                </div>
+                <button
+                  class="bg-primary/20 text-primary font-bold py-2 px-4 rounded-full text-sm"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </section>
+          <section class="mt-6">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
+              All Friends (124)
+            </h2>
+            <div class="space-y-3">
+              <div class="flex items-center gap-4">
+                <img
+                  alt="Ava"
+                  class="h-12 w-12 rounded-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh7FeQY7U9TjsJOQz4Fz2Ryl2NIZw3P3OGUL_8f1y3LHtap-Om83tIHN8l9EHF2g4hBkBtcj4OM6tesPKIkM39z8bMkhXAU023DHZ1O6QUe_z3vg9-KfHwguu53ecIxqVj3asLoEh1qYgc74d5HZLDYn5dLDOIb28J-MGSogSLcyS9YrnsTf6rmeRBsGXlNGjmS4LnxI0EHEKmUGgA5DY3rxg9XGAfuVcishhBwL-iHXEX4jqakw3TEOTwGtkaF8EojI9sU2N0Ic4"
+                />
+                <p
+                  class="flex-grow font-medium text-slate-800 dark:text-slate-200"
+                >
+                  Ava
+                </p>
+                <button class="text-slate-400 dark:text-slate-500">
+                  <span class="material-symbols-outlined">more_horiz</span>
+                </button>
+              </div>
+              <div class="flex items-center gap-4">
+                <img
+                  alt="Noah"
+                  class="h-12 w-12 rounded-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwT7KhGSqXPVXYDvKuxzRF1Wke1n-5uT3WDnklpRA83aABKzw8Ew3oj77SKQ7PPZtYtjbypRtsCVe-FNn521Ts4LG-wPl0gX09myi3B7PC6aHBSTbBAINumxEDkao7ILTiMW23_qnzgxUbVh9Msd2tSD_hgMzTLV6-rndrb91Mi_3AjXIlZyGUfYEJn6wKHa-vnFmcJom6-Vg2R64z1Jp4IDACdXmuo5VLtGVmDC8urM-Q_1WAzvp6MYJlFKtKsFU5kHtcqaqol-s"
+                />
+                <p
+                  class="flex-grow font-medium text-slate-800 dark:text-slate-200"
+                >
+                  Noah
+                </p>
+                <button class="text-slate-400 dark:text-slate-500">
+                  <span class="material-symbols-outlined">more_horiz</span>
+                </button>
+              </div>
+              <div class="flex items-center gap-4">
+                <img
+                  alt="Isabella"
+                  class="h-12 w-12 rounded-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQS1TREX8UYBWSJVEGBgd_f2N24IrZMPmOWrByTi5vZ-admaB__QbFPvyzI4pjatC-bNdeVcBDKYCvnvDysAjSnQj0pVgRLiV7yOVtc9j2wV3SP38nJ7w2hYMlJ7yWi_Vx3S2bo_ecFTChTj2B6BeRDJCTn4ExLf5Mob374ho2Yl9-VrA8W3ZoXhvA-LbkWQ_kt_ewFS9apomzxWOvERODg6OLLr4FPfgV0WwIkilBviv8phAgkfME06JI1eLs85evNRNMx5Y8ng8"
+                />
+                <p
+                  class="flex-grow font-medium text-slate-800 dark:text-slate-200"
+                >
+                  Isabella
+                </p>
+                <button class="text-slate-400 dark:text-slate-500">
+                  <span class="material-symbols-outlined">more_horiz</span>
+                </button>
+              </div>
+              <div class="flex items-center gap-4">
+                <img
+                  alt="Oliver"
+                  class="h-12 w-12 rounded-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZEbMd8VXWbAPl6PFywfXOrxgm6Rxo4Tqt8BtBZY0GaUlQEb7C2H2FsSknTCiCkSJLxezj2j1rlfOV0uKFAp8xurPt0PAfmUA26dtDefXCEcEKpTpbOfDlOw2zbhn1LDgn_aKBtbN8e0fKg8PUWycwwC6ZX35J9bHz1dSS4Hrk7isSpDul44gDcl1jAnZtoAy8pTUcfCoGyi6Vp6lrYtS0WhHHvm5xtY7n8Vv4dk7Y2DXCL3OpFsuztV6j3KS00iZTLXnkZBensWs"
+                />
+                <p
+                  class="flex-grow font-medium text-slate-800 dark:text-slate-200"
+                >
+                  Oliver
+                </p>
+                <button class="text-slate-400 dark:text-slate-500">
+                  <span class="material-symbols-outlined">more_horiz</span>
+                </button>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+      <nav
+        class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-t border-slate-200 dark:border-slate-800 pb-safe-area-bottom"
+      >
+        <div
+          class="flex justify-around items-start h-full max-w-md mx-auto pt-2"
+        >
+          <a
+            class="flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-xs font-medium">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">explore</span>
+            <span class="text-xs font-medium">Explore</span>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-3xl -mt-1"
+              >add_circle</span
+            >
+          </a>
+          <a
+            class="flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">chat_bubble</span>
+            <span class="text-xs font-medium">Chat</span>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center gap-1 text-primary"
+            href="#"
+          >
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: 'FILL' 1"
+              >person</span
+            >
+            <span class="text-xs font-bold">Profile</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>
