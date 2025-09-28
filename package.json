@@ -42,5 +42,12 @@
   },
   "engines": {
     "node": ">=16"
+  },
+  "codegenConfig": {
+    "name": "SypotApp",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "com.sypotapp"
+    }
   }
 }

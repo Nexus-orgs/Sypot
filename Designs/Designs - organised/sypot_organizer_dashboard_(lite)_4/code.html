@@ -1,127 +1,232 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sypot Organizer Dashboard</title>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#0df2cc",
-                        "background-light": "#f5f8f8",
-                        "background-dark": "#10221f",
-                    },
-                    fontFamily: {
-                        "display": ["Plus Jakarta Sans"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                },
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sypot Organizer Dashboard</title>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0df2cc',
+              'background-light': '#f5f8f8',
+              'background-dark': '#10221f',
             },
-        }
+            fontFamily: {
+              display: ['Plus Jakarta Sans'],
+            },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
     </script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-zinc-100">
-<div class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden">
-<div class="flex-grow">
-<header class="sticky top-0 z-10 flex items-center justify-between bg-background-light/80 p-4 pb-3 backdrop-blur-sm dark:bg-background-dark/80">
-<button class="flex size-10 items-center justify-center rounded-full text-zinc-900 dark:text-zinc-100">
-<span class="material-symbols-outlined text-2xl">arrow_back</span>
-</button>
-<h1 class="text-xl font-bold">Your Events</h1>
-<div class="size-10"></div>
-</header>
-<main class="px-4 pb-24">
-<section class="py-4">
-<h2 class="text-lg font-bold text-zinc-900 dark:text-zinc-100">Active</h2>
-<div class="mt-3 space-y-3">
-<div class="flex items-center gap-4 rounded-lg bg-white p-3 shadow-sm dark:bg-zinc-800/50">
-<div class="aspect-square size-16 shrink-0 overflow-hidden rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBbhZKlM2rLBuOYrymiHNx-tLTCoEZJBmUtcT7Z7CVlXSgJM80YggEUg_PG4MKGBje4X9FxkVsH8a-0WYftGJa0JPWnd7qYt4bP1Gsq0R9gzZqUf2rGZGdpmaH5GSNs5KtaVCNX89aexbM3qJgnUVixxhnzpkYwPtFLfDsXQAAe-_b3VEd1tdpshSqogmmnTE6xcZNGGiQv8xcw0p0PLG1KWM4gECiDzZmHGUS2EzhYQePk300MRRKzy-Tu6iJlsLyC9Vn1VuM_P3E");'></div>
-<div class="flex-grow">
-<p class="font-bold text-zinc-900 dark:text-zinc-100">Summer Music Festival</p>
-<p class="text-sm text-zinc-500 dark:text-zinc-400">Fri, Jul 12 • 7:00 PM</p>
-</div>
-<button class="flex size-9 items-center justify-center rounded-full text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-700">
-<span class="material-symbols-outlined text-xl">more_horiz</span>
-</button>
-</div>
-<div class="flex items-center gap-4 rounded-lg bg-white p-3 shadow-sm dark:bg-zinc-800/50">
-<div class="aspect-square size-16 shrink-0 overflow-hidden rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALzQKHuotbMEaafywV7TpzRV8ZysXI8kAptu4i2Tvab1gWyrXMV2da7ximfafVjDmGnuetaVg5oGh8knOljelglMgJlfv5OMGEnCbFZQXd3ImJ6hchDJa5t-aOGWhGdbV0De75Nhct6sxy-3AJPMOKNBF3dgzar_Kmze_gIqS1Ibea8wSYbR_0TZlI-gHujY9qxi9HO0BMHo0FaxzXqwuyADq1w8lES_lc-DodNX5Hsvzaoxq4K_DxRyLeBlaqLAzFlp3KmRFAfz0");'></div>
-<div class="flex-grow">
-<p class="font-bold text-zinc-900 dark:text-zinc-100">Art Exhibition Opening</p>
-<p class="text-sm text-zinc-500 dark:text-zinc-400">Sat, Jul 20 • 8:00 PM</p>
-</div>
-<button class="flex size-9 items-center justify-center rounded-full text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-700">
-<span class="material-symbols-outlined text-xl">more_horiz</span>
-</button>
-</div>
-</div>
-</section>
-<section class="py-4">
-<h2 class="text-lg font-bold text-zinc-900 dark:text-zinc-100">Past</h2>
-<div class="mt-3 space-y-3">
-<div class="flex items-center gap-4 rounded-lg bg-white p-3 opacity-60 shadow-sm dark:bg-zinc-800/50">
-<div class="aspect-square size-16 shrink-0 overflow-hidden rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdiStanMoa8NntgyQAGmFF2Nx1CYr59vgWt1gjvPnx_M9dKT7iLhFJhbSibHwsVrFDp-G-beIqSIFw8dQ9tEtXBZnmsHcS7PxeCXAWK0cjfqRMx_c-nSYO7PfIrHLbwnbjd0von4bT-Ljd0AkQo0GJ5QHR4IVpam5WdRIk_fKZNLiMsq9sBxy4TJEyqu8oqnw_Cx98FDp_YuKr0EzlgK4LZSDq_b74bBabTYmmZjCmVBk104JMvkfnfS2gSAQXKhdBDrt-t3RbIcM");'></div>
-<div class="flex-grow">
-<p class="font-bold text-zinc-900 dark:text-zinc-100">Tech Meetup</p>
-<p class="text-sm text-zinc-500 dark:text-zinc-400">Jun 15 • 6:00 PM</p>
-</div>
-<button class="flex size-9 items-center justify-center rounded-full text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-700">
-<span class="material-symbols-outlined text-xl">more_horiz</span>
-</button>
-</div>
-<div class="flex items-center gap-4 rounded-lg bg-white p-3 opacity-60 shadow-sm dark:bg-zinc-800/50">
-<div class="aspect-square size-16 shrink-0 overflow-hidden rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5Hcrru8YemSHnZrvpRBJA4nBmton18Zy8mtuPQoS6XSq_QqcHkutvNtNCrniG2ab1ug6YmtiwZILfDR8BYoSdqx7z6Qkd7ZMk60dUng9boQN4Y_5yeJiV9YQCqI6fmGFTAzzrmKWzy5oMYuCwqPwt6lcEeyUiQnZGTUzHHMghUjtoZoTj_UD3J5Nnba7Rw9XnHQz9gQC4hcxVIMJ3he446Iw-Lb4z4ke7s-Dm2tPcJGaEKHtTytfQzrYHIOUBPYULVu0wgsyU_CE");'></div>
-<div class="flex-grow">
-<p class="font-bold text-zinc-900 dark:text-zinc-100">Book Club Discussion</p>
-<p class="text-sm text-zinc-500 dark:text-zinc-400">May 22 • 5:30 PM</p>
-</div>
-<button class="flex size-9 items-center justify-center rounded-full text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-700">
-<span class="material-symbols-outlined text-xl">more_horiz</span>
-</button>
-</div>
-</div>
-</section>
-</main>
-</div>
-<footer class="fixed inset-x-0 bottom-0 border-t border-zinc-200 bg-background-light/90 pb-safe-area-inset-bottom pt-2 backdrop-blur-sm dark:border-zinc-800 dark:bg-background-dark/90">
-<div class="flex justify-around">
-<a class="flex flex-1 flex-col items-center justify-center gap-1 text-zinc-500 dark:text-zinc-400" href="#">
-<span class="material-symbols-outlined text-2xl">home</span>
-<p class="text-xs font-medium">Home</p>
-</a>
-<a class="flex flex-1 flex-col items-center justify-center gap-1 text-zinc-500 dark:text-zinc-400" href="#">
-<span class="material-symbols-outlined text-2xl">search</span>
-<p class="text-xs font-medium">Explore</p>
-</a>
-<a class="flex flex-1 flex-col items-center justify-center gap-1 text-zinc-500 dark:text-zinc-400" href="#">
-<span class="material-symbols-outlined text-5xl text-primary -translate-y-3 rounded-full bg-background-light p-2 shadow-lg dark:bg-background-dark">add_circle</span>
-</a>
-<a class="flex flex-1 flex-col items-center justify-center gap-1 text-zinc-500 dark:text-zinc-400" href="#">
-<span class="material-symbols-outlined text-2xl">chat_bubble</span>
-<p class="text-xs font-medium">Chat</p>
-</a>
-<a class="flex flex-1 flex-col items-center justify-center gap-1 font-bold text-zinc-900 dark:text-white" href="#">
-<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">person</span>
-<p class="text-xs font-medium">Profile</p>
-</a>
-</div>
-</footer>
-</div>
-
-</body></html>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-zinc-100"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden"
+    >
+      <div class="flex-grow">
+        <header
+          class="sticky top-0 z-10 flex items-center justify-between bg-background-light/80 p-4 pb-3 backdrop-blur-sm dark:bg-background-dark/80"
+        >
+          <button
+            class="flex size-10 items-center justify-center rounded-full text-zinc-900 dark:text-zinc-100"
+          >
+            <span class="material-symbols-outlined text-2xl">arrow_back</span>
+          </button>
+          <h1 class="text-xl font-bold">Your Events</h1>
+          <div class="size-10"></div>
+        </header>
+        <main class="px-4 pb-24">
+          <section class="py-4">
+            <h2 class="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+              Active
+            </h2>
+            <div class="mt-3 space-y-3">
+              <div
+                class="flex items-center gap-4 rounded-lg bg-white p-3 shadow-sm dark:bg-zinc-800/50"
+              >
+                <div
+                  class="aspect-square size-16 shrink-0 overflow-hidden rounded-lg bg-cover bg-center"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbhZKlM2rLBuOYrymiHNx-tLTCoEZJBmUtcT7Z7CVlXSgJM80YggEUg_PG4MKGBje4X9FxkVsH8a-0WYftGJa0JPWnd7qYt4bP1Gsq0R9gzZqUf2rGZGdpmaH5GSNs5KtaVCNX89aexbM3qJgnUVixxhnzpkYwPtFLfDsXQAAe-_b3VEd1tdpshSqogmmnTE6xcZNGGiQv8xcw0p0PLG1KWM4gECiDzZmHGUS2EzhYQePk300MRRKzy-Tu6iJlsLyC9Vn1VuM_P3E');
+                  "
+                ></div>
+                <div class="flex-grow">
+                  <p class="font-bold text-zinc-900 dark:text-zinc-100">
+                    Summer Music Festival
+                  </p>
+                  <p class="text-sm text-zinc-500 dark:text-zinc-400">
+                    Fri, Jul 12 • 7:00 PM
+                  </p>
+                </div>
+                <button
+                  class="flex size-9 items-center justify-center rounded-full text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-700"
+                >
+                  <span class="material-symbols-outlined text-xl"
+                    >more_horiz</span
+                  >
+                </button>
+              </div>
+              <div
+                class="flex items-center gap-4 rounded-lg bg-white p-3 shadow-sm dark:bg-zinc-800/50"
+              >
+                <div
+                  class="aspect-square size-16 shrink-0 overflow-hidden rounded-lg bg-cover bg-center"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALzQKHuotbMEaafywV7TpzRV8ZysXI8kAptu4i2Tvab1gWyrXMV2da7ximfafVjDmGnuetaVg5oGh8knOljelglMgJlfv5OMGEnCbFZQXd3ImJ6hchDJa5t-aOGWhGdbV0De75Nhct6sxy-3AJPMOKNBF3dgzar_Kmze_gIqS1Ibea8wSYbR_0TZlI-gHujY9qxi9HO0BMHo0FaxzXqwuyADq1w8lES_lc-DodNX5Hsvzaoxq4K_DxRyLeBlaqLAzFlp3KmRFAfz0');
+                  "
+                ></div>
+                <div class="flex-grow">
+                  <p class="font-bold text-zinc-900 dark:text-zinc-100">
+                    Art Exhibition Opening
+                  </p>
+                  <p class="text-sm text-zinc-500 dark:text-zinc-400">
+                    Sat, Jul 20 • 8:00 PM
+                  </p>
+                </div>
+                <button
+                  class="flex size-9 items-center justify-center rounded-full text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-700"
+                >
+                  <span class="material-symbols-outlined text-xl"
+                    >more_horiz</span
+                  >
+                </button>
+              </div>
+            </div>
+          </section>
+          <section class="py-4">
+            <h2 class="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+              Past
+            </h2>
+            <div class="mt-3 space-y-3">
+              <div
+                class="flex items-center gap-4 rounded-lg bg-white p-3 opacity-60 shadow-sm dark:bg-zinc-800/50"
+              >
+                <div
+                  class="aspect-square size-16 shrink-0 overflow-hidden rounded-lg bg-cover bg-center"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdiStanMoa8NntgyQAGmFF2Nx1CYr59vgWt1gjvPnx_M9dKT7iLhFJhbSibHwsVrFDp-G-beIqSIFw8dQ9tEtXBZnmsHcS7PxeCXAWK0cjfqRMx_c-nSYO7PfIrHLbwnbjd0von4bT-Ljd0AkQo0GJ5QHR4IVpam5WdRIk_fKZNLiMsq9sBxy4TJEyqu8oqnw_Cx98FDp_YuKr0EzlgK4LZSDq_b74bBabTYmmZjCmVBk104JMvkfnfS2gSAQXKhdBDrt-t3RbIcM');
+                  "
+                ></div>
+                <div class="flex-grow">
+                  <p class="font-bold text-zinc-900 dark:text-zinc-100">
+                    Tech Meetup
+                  </p>
+                  <p class="text-sm text-zinc-500 dark:text-zinc-400">
+                    Jun 15 • 6:00 PM
+                  </p>
+                </div>
+                <button
+                  class="flex size-9 items-center justify-center rounded-full text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-700"
+                >
+                  <span class="material-symbols-outlined text-xl"
+                    >more_horiz</span
+                  >
+                </button>
+              </div>
+              <div
+                class="flex items-center gap-4 rounded-lg bg-white p-3 opacity-60 shadow-sm dark:bg-zinc-800/50"
+              >
+                <div
+                  class="aspect-square size-16 shrink-0 overflow-hidden rounded-lg bg-cover bg-center"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5Hcrru8YemSHnZrvpRBJA4nBmton18Zy8mtuPQoS6XSq_QqcHkutvNtNCrniG2ab1ug6YmtiwZILfDR8BYoSdqx7z6Qkd7ZMk60dUng9boQN4Y_5yeJiV9YQCqI6fmGFTAzzrmKWzy5oMYuCwqPwt6lcEeyUiQnZGTUzHHMghUjtoZoTj_UD3J5Nnba7Rw9XnHQz9gQC4hcxVIMJ3he446Iw-Lb4z4ke7s-Dm2tPcJGaEKHtTytfQzrYHIOUBPYULVu0wgsyU_CE');
+                  "
+                ></div>
+                <div class="flex-grow">
+                  <p class="font-bold text-zinc-900 dark:text-zinc-100">
+                    Book Club Discussion
+                  </p>
+                  <p class="text-sm text-zinc-500 dark:text-zinc-400">
+                    May 22 • 5:30 PM
+                  </p>
+                </div>
+                <button
+                  class="flex size-9 items-center justify-center rounded-full text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-700"
+                >
+                  <span class="material-symbols-outlined text-xl"
+                    >more_horiz</span
+                  >
+                </button>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+      <footer
+        class="fixed inset-x-0 bottom-0 border-t border-zinc-200 bg-background-light/90 pb-safe-area-inset-bottom pt-2 backdrop-blur-sm dark:border-zinc-800 dark:bg-background-dark/90"
+      >
+        <div class="flex justify-around">
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-zinc-500 dark:text-zinc-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-2xl">home</span>
+            <p class="text-xs font-medium">Home</p>
+          </a>
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-zinc-500 dark:text-zinc-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-2xl">search</span>
+            <p class="text-xs font-medium">Explore</p>
+          </a>
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-zinc-500 dark:text-zinc-400"
+            href="#"
+          >
+            <span
+              class="material-symbols-outlined text-5xl text-primary -translate-y-3 rounded-full bg-background-light p-2 shadow-lg dark:bg-background-dark"
+              >add_circle</span
+            >
+          </a>
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-zinc-500 dark:text-zinc-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-2xl">chat_bubble</span>
+            <p class="text-xs font-medium">Chat</p>
+          </a>
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 font-bold text-zinc-900 dark:text-white"
+            href="#"
+          >
+            <span
+              class="material-symbols-outlined text-2xl"
+              style="font-variation-settings: 'FILL' 1"
+              >person</span
+            >
+            <p class="text-xs font-medium">Profile</p>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

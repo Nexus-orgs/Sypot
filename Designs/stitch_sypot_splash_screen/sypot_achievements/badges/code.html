@@ -1,163 +1,384 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sypot Achievements</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#0df2cc",
-                        "background-light": "#f5f8f8",
-                        "background-dark": "#10221f",
-                    },
-                    fontFamily: {
-                        "display": ["Plus Jakarta Sans"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                },
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sypot Achievements</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0df2cc',
+              'background-light': '#f5f8f8',
+              'background-dark': '#10221f',
             },
-        }
+            fontFamily: {
+              display: ['Plus Jakarta Sans'],
+            },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
     </script>
-<style>
-        .saturate-0 { filter: saturate(0); }
+    <style>
+      .saturate-0 {
+        filter: saturate(0);
+      }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden">
-<div class="flex-grow">
-<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-<div class="flex items-center p-4">
-<button class="text-black dark:text-white">
-<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
-</svg>
-</button>
-<h1 class="flex-1 text-center text-lg font-bold text-black dark:text-white pr-6">My Achievements</h1>
-</div>
-</header>
-<main class="p-4">
-<div class="text-center mb-6">
-<p class="text-4xl font-extrabold text-primary">12</p>
-<p class="text-base font-medium text-black/60 dark:text-white/60">Badges Earned</p>
-</div>
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-<div class="flex flex-col items-center gap-2">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCNQIwwLKd3vzNFuoOEF_RulvpdEb-Y3Bl7wjlL3TkM8cJcj3LTyD8EbaHUjzAapC7FlBw-KpxhkLQN9U5ZxAXzgHaCglHjKO_pCYI3BMW7FQKOCzmuSbINs0mYgh247qBWCNYGwPmFX4J4VBdtuqTKBtmpuSurYC9fMoGsHl7a7trZ0sP10sMqbWQokI-kamlJd5o-wf9CpHc02Q-oeBkgUr-iRaTAoatEADOcx4RspCunr7EJ0C1N_yesVpaSZqzpMkF15Ze5bI");'></div>
-<p class="text-sm font-semibold text-black dark:text-white">Explorer</p>
-</div>
-<div class="flex flex-col items-center gap-2">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHIRkFMcf179TbHcvcwZ0ZaZVsGI9sGGSv_GHcgfAfLp4TKOfZfPqhLxNj3zyKUU9afjnheOwecLP2Bn53m5ZP5Fxpu97-mY9WCHcEKJvrOGF4R_e-8odX1gnhN5mdzvUFWljcsAA7Z5LrUwUedZJpE_886xDrucN1XAcigVm4rzb54bsYG-iy1OKQ1JaDQ3zGAb9YPoZngG-ib-tOoc9QCKdiekcXb3Wx1b-tv66d0zwbwVTdsPF2xYwV2tP8coeAHnA7Fdgy__c");'></div>
-<p class="text-sm font-semibold text-black dark:text-white">Social Butterfly</p>
-</div>
-<div class="flex flex-col items-center gap-2">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBEkFSKF7nAMThzmz4hdqT8IF2DrhotjDLFkwnVCVIYkJpTDE3TWQlQhjKCgBlVtdjjguDFpQ2OuRhBeO-vMDj3rC_YDauQB0Q4JGevv7qmKAXVvI7dIoT810zShi92IemfDwIz_EJdXhwGqvsRG7_aGQW71-DDPlqB3enjhJNjLivx4sGJY_1JESnxIhtcagmqY_WqQKR5Bo0X-lYdwyIOLV6RHh59W5TUQ8uVkXWH5TB9zYID9R4RcyjpiRl9GWxqxBUsraEHtL8");'></div>
-<p class="text-sm font-semibold text-black dark:text-white">Night Owl</p>
-</div>
-<div class="flex flex-col items-center gap-2">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC6FJvp6kRPs4zqv-qYS--CDTIWDsZIrHff6o5tDVhGSWyMmRkZRuUjuxJXuetT-zoId-o9NuSxJji4hHGrAb09zWw4kz_ilKLAE0afmfQS0LzGL1fbi1LAV9gOYb2LsSmzMqdIzL0BPhh2q5wyF-YUh5Wtg_TSwC3yAYU7E7eAA0qYJElrTPvgFhpxX5c270I2QzyR4oeK_QIUXFxc5PdkJLFpXr5oPkzESUrcCgHq7yCqQF2qaeTfTYduVlji1KYaU66bKIkS_ZM");'></div>
-<p class="text-sm font-semibold text-black dark:text-white">Foodie</p>
-</div>
-<div class="flex flex-col items-center gap-2">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUYDocw_gzFuKV0isM55jJAT6ZLVWj7XiRgtW45ucLw3Gwbia_qRCN2TcEoS_M3MbLv0FqR-5boDu88LdxkYShVTluuKo5a496qMY0eZ92ALh6czmXVCQCzJUBNX3wCstoupFAaMl-Xv-LHZEPF01PWxBUvue2SNEwLIgL1fDzC7eN65tKjDu9tYVkvZaWLf2C_LhEY75sJy9DgVd6j09rccx7RJNBQui1ud8DliXPAaTC_YypnLXykKATG13xD4wqOfBrUwx258s");'></div>
-<p class="text-sm font-semibold text-black dark:text-white">Culture Seeker</p>
-</div>
-<div class="flex flex-col items-center gap-2">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAd6qz-7l7nF53q0Po0AL1xF3vpw-Il-2--KV81q59q7DXbWmwFjaMKOCrQieEsOXYcvIene5deMaEdVZFJ0j0iuzeqxbgFPiTvS6rMS-wBrykcA1x526fMWEuo_1uwo-Q1U48S-B2J4KF-CregfiTgokUj5FjaMJVboK6--selR22M-L198CdrFfCi_DEL_SibbtokVoLTaTfmR1s8fqVqwcDDlJVs2dJXS5VOHGQo9qQmItm6upCwr6YNOrZur8x7wrKmxLA68ho");'></div>
-<p class="text-sm font-semibold text-black dark:text-white">Adventurer</p>
-</div>
-<div class="flex flex-col items-center gap-2">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBWDjRQhx3Td62mLq3_VdnyIKj485jChfcZ9_oJWrUyVQvqmeJQgYgvSEo997MvoOub-fHD-It-hWakmm16yqWAA0Z4UvPygqz2LLlqHrSrpjveszCG6_41XU9FportfM7DRHqY6qINOqz_GC-p-Y7WaGLIhjXs06rOlrMUwtfgUleTy5h7Ug0gubJ_pDdkVXKxNRgnlk1ZTBozDf8K5ReIRPoBF7ZwMWL9uMCDdOzMZV8OwlgReeTgsFqTBsTJma5HeSQC44QVB_4");'></div>
-<p class="text-sm font-semibold text-black dark:text-white">Early Bird</p>
-</div>
-<div class="flex flex-col items-center gap-2">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAP8MjdAZO7m5sbluh0l50lSoTcxli2J-Cx81X1NWpNjMYRoOB2v8N2AzEw70_TKhXNrFKlGyOhI0zF7NP9gO3Eo3nK9bHncw-3qZxXtD94l1yCUbKlc1kcjxwrwiU86rJDz3OR0VHbiLDNTmj4BUtix-zxZpsjyG2tpDN6sobfROoklr37ZGeaIb60HO5YKM5CNN8YF37lMW1CJwpmMvD5T6ofrj2JECXOT0ip9SM9hbhJXEcGooGh2ULcg7nVCMZHlE5Wit7RY80");'></div>
-<p class="text-sm font-semibold text-black dark:text-white">Trendsetter</p>
-</div>
-<div class="flex flex-col items-center gap-2">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvErGq0GBAECvaQaIpfutUtQZz_xiYLTi1eQVY4JfIHWt3FvVyW77duVALEr8H8Mtp37_hqtv3TH1KtpG_k6YhzF7c8Rm1JvXALeKUbj2bZD-cVtQRjiwzDzqhqZrDk5VWWiA7Lfo_zt4noPDs9mboVOiwH8AMjeDZBaHi7Egk7ThDsusmMRh4iq_gVB3GOudOAR2puXMn5FJNVtoRGU_IEc8CEx38XdRMpvnhMI0v_xvAyeJu52m5wxBVHyMHwByacl2MIoP6Niw");'></div>
-<p class="text-sm font-semibold text-black dark:text-white">Local Expert</p>
-</div>
-<div class="flex flex-col items-center gap-2">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmzLUKrbLqZ8PHfG6Gz-9YC9_q9_EA2HWPpC7mo8fm_G1V-7hN9oO8vP6tuWQ-3zEKdrcdSbXoqBEVcMTW-yvCeGbo6AzzG7CYxQQ9HqP1r5ONfr1WsnofIVw65BsuakZghhn7X0SPu7kFUOMhFUE4xEfrDnd6ajFN8ZR8-pEYKe6dFelvhlkCTmZZDNV0otR3vuFHyQup5FJUL1aK9I5Et5hOdm9Cl94B4K91IAddBBk5hN6sKwGmGNE0nPIVdvOZcsHRFXi4T58");'></div>
-<p class="text-sm font-semibold text-black dark:text-white">Community Builder</p>
-</div>
-<div class="flex flex-col items-center gap-2">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAetQ3AENIJaNsiKUPxyf8yzL81yJx85OIjz6zBclOvKXIZTeCybPI77_tQGosyfM20SgXA0tXvosm-GodgEROPSerFTE-yFXRg0cA7cSyN-uLirUSbIpZt5nV8sbltIPumnt3jjwywnardHG9-AcG1KFAG70VXxrt0T80mxnzckLeJiIPIJxP55iSgrxaUjLg6YMiLYcwXD5MbDLc3ScMiGcEwXjHvzSNfF89Gqb2y2GzmDRSHcNxOqsg0zlM_t7AB1A8ibkKCbOA");'></div>
-<p class="text-sm font-semibold text-black dark:text-white">Active Participant</p>
-</div>
-<div class="flex flex-col items-center gap-2">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1TYRlNU2j69_bTXJ-UBGTgKsrZp-oCS0NiChD5XsooPnqGn7-mPni_FzIVbd3dQ91yqiOhJ7XhjAWj-EGTrCTU3ybsQ-1d2gyrYTBDreH8mi5z-VkdSs9W1RXPJt3nDBV-ZRakRJA7Cs3zQTv7pm1OcC_661PmDUcRptKvYAEap0-8Q7snBV3RRElrX53GmsD1VZwMrTbI1axRQZXVV0WRIYp9GJp1bo0QMONFxwR1OSnks-LCB0PrxzRWsG--FHIfan5OHX8anA");'></div>
-<p class="text-sm font-semibold text-black dark:text-white">Sypot Enthusiast</p>
-</div>
-</div>
-<div class="mt-12">
-<h2 class="text-xl font-bold text-black dark:text-white mb-4">Locked Badges</h2>
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-<div class="flex flex-col items-center gap-2 opacity-50">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl saturate-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHZdcB-bRCMuNgNbbEp94Si3f3XaSJDR1wsl3IlmcWnzKy6QUR8SfwiFR-rE8RCjLvkcr1gG87U2q7bSr6toXkPObSDO-Djech-5NF45r9xzO2nvgM4U77NN1f6LXXGxE5x2gl16MAuOFOBMZnBI0exHDZ9t6Y-Mx0bY2jog0OhMaBhAcOzjPPqMIxPWwF3opw6v99_QlZ5vqJm0w1BNzoIGyVsTOR6CxpStarnaN4WEC8CBkOO6Zx5KemCjOjTTiHGdMNrrCmP5Y");'>
-<div class="flex items-center justify-center h-full bg-black/40 rounded-xl">
-<svg fill="white" height="48" viewBox="0 0 256 256" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96v96a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,192H48V96H208Z"></path></svg>
-</div>
-</div>
-<p class="text-sm font-semibold text-black dark:text-white">Music Lover</p>
-<p class="text-xs text-center text-black/60 dark:text-white/60">Attend 5 concerts</p>
-</div>
-<div class="flex flex-col items-center gap-2 opacity-50">
-<div class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl saturate-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHZdcB-bRCMuNgNbbEp94Si3f3XaSJDR1wsl3IlmcWnzKy6QUR8SfwiFR-rE8RCjLvkcr1gG87U2q7bSr6toXkPObSDO-Djech-5NF45r9xzO2nvgM4U77NN1f6LXXGxE5x2gl16MAuOFOBMZnBI0exHDZ9t6Y-Mx0bY2jog0OhMaBhAcOzjPPqMIxPWwF3opw6v99_QlZ5vqJm0w1BNzoIGyVsTOR6CxpStarnaN4WEC8CBkOO6Zx5KemCjOjTTiHGdMNrrCmP5Y");'>
-<div class="flex items-center justify-center h-full bg-black/40 rounded-xl">
-<svg fill="white" height="48" viewBox="0 0 256 256" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96v96a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,192H48V96H208Z"></path></svg>
-</div>
-</div>
-<p class="text-sm font-semibold text-black dark:text-white">Marathoner</p>
-<p class="text-xs text-center text-black/60 dark:text-white/60">Join a marathon event</p>
-</div>
-</div>
-</div>
-</main>
-</div>
-<footer class="sticky bottom-0 bg-background-light dark:bg-background-dark border-t border-black/10 dark:border-white/10">
-<nav class="flex justify-around items-center h-16 px-2">
-<a class="flex flex-col items-center justify-center w-full text-black/60 dark:text-white/60 hover:text-primary dark:hover:text-primary" href="#">
-<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"></path></svg>
-<span class="text-xs font-medium">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center w-full text-black/60 dark:text-white/60 hover:text-primary dark:hover:text-primary" href="#">
-<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
-<span class="text-xs font-medium">Explore</span>
-</a>
-<a class="flex flex-col items-center justify-center w-full text-black/60 dark:text-white/60 hover:text-primary dark:hover:text-primary" href="#">
-<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208Zm-32-80a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path></svg>
-<span class="text-xs font-medium">Create</span>
-</a>
-<a class="flex flex-col items-center justify-center w-full text-black/60 dark:text-white/60 hover:text-primary dark:hover:text-primary" href="#">
-<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"></path></svg>
-<span class="text-xs font-medium">Chat</span>
-</a>
-<a class="flex flex-col items-center justify-center w-full text-primary dark:text-primary" href="#">
-<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/20">
-<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"></path></svg>
-</div>
-<span class="text-xs font-bold">Profile</span>
-</a>
-</nav>
-</footer>
-</div>
-
-</body></html>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden"
+    >
+      <div class="flex-grow">
+        <header
+          class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
+        >
+          <div class="flex items-center p-4">
+            <button class="text-black dark:text-white">
+              <svg
+                fill="currentColor"
+                height="24"
+                viewBox="0 0 256 256"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"
+                ></path>
+              </svg>
+            </button>
+            <h1
+              class="flex-1 text-center text-lg font-bold text-black dark:text-white pr-6"
+            >
+              My Achievements
+            </h1>
+          </div>
+        </header>
+        <main class="p-4">
+          <div class="text-center mb-6">
+            <p class="text-4xl font-extrabold text-primary">12</p>
+            <p class="text-base font-medium text-black/60 dark:text-white/60">
+              Badges Earned
+            </p>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div class="flex flex-col items-center gap-2">
+              <div
+                class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCNQIwwLKd3vzNFuoOEF_RulvpdEb-Y3Bl7wjlL3TkM8cJcj3LTyD8EbaHUjzAapC7FlBw-KpxhkLQN9U5ZxAXzgHaCglHjKO_pCYI3BMW7FQKOCzmuSbINs0mYgh247qBWCNYGwPmFX4J4VBdtuqTKBtmpuSurYC9fMoGsHl7a7trZ0sP10sMqbWQokI-kamlJd5o-wf9CpHc02Q-oeBkgUr-iRaTAoatEADOcx4RspCunr7EJ0C1N_yesVpaSZqzpMkF15Ze5bI');
+                "
+              ></div>
+              <p class="text-sm font-semibold text-black dark:text-white">
+                Explorer
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div
+                class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHIRkFMcf179TbHcvcwZ0ZaZVsGI9sGGSv_GHcgfAfLp4TKOfZfPqhLxNj3zyKUU9afjnheOwecLP2Bn53m5ZP5Fxpu97-mY9WCHcEKJvrOGF4R_e-8odX1gnhN5mdzvUFWljcsAA7Z5LrUwUedZJpE_886xDrucN1XAcigVm4rzb54bsYG-iy1OKQ1JaDQ3zGAb9YPoZngG-ib-tOoc9QCKdiekcXb3Wx1b-tv66d0zwbwVTdsPF2xYwV2tP8coeAHnA7Fdgy__c');
+                "
+              ></div>
+              <p class="text-sm font-semibold text-black dark:text-white">
+                Social Butterfly
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div
+                class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEkFSKF7nAMThzmz4hdqT8IF2DrhotjDLFkwnVCVIYkJpTDE3TWQlQhjKCgBlVtdjjguDFpQ2OuRhBeO-vMDj3rC_YDauQB0Q4JGevv7qmKAXVvI7dIoT810zShi92IemfDwIz_EJdXhwGqvsRG7_aGQW71-DDPlqB3enjhJNjLivx4sGJY_1JESnxIhtcagmqY_WqQKR5Bo0X-lYdwyIOLV6RHh59W5TUQ8uVkXWH5TB9zYID9R4RcyjpiRl9GWxqxBUsraEHtL8');
+                "
+              ></div>
+              <p class="text-sm font-semibold text-black dark:text-white">
+                Night Owl
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div
+                class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6FJvp6kRPs4zqv-qYS--CDTIWDsZIrHff6o5tDVhGSWyMmRkZRuUjuxJXuetT-zoId-o9NuSxJji4hHGrAb09zWw4kz_ilKLAE0afmfQS0LzGL1fbi1LAV9gOYb2LsSmzMqdIzL0BPhh2q5wyF-YUh5Wtg_TSwC3yAYU7E7eAA0qYJElrTPvgFhpxX5c270I2QzyR4oeK_QIUXFxc5PdkJLFpXr5oPkzESUrcCgHq7yCqQF2qaeTfTYduVlji1KYaU66bKIkS_ZM');
+                "
+              ></div>
+              <p class="text-sm font-semibold text-black dark:text-white">
+                Foodie
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div
+                class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUYDocw_gzFuKV0isM55jJAT6ZLVWj7XiRgtW45ucLw3Gwbia_qRCN2TcEoS_M3MbLv0FqR-5boDu88LdxkYShVTluuKo5a496qMY0eZ92ALh6czmXVCQCzJUBNX3wCstoupFAaMl-Xv-LHZEPF01PWxBUvue2SNEwLIgL1fDzC7eN65tKjDu9tYVkvZaWLf2C_LhEY75sJy9DgVd6j09rccx7RJNBQui1ud8DliXPAaTC_YypnLXykKATG13xD4wqOfBrUwx258s');
+                "
+              ></div>
+              <p class="text-sm font-semibold text-black dark:text-white">
+                Culture Seeker
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div
+                class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAd6qz-7l7nF53q0Po0AL1xF3vpw-Il-2--KV81q59q7DXbWmwFjaMKOCrQieEsOXYcvIene5deMaEdVZFJ0j0iuzeqxbgFPiTvS6rMS-wBrykcA1x526fMWEuo_1uwo-Q1U48S-B2J4KF-CregfiTgokUj5FjaMJVboK6--selR22M-L198CdrFfCi_DEL_SibbtokVoLTaTfmR1s8fqVqwcDDlJVs2dJXS5VOHGQo9qQmItm6upCwr6YNOrZur8x7wrKmxLA68ho');
+                "
+              ></div>
+              <p class="text-sm font-semibold text-black dark:text-white">
+                Adventurer
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div
+                class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWDjRQhx3Td62mLq3_VdnyIKj485jChfcZ9_oJWrUyVQvqmeJQgYgvSEo997MvoOub-fHD-It-hWakmm16yqWAA0Z4UvPygqz2LLlqHrSrpjveszCG6_41XU9FportfM7DRHqY6qINOqz_GC-p-Y7WaGLIhjXs06rOlrMUwtfgUleTy5h7Ug0gubJ_pDdkVXKxNRgnlk1ZTBozDf8K5ReIRPoBF7ZwMWL9uMCDdOzMZV8OwlgReeTgsFqTBsTJma5HeSQC44QVB_4');
+                "
+              ></div>
+              <p class="text-sm font-semibold text-black dark:text-white">
+                Early Bird
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div
+                class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAP8MjdAZO7m5sbluh0l50lSoTcxli2J-Cx81X1NWpNjMYRoOB2v8N2AzEw70_TKhXNrFKlGyOhI0zF7NP9gO3Eo3nK9bHncw-3qZxXtD94l1yCUbKlc1kcjxwrwiU86rJDz3OR0VHbiLDNTmj4BUtix-zxZpsjyG2tpDN6sobfROoklr37ZGeaIb60HO5YKM5CNN8YF37lMW1CJwpmMvD5T6ofrj2JECXOT0ip9SM9hbhJXEcGooGh2ULcg7nVCMZHlE5Wit7RY80');
+                "
+              ></div>
+              <p class="text-sm font-semibold text-black dark:text-white">
+                Trendsetter
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div
+                class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvErGq0GBAECvaQaIpfutUtQZz_xiYLTi1eQVY4JfIHWt3FvVyW77duVALEr8H8Mtp37_hqtv3TH1KtpG_k6YhzF7c8Rm1JvXALeKUbj2bZD-cVtQRjiwzDzqhqZrDk5VWWiA7Lfo_zt4noPDs9mboVOiwH8AMjeDZBaHi7Egk7ThDsusmMRh4iq_gVB3GOudOAR2puXMn5FJNVtoRGU_IEc8CEx38XdRMpvnhMI0v_xvAyeJu52m5wxBVHyMHwByacl2MIoP6Niw');
+                "
+              ></div>
+              <p class="text-sm font-semibold text-black dark:text-white">
+                Local Expert
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div
+                class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmzLUKrbLqZ8PHfG6Gz-9YC9_q9_EA2HWPpC7mo8fm_G1V-7hN9oO8vP6tuWQ-3zEKdrcdSbXoqBEVcMTW-yvCeGbo6AzzG7CYxQQ9HqP1r5ONfr1WsnofIVw65BsuakZghhn7X0SPu7kFUOMhFUE4xEfrDnd6ajFN8ZR8-pEYKe6dFelvhlkCTmZZDNV0otR3vuFHyQup5FJUL1aK9I5Et5hOdm9Cl94B4K91IAddBBk5hN6sKwGmGNE0nPIVdvOZcsHRFXi4T58');
+                "
+              ></div>
+              <p class="text-sm font-semibold text-black dark:text-white">
+                Community Builder
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div
+                class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAetQ3AENIJaNsiKUPxyf8yzL81yJx85OIjz6zBclOvKXIZTeCybPI77_tQGosyfM20SgXA0tXvosm-GodgEROPSerFTE-yFXRg0cA7cSyN-uLirUSbIpZt5nV8sbltIPumnt3jjwywnardHG9-AcG1KFAG70VXxrt0T80mxnzckLeJiIPIJxP55iSgrxaUjLg6YMiLYcwXD5MbDLc3ScMiGcEwXjHvzSNfF89Gqb2y2GzmDRSHcNxOqsg0zlM_t7AB1A8ibkKCbOA');
+                "
+              ></div>
+              <p class="text-sm font-semibold text-black dark:text-white">
+                Active Participant
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div
+                class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1TYRlNU2j69_bTXJ-UBGTgKsrZp-oCS0NiChD5XsooPnqGn7-mPni_FzIVbd3dQ91yqiOhJ7XhjAWj-EGTrCTU3ybsQ-1d2gyrYTBDreH8mi5z-VkdSs9W1RXPJt3nDBV-ZRakRJA7Cs3zQTv7pm1OcC_661PmDUcRptKvYAEap0-8Q7snBV3RRElrX53GmsD1VZwMrTbI1axRQZXVV0WRIYp9GJp1bo0QMONFxwR1OSnks-LCB0PrxzRWsG--FHIfan5OHX8anA');
+                "
+              ></div>
+              <p class="text-sm font-semibold text-black dark:text-white">
+                Sypot Enthusiast
+              </p>
+            </div>
+          </div>
+          <div class="mt-12">
+            <h2 class="text-xl font-bold text-black dark:text-white mb-4">
+              Locked Badges
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              <div class="flex flex-col items-center gap-2 opacity-50">
+                <div
+                  class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl saturate-0"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHZdcB-bRCMuNgNbbEp94Si3f3XaSJDR1wsl3IlmcWnzKy6QUR8SfwiFR-rE8RCjLvkcr1gG87U2q7bSr6toXkPObSDO-Djech-5NF45r9xzO2nvgM4U77NN1f6LXXGxE5x2gl16MAuOFOBMZnBI0exHDZ9t6Y-Mx0bY2jog0OhMaBhAcOzjPPqMIxPWwF3opw6v99_QlZ5vqJm0w1BNzoIGyVsTOR6CxpStarnaN4WEC8CBkOO6Zx5KemCjOjTTiHGdMNrrCmP5Y');
+                  "
+                >
+                  <div
+                    class="flex items-center justify-center h-full bg-black/40 rounded-xl"
+                  >
+                    <svg
+                      fill="white"
+                      height="48"
+                      viewBox="0 0 256 256"
+                      width="48"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96v96a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,192H48V96H208Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-sm font-semibold text-black dark:text-white">
+                  Music Lover
+                </p>
+                <p class="text-xs text-center text-black/60 dark:text-white/60">
+                  Attend 5 concerts
+                </p>
+              </div>
+              <div class="flex flex-col items-center gap-2 opacity-50">
+                <div
+                  class="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl saturate-0"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHZdcB-bRCMuNgNbbEp94Si3f3XaSJDR1wsl3IlmcWnzKy6QUR8SfwiFR-rE8RCjLvkcr1gG87U2q7bSr6toXkPObSDO-Djech-5NF45r9xzO2nvgM4U77NN1f6LXXGxE5x2gl16MAuOFOBMZnBI0exHDZ9t6Y-Mx0bY2jog0OhMaBhAcOzjPPqMIxPWwF3opw6v99_QlZ5vqJm0w1BNzoIGyVsTOR6CxpStarnaN4WEC8CBkOO6Zx5KemCjOjTTiHGdMNrrCmP5Y');
+                  "
+                >
+                  <div
+                    class="flex items-center justify-center h-full bg-black/40 rounded-xl"
+                  >
+                    <svg
+                      fill="white"
+                      height="48"
+                      viewBox="0 0 256 256"
+                      width="48"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96v96a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,192H48V96H208Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-sm font-semibold text-black dark:text-white">
+                  Marathoner
+                </p>
+                <p class="text-xs text-center text-black/60 dark:text-white/60">
+                  Join a marathon event
+                </p>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer
+        class="sticky bottom-0 bg-background-light dark:bg-background-dark border-t border-black/10 dark:border-white/10"
+      >
+        <nav class="flex justify-around items-center h-16 px-2">
+          <a
+            class="flex flex-col items-center justify-center w-full text-black/60 dark:text-white/60 hover:text-primary dark:hover:text-primary"
+            href="#"
+          >
+            <svg
+              fill="currentColor"
+              height="24"
+              viewBox="0 0 256 256"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"
+              ></path>
+            </svg>
+            <span class="text-xs font-medium">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center w-full text-black/60 dark:text-white/60 hover:text-primary dark:hover:text-primary"
+            href="#"
+          >
+            <svg
+              fill="currentColor"
+              height="24"
+              viewBox="0 0 256 256"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+              ></path>
+            </svg>
+            <span class="text-xs font-medium">Explore</span>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center w-full text-black/60 dark:text-white/60 hover:text-primary dark:hover:text-primary"
+            href="#"
+          >
+            <svg
+              fill="currentColor"
+              height="24"
+              viewBox="0 0 256 256"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208Zm-32-80a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"
+              ></path>
+            </svg>
+            <span class="text-xs font-medium">Create</span>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center w-full text-black/60 dark:text-white/60 hover:text-primary dark:hover:text-primary"
+            href="#"
+          >
+            <svg
+              fill="currentColor"
+              height="24"
+              viewBox="0 0 256 256"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"
+              ></path>
+            </svg>
+            <span class="text-xs font-medium">Chat</span>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center w-full text-primary dark:text-primary"
+            href="#"
+          >
+            <div
+              class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/20"
+            >
+              <svg
+                fill="currentColor"
+                height="24"
+                viewBox="0 0 256 256"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-xs font-bold">Profile</span>
+          </a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

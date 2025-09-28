@@ -11,7 +11,13 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { colors, spacing, typography, borderRadius, shadows } from '../../utils/theme';
+import {
+  colors,
+  spacing,
+  typography,
+  borderRadius,
+  shadows,
+} from '../../utils/theme';
 import { mockUsers, eventCategories } from '../../services/mockData';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -33,10 +39,10 @@ interface FormErrors {
 
 export default function EditProfileScreen() {
   const navigation = useNavigation();
-  
+
   // Initialize with mock user data
   const currentUser = mockUsers[0];
-  
+
   const [formData, setFormData] = useState<ProfileFormData>({
     firstName: currentUser.name.split(' ')[0] || '',
     lastName: currentUser.name.split(' ')[1] || '',
@@ -46,8 +52,10 @@ export default function EditProfileScreen() {
     location: 'New York, NY',
     website: 'https://johndoe.com',
   });
-  
-  const [selectedInterests, setSelectedInterests] = useState<string[]>(currentUser.interests);
+
+  const [selectedInterests, setSelectedInterests] = useState<string[]>(
+    currentUser.interests,
+  );
   const [errors, setErrors] = useState<FormErrors>({});
   const [loading, setLoading] = useState(false);
 
@@ -85,7 +93,7 @@ export default function EditProfileScreen() {
 
   const handleInputChange = (field: keyof ProfileFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-    
+
     // Clear error when user starts typing
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: '' }));
@@ -93,10 +101,10 @@ export default function EditProfileScreen() {
   };
 
   const toggleInterest = (interest: string) => {
-    setSelectedInterests(prev => 
-      prev.includes(interest) 
+    setSelectedInterests(prev =>
+      prev.includes(interest)
         ? prev.filter(i => i !== interest)
-        : [...prev, interest]
+        : [...prev, interest],
     );
   };
 
@@ -106,21 +114,17 @@ export default function EditProfileScreen() {
     }
 
     setLoading(true);
-    
+
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      Alert.alert(
-        'Success!',
-        'Your profile has been updated successfully.',
-        [
-          { 
-            text: 'OK', 
-            onPress: () => navigation.goBack() 
-          }
-        ]
-      );
+
+      Alert.alert('Success!', 'Your profile has been updated successfully.', [
+        {
+          text: 'OK',
+          onPress: () => navigation.goBack(),
+        },
+      ]);
     } catch (error) {
       Alert.alert('Error', 'Failed to update profile. Please try again.');
     } finally {
@@ -129,16 +133,19 @@ export default function EditProfileScreen() {
   };
 
   const handleAvatarChange = () => {
-    Alert.alert(
-      'Change Avatar',
-      'Choose an option',
-      [
-        { text: 'Take Photo', onPress: () => console.log('Take photo') },
-        { text: 'Choose from Gallery', onPress: () => console.log('Choose from gallery') },
-        { text: 'Remove Photo', style: 'destructive', onPress: () => console.log('Remove photo') },
-        { text: 'Cancel', style: 'cancel' },
-      ]
-    );
+    Alert.alert('Change Avatar', 'Choose an option', [
+      { text: 'Take Photo', onPress: () => console.log('Take photo') },
+      {
+        text: 'Choose from Gallery',
+        onPress: () => console.log('Choose from gallery'),
+      },
+      {
+        text: 'Remove Photo',
+        style: 'destructive',
+        onPress: () => console.log('Remove photo'),
+      },
+      { text: 'Cancel', style: 'cancel' },
+    ]);
   };
 
   const AvatarSection = () => (
@@ -146,10 +153,11 @@ export default function EditProfileScreen() {
       <View style={styles.avatarContainer}>
         <View style={styles.avatar}>
           <Text style={styles.avatarText}>
-            {currentUser.avatar || `${formData.firstName.charAt(0)}${formData.lastName.charAt(0)}`}
+            {currentUser.avatar ||
+              `${formData.firstName.charAt(0)}${formData.lastName.charAt(0)}`}
           </Text>
         </View>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.avatarChangeButton}
           onPress={handleAvatarChange}
         >
@@ -169,24 +177,27 @@ export default function EditProfileScreen() {
       <Text style={styles.sectionDescription}>
         Select your interests to help us recommend relevant events
       </Text>
-      
+
       <View style={styles.interestsContainer}>
-        {eventCategories.map((category) => (
+        {eventCategories.map(category => (
           <TouchableOpacity
             key={category.id}
             style={[
               styles.interestChip,
               selectedInterests.includes(category.name) && {
                 backgroundColor: category.color,
-              }
+              },
             ]}
             onPress={() => toggleInterest(category.name)}
           >
             <Text style={styles.interestEmoji}>{category.emoji}</Text>
-            <Text style={[
-              styles.interestText,
-              selectedInterests.includes(category.name) && styles.selectedInterestText
-            ]}>
+            <Text
+              style={[
+                styles.interestText,
+                selectedInterests.includes(category.name) &&
+                  styles.selectedInterestText,
+              ]}
+            >
               {category.name}
             </Text>
           </TouchableOpacity>
@@ -198,7 +209,7 @@ export default function EditProfileScreen() {
   const PrivacySection = () => (
     <Card style={styles.section}>
       <Text style={styles.sectionTitle}>Privacy Settings</Text>
-      
+
       <View style={styles.privacyOptions}>
         <TouchableOpacity style={styles.privacyItem}>
           <View style={styles.privacyContent}>
@@ -209,7 +220,7 @@ export default function EditProfileScreen() {
           </View>
           <Text style={styles.privacyValue}>Public</Text>
         </TouchableOpacity>
-        
+
         <TouchableOpacity style={styles.privacyItem}>
           <View style={styles.privacyContent}>
             <Text style={styles.privacyTitle}>Event Activity</Text>
@@ -221,7 +232,7 @@ export default function EditProfileScreen() {
             <Text style={styles.toggleText}>ON</Text>
           </View>
         </TouchableOpacity>
-        
+
         <TouchableOpacity style={styles.privacyItem}>
           <View style={styles.privacyContent}>
             <Text style={styles.privacyTitle}>Friend Requests</Text>
@@ -239,30 +250,32 @@ export default function EditProfileScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={colors.backgroundLight} />
-      
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={colors.backgroundLight}
+      />
+
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
           <Text style={styles.backButtonText}>←</Text>
         </TouchableOpacity>
-        
+
         <Text style={styles.headerTitle}>Edit Profile</Text>
-        
-        <TouchableOpacity 
-          onPress={handleSaveProfile}
-          disabled={loading}
-        >
-          <Text style={[styles.saveButton, loading && styles.saveButtonDisabled]}>
+
+        <TouchableOpacity onPress={handleSaveProfile} disabled={loading}>
+          <Text
+            style={[styles.saveButton, loading && styles.saveButtonDisabled]}
+          >
             Save
           </Text>
         </TouchableOpacity>
       </View>
 
-      <ScrollView 
+      <ScrollView
         style={styles.content}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
@@ -273,22 +286,22 @@ export default function EditProfileScreen() {
         {/* Basic Information */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>Basic Information</Text>
-          
+
           <View style={styles.nameRow}>
             <Input
               label="First Name"
               placeholder="Enter first name"
               value={formData.firstName}
-              onChangeText={(value) => handleInputChange('firstName', value)}
+              onChangeText={value => handleInputChange('firstName', value)}
               error={errors.firstName}
               containerStyle={styles.halfInput}
             />
-            
+
             <Input
               label="Last Name"
               placeholder="Enter last name"
               value={formData.lastName}
-              onChangeText={(value) => handleInputChange('lastName', value)}
+              onChangeText={value => handleInputChange('lastName', value)}
               error={errors.lastName}
               containerStyle={styles.halfInput}
             />
@@ -298,7 +311,7 @@ export default function EditProfileScreen() {
             label="Email"
             placeholder="Enter your email address"
             value={formData.email}
-            onChangeText={(value) => handleInputChange('email', value)}
+            onChangeText={value => handleInputChange('email', value)}
             error={errors.email}
             keyboardType="email-address"
             autoCapitalize="none"
@@ -309,7 +322,7 @@ export default function EditProfileScreen() {
             label="Phone Number"
             placeholder="Enter your phone number"
             value={formData.phone}
-            onChangeText={(value) => handleInputChange('phone', value)}
+            onChangeText={value => handleInputChange('phone', value)}
             error={errors.phone}
             keyboardType="phone-pad"
             leftIcon={<Text style={styles.inputIcon}>📱</Text>}
@@ -319,12 +332,12 @@ export default function EditProfileScreen() {
         {/* About Me */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>About Me</Text>
-          
+
           <Input
             label="Bio"
             placeholder="Tell others about yourself..."
             value={formData.bio}
-            onChangeText={(value) => handleInputChange('bio', value)}
+            onChangeText={value => handleInputChange('bio', value)}
             multiline
             style={styles.textArea}
             leftIcon={<Text style={styles.inputIcon}>✍️</Text>}
@@ -335,7 +348,7 @@ export default function EditProfileScreen() {
             label="Location"
             placeholder="Where are you located?"
             value={formData.location}
-            onChangeText={(value) => handleInputChange('location', value)}
+            onChangeText={value => handleInputChange('location', value)}
             leftIcon={<Text style={styles.inputIcon}>📍</Text>}
           />
 
@@ -343,7 +356,7 @@ export default function EditProfileScreen() {
             label="Website"
             placeholder="https://yourwebsite.com"
             value={formData.website}
-            onChangeText={(value) => handleInputChange('website', value)}
+            onChangeText={value => handleInputChange('website', value)}
             error={errors.website}
             keyboardType="url"
             autoCapitalize="none"
@@ -360,22 +373,24 @@ export default function EditProfileScreen() {
         {/* Account Actions */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>Account</Text>
-          
+
           <TouchableOpacity style={styles.actionItem}>
             <Text style={styles.actionIcon}>🔒</Text>
             <Text style={styles.actionText}>Change Password</Text>
             <Text style={styles.actionArrow}>›</Text>
           </TouchableOpacity>
-          
+
           <TouchableOpacity style={styles.actionItem}>
             <Text style={styles.actionIcon}>📧</Text>
             <Text style={styles.actionText}>Change Email</Text>
             <Text style={styles.actionArrow}>›</Text>
           </TouchableOpacity>
-          
+
           <TouchableOpacity style={[styles.actionItem, styles.dangerAction]}>
             <Text style={styles.actionIcon}>🗑️</Text>
-            <Text style={[styles.actionText, styles.dangerText]}>Delete Account</Text>
+            <Text style={[styles.actionText, styles.dangerText]}>
+              Delete Account
+            </Text>
             <Text style={styles.actionArrow}>›</Text>
           </TouchableOpacity>
         </Card>
@@ -392,7 +407,7 @@ export default function EditProfileScreen() {
           variant="outline"
           style={styles.cancelButton}
         />
-        
+
         <Button
           title="Save Changes"
           onPress={handleSaveProfile}

@@ -14,7 +14,13 @@ import {
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-import { colors, spacing, typography, borderRadius, shadows } from '../../utils/theme';
+import {
+  colors,
+  spacing,
+  typography,
+  borderRadius,
+  shadows,
+} from '../../utils/theme';
 import { Event, User } from '../../types/navigation';
 import { mockEvents, mockUsers } from '../../services/mockData';
 import Button from '../../components/Button';
@@ -30,7 +36,7 @@ export default function EventDetailsScreen() {
   const navigation = useNavigation();
   const route = useRoute();
   const { eventId } = route.params as RouteParams;
-  
+
   const [event, setEvent] = useState<Event | null>(null);
   const [organizer, setOrganizer] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -46,11 +52,13 @@ export default function EventDetailsScreen() {
       setLoading(true);
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 800));
-      
+
       const eventData = mockEvents.find(e => e.id === eventId);
       if (eventData) {
         setEvent(eventData);
-        const organizerData = mockUsers.find(u => u.id === eventData.organizerId);
+        const organizerData = mockUsers.find(
+          u => u.id === eventData.organizerId,
+        );
         setOrganizer(organizerData || null);
       }
     } catch (error) {
@@ -61,11 +69,15 @@ export default function EventDetailsScreen() {
   };
 
   const handleBookEvent = () => {
-    if (!event) return;
-    
+    if (!event) {
+      return;
+    }
+
     Alert.alert(
       'Book Event',
-      `Would you like to book "${event.title}"?${event.price ? ` Price: $${event.price}` : ' This event is free.'}`,
+      `Would you like to book "${event.title}"?${
+        event.price ? ` Price: $${event.price}` : ' This event is free.'
+      }`,
       [
         { text: 'Cancel', style: 'cancel' },
         {
@@ -73,21 +85,26 @@ export default function EventDetailsScreen() {
           onPress: () => {
             setIsAttending(true);
             Alert.alert('Success!', 'You have successfully booked this event.');
-          }
-        }
-      ]
+          },
+        },
+      ],
     );
   };
 
   const handleShareEvent = () => {
-    Alert.alert('Share Event', 'Sharing functionality will be implemented with native share API.');
+    Alert.alert(
+      'Share Event',
+      'Sharing functionality will be implemented with native share API.',
+    );
   };
 
   const handleMessageOrganizer = () => {
-    if (!organizer) return;
+    if (!organizer) {
+      return;
+    }
     Alert.alert('Message Organizer', `Open chat with ${organizer.name}?`, [
       { text: 'Cancel', style: 'cancel' },
-      { text: 'Message', onPress: () => console.log('Navigate to chat') }
+      { text: 'Message', onPress: () => console.log('Navigate to chat') },
     ]);
   };
 
@@ -103,7 +120,9 @@ export default function EventDetailsScreen() {
   };
 
   const formatPrice = (price?: number) => {
-    if (!price) return 'Free Event';
+    if (!price) {
+      return 'Free Event';
+    }
     return `$${price}`;
   };
 
@@ -132,28 +151,34 @@ export default function EventDetailsScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={colors.backgroundLight} />
-      
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={colors.backgroundLight}
+      />
+
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
           <Text style={styles.backButtonText}>←</Text>
         </TouchableOpacity>
-        
+
         <View style={styles.headerActions}>
-          <TouchableOpacity 
-            style={[styles.actionButton, isBookmarked && styles.bookmarkedButton]}
+          <TouchableOpacity
+            style={[
+              styles.actionButton,
+              isBookmarked && styles.bookmarkedButton,
+            ]}
             onPress={() => setIsBookmarked(!isBookmarked)}
           >
             <Text style={styles.actionButtonText}>
               {isBookmarked ? '❤️' : '🤍'}
             </Text>
           </TouchableOpacity>
-          
-          <TouchableOpacity 
+
+          <TouchableOpacity
             style={styles.actionButton}
             onPress={handleShareEvent}
           >
@@ -176,23 +201,25 @@ export default function EventDetailsScreen() {
         {/* Event Info */}
         <View style={styles.eventInfo}>
           <Text style={styles.eventTitle}>{event.title}</Text>
-          
+
           <View style={styles.eventMeta}>
             <View style={styles.metaItem}>
               <Text style={styles.metaIcon}>📅</Text>
               <Text style={styles.metaText}>{formatDate(event.date)}</Text>
             </View>
-            
+
             <View style={styles.metaItem}>
               <Text style={styles.metaIcon}>📍</Text>
               <Text style={styles.metaText}>{event.location}</Text>
             </View>
-            
+
             <View style={styles.metaItem}>
               <Text style={styles.metaIcon}>👥</Text>
-              <Text style={styles.metaText}>{event.attendeeCount} attending</Text>
+              <Text style={styles.metaText}>
+                {event.attendeeCount} attending
+              </Text>
             </View>
-            
+
             <View style={styles.metaItem}>
               <Text style={styles.metaIcon}>💰</Text>
               <Text style={styles.metaText}>{formatPrice(event.price)}</Text>
@@ -210,7 +237,7 @@ export default function EventDetailsScreen() {
         {organizer && (
           <Card style={styles.section}>
             <Text style={styles.sectionTitle}>Organized By</Text>
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.organizerCard}
               onPress={handleMessageOrganizer}
             >
@@ -222,7 +249,8 @@ export default function EventDetailsScreen() {
               <View style={styles.organizerInfo}>
                 <Text style={styles.organizerName}>{organizer.name}</Text>
                 <Text style={styles.organizerStats}>
-                  {organizer.eventsAttended} events • {organizer.friendsCount} friends
+                  {organizer.eventsAttended} events • {organizer.friendsCount}{' '}
+                  friends
                 </Text>
               </View>
               <TouchableOpacity style={styles.messageButton}>
@@ -238,11 +266,13 @@ export default function EventDetailsScreen() {
           <View style={styles.mapPlaceholder}>
             <Text style={styles.mapIcon}>🗺️</Text>
             <Text style={styles.mapText}>{event.location}</Text>
-            <Button 
-              title="Open in Maps" 
-              variant="outline" 
+            <Button
+              title="Open in Maps"
+              variant="outline"
               size="small"
-              onPress={() => Alert.alert('Maps', 'Will open in device maps app')}
+              onPress={() =>
+                Alert.alert('Maps', 'Will open in device maps app')
+              }
             />
           </View>
         </Card>
@@ -252,13 +282,21 @@ export default function EventDetailsScreen() {
           <Text style={styles.sectionTitle}>Who's Going</Text>
           <View style={styles.attendeesContainer}>
             <View style={styles.attendeeAvatars}>
-              {Array.from({ length: Math.min(5, event.attendeeCount) }).map((_, index) => (
-                <View key={index} style={[styles.attendeeAvatar, { marginLeft: index > 0 ? -10 : 0 }]}>
-                  <Text style={styles.attendeeAvatarText}>
-                    {mockUsers[index % mockUsers.length]?.avatar || '👤'}
-                  </Text>
-                </View>
-              ))}
+              {Array.from({ length: Math.min(5, event.attendeeCount) }).map(
+                (_, index) => (
+                  <View
+                    key={index}
+                    style={[
+                      styles.attendeeAvatar,
+                      { marginLeft: index > 0 ? -10 : 0 },
+                    ]}
+                  >
+                    <Text style={styles.attendeeAvatarText}>
+                      {mockUsers[index % mockUsers.length]?.avatar || '👤'}
+                    </Text>
+                  </View>
+                ),
+              )}
             </View>
             <Text style={styles.attendeeCount}>
               {event.attendeeCount} people are attending
@@ -278,7 +316,7 @@ export default function EventDetailsScreen() {
           </Text>
           <Text style={styles.priceValue}>{formatPrice(event.price)}</Text>
         </View>
-        
+
         <Button
           title={isAttending ? 'Attending ✓' : 'Book Now'}
           onPress={handleBookEvent}

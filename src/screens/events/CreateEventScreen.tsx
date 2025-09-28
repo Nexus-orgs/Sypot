@@ -34,7 +34,7 @@ interface FormErrors {
 
 export default function CreateEventScreen() {
   const navigation = useNavigation();
-  
+
   const [formData, setFormData] = useState<EventFormData>({
     title: '',
     description: '',
@@ -45,7 +45,7 @@ export default function CreateEventScreen() {
     price: '',
     maxAttendees: '',
   });
-  
+
   const [errors, setErrors] = useState<FormErrors>({});
   const [loading, setLoading] = useState(false);
 
@@ -92,7 +92,7 @@ export default function CreateEventScreen() {
 
   const handleInputChange = (field: keyof EventFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-    
+
     // Clear error when user starts typing
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: '' }));
@@ -105,21 +105,17 @@ export default function CreateEventScreen() {
     }
 
     setLoading(true);
-    
+
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      Alert.alert(
-        'Success!',
-        'Your event has been created successfully.',
-        [
-          { 
-            text: 'OK', 
-            onPress: () => navigation.goBack() 
-          }
-        ]
-      );
+
+      Alert.alert('Success!', 'Your event has been created successfully.', [
+        {
+          text: 'OK',
+          onPress: () => navigation.goBack(),
+        },
+      ]);
     } catch (error) {
       Alert.alert('Error', 'Failed to create event. Please try again.');
     } finally {
@@ -131,22 +127,25 @@ export default function CreateEventScreen() {
     <Card style={styles.categoryCard}>
       <Text style={styles.inputLabel}>Category *</Text>
       <View style={styles.categoriesContainer}>
-        {eventCategories.map((category) => (
+        {eventCategories.map(category => (
           <TouchableOpacity
             key={category.id}
             style={[
               styles.categoryChip,
               formData.category === category.name && {
                 backgroundColor: category.color,
-              }
+              },
             ]}
             onPress={() => handleInputChange('category', category.name)}
           >
             <Text style={styles.categoryEmoji}>{category.emoji}</Text>
-            <Text style={[
-              styles.categoryText,
-              formData.category === category.name && styles.selectedCategoryText
-            ]}>
+            <Text
+              style={[
+                styles.categoryText,
+                formData.category === category.name &&
+                  styles.selectedCategoryText,
+              ]}
+            >
               {category.name}
             </Text>
           </TouchableOpacity>
@@ -161,9 +160,14 @@ export default function CreateEventScreen() {
   const ImageUploadPlaceholder = () => (
     <Card style={styles.imageUploadCard}>
       <Text style={styles.inputLabel}>Event Image</Text>
-      <TouchableOpacity 
+      <TouchableOpacity
         style={styles.imageUploadArea}
-        onPress={() => Alert.alert('Image Upload', 'Photo selection will be implemented with image picker.')}
+        onPress={() =>
+          Alert.alert(
+            'Image Upload',
+            'Photo selection will be implemented with image picker.',
+          )
+        }
       >
         <Text style={styles.imageUploadIcon}>📷</Text>
         <Text style={styles.imageUploadText}>Add Event Photo</Text>
@@ -176,28 +180,36 @@ export default function CreateEventScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={colors.backgroundLight} />
-      
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={colors.backgroundLight}
+      />
+
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
           <Text style={styles.backButtonText}>←</Text>
         </TouchableOpacity>
-        
+
         <Text style={styles.headerTitle}>Create Event</Text>
-        
-        <TouchableOpacity 
+
+        <TouchableOpacity
           style={styles.helpButton}
-          onPress={() => Alert.alert('Help', 'Need help creating your event? Contact our support team.')}
+          onPress={() =>
+            Alert.alert(
+              'Help',
+              'Need help creating your event? Contact our support team.',
+            )
+          }
         >
           <Text style={styles.helpButtonText}>?</Text>
         </TouchableOpacity>
       </View>
 
-      <ScrollView 
+      <ScrollView
         style={styles.content}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
@@ -205,12 +217,12 @@ export default function CreateEventScreen() {
         {/* Basic Information */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>Event Details</Text>
-          
+
           <Input
             label="Event Title"
             placeholder="Enter a catchy event title"
             value={formData.title}
-            onChangeText={(value) => handleInputChange('title', value)}
+            onChangeText={value => handleInputChange('title', value)}
             error={errors.title}
             leftIcon={<Text style={styles.inputIcon}>🎉</Text>}
           />
@@ -219,7 +231,7 @@ export default function CreateEventScreen() {
             label="Description"
             placeholder="Describe your event in detail..."
             value={formData.description}
-            onChangeText={(value) => handleInputChange('description', value)}
+            onChangeText={value => handleInputChange('description', value)}
             error={errors.description}
             multiline
             style={styles.textArea}
@@ -236,23 +248,23 @@ export default function CreateEventScreen() {
         {/* Date & Time */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>When</Text>
-          
+
           <View style={styles.dateTimeRow}>
             <Input
               label="Date"
               placeholder="MM/DD/YYYY"
               value={formData.date}
-              onChangeText={(value) => handleInputChange('date', value)}
+              onChangeText={value => handleInputChange('date', value)}
               error={errors.date}
               containerStyle={styles.halfInput}
               leftIcon={<Text style={styles.inputIcon}>📅</Text>}
             />
-            
+
             <Input
               label="Time"
               placeholder="HH:MM AM/PM"
               value={formData.time}
-              onChangeText={(value) => handleInputChange('time', value)}
+              onChangeText={value => handleInputChange('time', value)}
               error={errors.time}
               containerStyle={styles.halfInput}
               leftIcon={<Text style={styles.inputIcon}>🕐</Text>}
@@ -263,16 +275,23 @@ export default function CreateEventScreen() {
         {/* Location */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>Where</Text>
-          
+
           <Input
             label="Location"
             placeholder="Enter venue address or name"
             value={formData.location}
-            onChangeText={(value) => handleInputChange('location', value)}
+            onChangeText={value => handleInputChange('location', value)}
             error={errors.location}
             leftIcon={<Text style={styles.inputIcon}>📍</Text>}
             rightIcon={
-              <TouchableOpacity onPress={() => Alert.alert('Map', 'Location picker will be integrated with maps.')}>
+              <TouchableOpacity
+                onPress={() =>
+                  Alert.alert(
+                    'Map',
+                    'Location picker will be integrated with maps.',
+                  )
+                }
+              >
                 <Text style={styles.mapIcon}>🗺️</Text>
               </TouchableOpacity>
             }
@@ -282,23 +301,23 @@ export default function CreateEventScreen() {
         {/* Pricing & Capacity */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>Pricing & Capacity</Text>
-          
+
           <Input
             label="Ticket Price (Optional)"
             placeholder="0.00 (Leave empty for free events)"
             value={formData.price}
-            onChangeText={(value) => handleInputChange('price', value)}
+            onChangeText={value => handleInputChange('price', value)}
             error={errors.price}
             keyboardType="numeric"
             leftIcon={<Text style={styles.inputIcon}>💰</Text>}
             helperText="Leave empty for free events"
           />
-          
+
           <Input
             label="Max Attendees (Optional)"
             placeholder="Enter maximum number of attendees"
             value={formData.maxAttendees}
-            onChangeText={(value) => handleInputChange('maxAttendees', value)}
+            onChangeText={value => handleInputChange('maxAttendees', value)}
             error={errors.maxAttendees}
             keyboardType="numeric"
             leftIcon={<Text style={styles.inputIcon}>👥</Text>}
@@ -309,7 +328,7 @@ export default function CreateEventScreen() {
         {/* Additional Options */}
         <Card style={styles.section}>
           <Text style={styles.sectionTitle}>Additional Options</Text>
-          
+
           <View style={styles.optionsContainer}>
             <TouchableOpacity style={styles.optionItem}>
               <Text style={styles.optionIcon}>📋</Text>
@@ -323,7 +342,7 @@ export default function CreateEventScreen() {
                 <Text style={styles.toggleText}>ON</Text>
               </View>
             </TouchableOpacity>
-            
+
             <TouchableOpacity style={styles.optionItem}>
               <Text style={styles.optionIcon}>🔒</Text>
               <View style={styles.optionContent}>
@@ -343,7 +362,12 @@ export default function CreateEventScreen() {
         <Card style={styles.section}>
           <Button
             title="Preview Event"
-            onPress={() => Alert.alert('Preview', 'Event preview will show how your event will look to attendees.')}
+            onPress={() =>
+              Alert.alert(
+                'Preview',
+                'Event preview will show how your event will look to attendees.',
+              )
+            }
             variant="outline"
             fullWidth
           />
@@ -357,11 +381,13 @@ export default function CreateEventScreen() {
       <View style={styles.bottomBar}>
         <Button
           title="Save as Draft"
-          onPress={() => Alert.alert('Draft Saved', 'Your event has been saved as a draft.')}
+          onPress={() =>
+            Alert.alert('Draft Saved', 'Your event has been saved as a draft.')
+          }
           variant="outline"
           style={styles.draftButton}
         />
-        
+
         <Button
           title="Create Event"
           onPress={handleCreateEvent}

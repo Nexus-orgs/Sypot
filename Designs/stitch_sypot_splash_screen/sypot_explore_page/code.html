@@ -1,172 +1,388 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<title>Sypot - Explore</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <title>Sypot - Explore</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
       tailwind.config = {
-        darkMode: "class",
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              primary: "#0df2db",
-              "background-light": "#f5f8f8",
-              "background-dark": "#102220",
+              primary: '#0df2db',
+              'background-light': '#f5f8f8',
+              'background-dark': '#102220',
             },
             fontFamily: {
-              display: ["Plus Jakarta Sans"],
+              display: ['Plus Jakarta Sans'],
             },
-            borderRadius: { DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px" },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
           },
         },
       };
     </script>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden">
-<div class="flex-grow">
-<header class="sticky top-0 z-10 flex items-center justify-between bg-background-light/80 p-4 pb-2 backdrop-blur-sm dark:bg-background-dark/80">
-<div class="w-12"></div>
-<h1 class="flex-1 text-center text-lg font-bold tracking-tight text-background-dark dark:text-background-light">Explore</h1>
-<div class="flex w-12 items-center justify-end">
-<button class="flex h-12 cursor-pointer items-center justify-center rounded-full bg-background-light p-3 text-background-dark shadow-sm dark:bg-background-dark dark:text-background-light">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M228.92,49.69a8,8,0,0,0-6.86-1.45L160.93,63.52,99.58,32.84a8,8,0,0,0-5.52-.6l-64,16A8,8,0,0,0,24,56V200a8,8,0,0,0,9.94,7.76l61.13-15.28,61.35,30.68A8.15,8.15,0,0,0,160,224a8,8,0,0,0,1.94-.24l64-16A8,8,0,0,0,232,200V56A8,8,0,0,0,228.92,49.69ZM104,52.94l48,24V203.06l-48-24ZM40,62.25l48-12v127.5l-48,12Zm176,131.5-48,12V78.25l48-12Z"></path>
-</svg>
-</button>
-</div>
-</header>
-<div class="px-4 py-3">
-<div class="relative">
-<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
-<svg class="h-5 w-5 text-background-dark/50 dark:text-background-light/50" fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
-</svg>
-</div>
-<input class="form-input block h-14 w-full rounded-lg border-transparent bg-white pl-11 text-background-dark placeholder:text-background-dark/50 focus:border-primary focus:ring-primary dark:bg-background-dark/50 dark:text-background-light dark:placeholder:text-background-light/50" placeholder="Search events, places..." type="search"/>
-</div>
-</div>
-<div class="flex gap-2 px-4 pb-4">
-<div class="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4">
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-4 text-sm font-bold text-background-dark dark:bg-primary/30 dark:text-background-light">
-<span>List View</span>
-</button>
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white px-4 text-sm font-medium text-background-dark/80 dark:bg-background-dark/50 dark:text-background-light/80">
-<span>Date</span>
-<svg class="h-4 w-4" fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
-<path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
-</svg>
-</button>
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white px-4 text-sm font-medium text-background-dark/80 dark:bg-background-dark/50 dark:text-background-light/80">
-<span>Category</span>
-<svg class="h-4 w-4" fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
-<path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
-</svg>
-</button>
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white px-4 text-sm font-medium text-background-dark/80 dark:bg-background-dark/50 dark:text-background-light/80">
-<span>Price/Free</span>
-<svg class="h-4 w-4" fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
-<path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
-</svg>
-</button>
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white px-4 text-sm font-medium text-background-dark/80 dark:bg-background-dark/50 dark:text-background-light/80">
-<span>Location</span>
-<svg class="h-4 w-4" fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
-<path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
-</svg>
-</button>
-</div>
-</div>
-<main class="space-y-6 p-4 pt-2">
-<div class="space-y-4">
-<h2 class="text-xl font-bold text-background-dark dark:text-background-light">Featured Event</h2>
-<div class="rounded-xl bg-white p-3 shadow-md dark:bg-background-dark/50">
-<div class="flex items-start gap-4">
-<div class="flex flex-1 flex-col gap-1">
-<p class="text-sm font-semibold text-primary">Featured</p>
-<p class="text-lg font-bold text-background-dark dark:text-background-light">Urban Art Walk</p>
-<p class="text-sm text-background-dark/70 dark:text-background-light/70">Explore the city's vibrant street art scene with a guided tour.</p>
-</div>
-<div class="h-24 w-24 flex-shrink-0 rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAkNXjXhkAXVo1wb_oAGlKXoBOmFYwGm_6l4hnuezuXA9XLke7Z-BC6FTfHYx9R2EQkvAawpxoizTEHKQUsF0lfRdkBUqQ3hEiTKO_Ld-rIkkrfxUZS1P5oI2cgURoAG63rxcR6p0uKMj-gz0nBLAoUueXMorVHi4HffG8K0Xz7VqiYrGAK86AGSXaFNVx081AHT1Jc3EYXDQC0_hYIZ7H11FAt1RcP9ioApyYQCNNlXu5mLlJZ4bSBVHMFrLNpHkZjULjYZ44ODXc");'></div>
-</div>
-</div>
-</div>
-<div class="space-y-4">
-<h2 class="text-xl font-bold text-background-dark dark:text-background-light">Nearby</h2>
-<div class="space-y-4">
-<div class="rounded-xl bg-white p-3 shadow-md dark:bg-background-dark/50">
-<div class="flex items-start gap-4">
-<div class="flex flex-1 flex-col gap-1">
-<p class="text-lg font-bold text-background-dark dark:text-background-light">Indie Music Night</p>
-<p class="text-sm text-background-dark/70 dark:text-background-light/70">Discover emerging artists at a local venue.</p>
-</div>
-<div class="h-24 w-24 flex-shrink-0 rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYmg5yfIvHSzRHgLYIZYUGhmFZapi6xwz28A4-KvoqXCF20Y73-7NdL0CWWykNELkrGImXyI2PtnCNyk9xX0m3j_Tw8mUemKAPnjS9f-x4R56QaEbBKXfRGBEXJwxQ2ZUBpWTGVWSh0iW1xmQmBfnFgALPom0B-8UqWSRe7Sm9_73Pw8Pcg2IpLh30fy0MOyxDsrKQKwIRxLXjWUbbFCrhE2f2zOP9zJOnUuvom5BLvQZYmjBWQAHlTfDjP6rz88bJzw4sqtCh9ps");'></div>
-</div>
-</div>
-<div class="rounded-xl bg-white p-3 shadow-md dark:bg-background-dark/50">
-<div class="flex items-start gap-4">
-<div class="flex flex-1 flex-col gap-1">
-<p class="text-lg font-bold text-background-dark dark:text-background-light">Vintage Market</p>
-<p class="text-sm text-background-dark/70 dark:text-background-light/70">Find unique treasures and vintage clothing.</p>
-</div>
-<div class="h-24 w-24 flex-shrink-0 rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjkjmZGDKSdaMOazyr8_0REo2attteQ55wUq_3zJX3AEO8MCVU55l2o7zKKMLChtDyngamvFhKkTr9QJRFoNhgHaKAIW23F7P9Y5MS9VYyIPLqOqz1bUzNgzsoMxYzLlZagdAhh5IcCv1CE0vXbfh4c2eY4lpA6NyHSonaht2U3wGgjMQgyasPusu9ufnRoXdJwgYlTo4Q0jhIHIh06K5U8QwDEkzOOrs0RKWLYoBk-IwuwlRcV2-aLReTt71fH-VjyzoV1XKeEGc");'></div>
-</div>
-</div>
-<div class="rounded-xl bg-white p-3 shadow-md dark:bg-background-dark/50">
-<div class="flex items-start gap-4">
-<div class="flex flex-1 flex-col gap-1">
-<p class="text-lg font-bold text-background-dark dark:text-background-light">Rooftop Cinema</p>
-<p class="text-sm text-background-dark/70 dark:text-background-light/70">Enjoy a movie under the stars with city views.</p>
-</div>
-<div class="h-24 w-24 flex-shrink-0 rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQX5c3I0RgSdo9FcYzyfdSxTsfqn6KFp2_UBpEWnub5UVX0cL6tKZhnrMlLTUOR0fYubI8vGbrIaDFxkZ7PQcLT08JNkVi1cyOCu5uOh8uBK7orq0cTNJbSiRi0xVzhyG3ab9ZAZ9RZnMzlN2yXI0i4T8WSV3ULvuDSuWoJnHlKytj5bj7Fx8NI32135R1WCm4JpsT9S4gdjtZ1YKT0N3OfBjMEaNGYlB8bldi_N-gcv_QVhuaYR1XnZF_emsGg2oRWYW9EAty2xw");'></div>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-<footer class="sticky bottom-0 border-t border-background-dark/10 bg-background-light/80 pb-4 pt-2 backdrop-blur-sm dark:border-background-light/10 dark:bg-background-dark/80">
-<nav class="flex items-center justify-around px-4">
-<a class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60" href="#">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"></path>
-</svg>
-<span class="text-xs font-medium">Home</span>
-</a>
-<a class="flex flex-col items-center gap-1.5 rounded-full px-3 py-1 text-primary" href="#">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
-</svg>
-<span class="text-xs font-bold">Explore</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60" href="#">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208Zm-32-80a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path>
-</svg>
-<span class="text-xs font-medium">Create</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60" href="#">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"></path>
-</svg>
-<span class="text-xs font-medium">Chat</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60" href="#">
-<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-<path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path>
-</svg>
-<span class="text-xs font-medium">Profile</span>
-</a>
-</nav>
-</footer>
-</div>
-
-</body></html>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden"
+    >
+      <div class="flex-grow">
+        <header
+          class="sticky top-0 z-10 flex items-center justify-between bg-background-light/80 p-4 pb-2 backdrop-blur-sm dark:bg-background-dark/80"
+        >
+          <div class="w-12"></div>
+          <h1
+            class="flex-1 text-center text-lg font-bold tracking-tight text-background-dark dark:text-background-light"
+          >
+            Explore
+          </h1>
+          <div class="flex w-12 items-center justify-end">
+            <button
+              class="flex h-12 cursor-pointer items-center justify-center rounded-full bg-background-light p-3 text-background-dark shadow-sm dark:bg-background-dark dark:text-background-light"
+            >
+              <svg
+                fill="currentColor"
+                height="24px"
+                viewBox="0 0 256 256"
+                width="24px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M228.92,49.69a8,8,0,0,0-6.86-1.45L160.93,63.52,99.58,32.84a8,8,0,0,0-5.52-.6l-64,16A8,8,0,0,0,24,56V200a8,8,0,0,0,9.94,7.76l61.13-15.28,61.35,30.68A8.15,8.15,0,0,0,160,224a8,8,0,0,0,1.94-.24l64-16A8,8,0,0,0,232,200V56A8,8,0,0,0,228.92,49.69ZM104,52.94l48,24V203.06l-48-24ZM40,62.25l48-12v127.5l-48,12Zm176,131.5-48,12V78.25l48-12Z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div class="px-4 py-3">
+          <div class="relative">
+            <div
+              class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4"
+            >
+              <svg
+                class="h-5 w-5 text-background-dark/50 dark:text-background-light/50"
+                fill="currentColor"
+                height="24px"
+                viewBox="0 0 256 256"
+                width="24px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                ></path>
+              </svg>
+            </div>
+            <input
+              class="form-input block h-14 w-full rounded-lg border-transparent bg-white pl-11 text-background-dark placeholder:text-background-dark/50 focus:border-primary focus:ring-primary dark:bg-background-dark/50 dark:text-background-light dark:placeholder:text-background-light/50"
+              placeholder="Search events, places..."
+              type="search"
+            />
+          </div>
+        </div>
+        <div class="flex gap-2 px-4 pb-4">
+          <div class="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4">
+            <button
+              class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-4 text-sm font-bold text-background-dark dark:bg-primary/30 dark:text-background-light"
+            >
+              <span>List View</span>
+            </button>
+            <button
+              class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white px-4 text-sm font-medium text-background-dark/80 dark:bg-background-dark/50 dark:text-background-light/80"
+            >
+              <span>Date</span>
+              <svg
+                class="h-4 w-4"
+                fill="currentColor"
+                height="20px"
+                viewBox="0 0 256 256"
+                width="20px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                ></path>
+              </svg>
+            </button>
+            <button
+              class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white px-4 text-sm font-medium text-background-dark/80 dark:bg-background-dark/50 dark:text-background-light/80"
+            >
+              <span>Category</span>
+              <svg
+                class="h-4 w-4"
+                fill="currentColor"
+                height="20px"
+                viewBox="0 0 256 256"
+                width="20px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                ></path>
+              </svg>
+            </button>
+            <button
+              class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white px-4 text-sm font-medium text-background-dark/80 dark:bg-background-dark/50 dark:text-background-light/80"
+            >
+              <span>Price/Free</span>
+              <svg
+                class="h-4 w-4"
+                fill="currentColor"
+                height="20px"
+                viewBox="0 0 256 256"
+                width="20px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                ></path>
+              </svg>
+            </button>
+            <button
+              class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white px-4 text-sm font-medium text-background-dark/80 dark:bg-background-dark/50 dark:text-background-light/80"
+            >
+              <span>Location</span>
+              <svg
+                class="h-4 w-4"
+                fill="currentColor"
+                height="20px"
+                viewBox="0 0 256 256"
+                width="20px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <main class="space-y-6 p-4 pt-2">
+          <div class="space-y-4">
+            <h2
+              class="text-xl font-bold text-background-dark dark:text-background-light"
+            >
+              Featured Event
+            </h2>
+            <div
+              class="rounded-xl bg-white p-3 shadow-md dark:bg-background-dark/50"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex flex-1 flex-col gap-1">
+                  <p class="text-sm font-semibold text-primary">Featured</p>
+                  <p
+                    class="text-lg font-bold text-background-dark dark:text-background-light"
+                  >
+                    Urban Art Walk
+                  </p>
+                  <p
+                    class="text-sm text-background-dark/70 dark:text-background-light/70"
+                  >
+                    Explore the city's vibrant street art scene with a guided
+                    tour.
+                  </p>
+                </div>
+                <div
+                  class="h-24 w-24 flex-shrink-0 rounded-lg bg-cover bg-center"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkNXjXhkAXVo1wb_oAGlKXoBOmFYwGm_6l4hnuezuXA9XLke7Z-BC6FTfHYx9R2EQkvAawpxoizTEHKQUsF0lfRdkBUqQ3hEiTKO_Ld-rIkkrfxUZS1P5oI2cgURoAG63rxcR6p0uKMj-gz0nBLAoUueXMorVHi4HffG8K0Xz7VqiYrGAK86AGSXaFNVx081AHT1Jc3EYXDQC0_hYIZ7H11FAt1RcP9ioApyYQCNNlXu5mLlJZ4bSBVHMFrLNpHkZjULjYZ44ODXc');
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <h2
+              class="text-xl font-bold text-background-dark dark:text-background-light"
+            >
+              Nearby
+            </h2>
+            <div class="space-y-4">
+              <div
+                class="rounded-xl bg-white p-3 shadow-md dark:bg-background-dark/50"
+              >
+                <div class="flex items-start gap-4">
+                  <div class="flex flex-1 flex-col gap-1">
+                    <p
+                      class="text-lg font-bold text-background-dark dark:text-background-light"
+                    >
+                      Indie Music Night
+                    </p>
+                    <p
+                      class="text-sm text-background-dark/70 dark:text-background-light/70"
+                    >
+                      Discover emerging artists at a local venue.
+                    </p>
+                  </div>
+                  <div
+                    class="h-24 w-24 flex-shrink-0 rounded-lg bg-cover bg-center"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYmg5yfIvHSzRHgLYIZYUGhmFZapi6xwz28A4-KvoqXCF20Y73-7NdL0CWWykNELkrGImXyI2PtnCNyk9xX0m3j_Tw8mUemKAPnjS9f-x4R56QaEbBKXfRGBEXJwxQ2ZUBpWTGVWSh0iW1xmQmBfnFgALPom0B-8UqWSRe7Sm9_73Pw8Pcg2IpLh30fy0MOyxDsrKQKwIRxLXjWUbbFCrhE2f2zOP9zJOnUuvom5BLvQZYmjBWQAHlTfDjP6rz88bJzw4sqtCh9ps');
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="rounded-xl bg-white p-3 shadow-md dark:bg-background-dark/50"
+              >
+                <div class="flex items-start gap-4">
+                  <div class="flex flex-1 flex-col gap-1">
+                    <p
+                      class="text-lg font-bold text-background-dark dark:text-background-light"
+                    >
+                      Vintage Market
+                    </p>
+                    <p
+                      class="text-sm text-background-dark/70 dark:text-background-light/70"
+                    >
+                      Find unique treasures and vintage clothing.
+                    </p>
+                  </div>
+                  <div
+                    class="h-24 w-24 flex-shrink-0 rounded-lg bg-cover bg-center"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjkjmZGDKSdaMOazyr8_0REo2attteQ55wUq_3zJX3AEO8MCVU55l2o7zKKMLChtDyngamvFhKkTr9QJRFoNhgHaKAIW23F7P9Y5MS9VYyIPLqOqz1bUzNgzsoMxYzLlZagdAhh5IcCv1CE0vXbfh4c2eY4lpA6NyHSonaht2U3wGgjMQgyasPusu9ufnRoXdJwgYlTo4Q0jhIHIh06K5U8QwDEkzOOrs0RKWLYoBk-IwuwlRcV2-aLReTt71fH-VjyzoV1XKeEGc');
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="rounded-xl bg-white p-3 shadow-md dark:bg-background-dark/50"
+              >
+                <div class="flex items-start gap-4">
+                  <div class="flex flex-1 flex-col gap-1">
+                    <p
+                      class="text-lg font-bold text-background-dark dark:text-background-light"
+                    >
+                      Rooftop Cinema
+                    </p>
+                    <p
+                      class="text-sm text-background-dark/70 dark:text-background-light/70"
+                    >
+                      Enjoy a movie under the stars with city views.
+                    </p>
+                  </div>
+                  <div
+                    class="h-24 w-24 flex-shrink-0 rounded-lg bg-cover bg-center"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQX5c3I0RgSdo9FcYzyfdSxTsfqn6KFp2_UBpEWnub5UVX0cL6tKZhnrMlLTUOR0fYubI8vGbrIaDFxkZ7PQcLT08JNkVi1cyOCu5uOh8uBK7orq0cTNJbSiRi0xVzhyG3ab9ZAZ9RZnMzlN2yXI0i4T8WSV3ULvuDSuWoJnHlKytj5bj7Fx8NI32135R1WCm4JpsT9S4gdjtZ1YKT0N3OfBjMEaNGYlB8bldi_N-gcv_QVhuaYR1XnZF_emsGg2oRWYW9EAty2xw');
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer
+        class="sticky bottom-0 border-t border-background-dark/10 bg-background-light/80 pb-4 pt-2 backdrop-blur-sm dark:border-background-light/10 dark:bg-background-dark/80"
+      >
+        <nav class="flex items-center justify-around px-4">
+          <a
+            class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60"
+            href="#"
+          >
+            <svg
+              fill="currentColor"
+              height="24px"
+              viewBox="0 0 256 256"
+              width="24px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"
+              ></path>
+            </svg>
+            <span class="text-xs font-medium">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1.5 rounded-full px-3 py-1 text-primary"
+            href="#"
+          >
+            <svg
+              fill="currentColor"
+              height="24px"
+              viewBox="0 0 256 256"
+              width="24px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+              ></path>
+            </svg>
+            <span class="text-xs font-bold">Explore</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60"
+            href="#"
+          >
+            <svg
+              fill="currentColor"
+              height="24px"
+              viewBox="0 0 256 256"
+              width="24px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208Zm-32-80a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"
+              ></path>
+            </svg>
+            <span class="text-xs font-medium">Create</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60"
+            href="#"
+          >
+            <svg
+              fill="currentColor"
+              height="24px"
+              viewBox="0 0 256 256"
+              width="24px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"
+              ></path>
+            </svg>
+            <span class="text-xs font-medium">Chat</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-background-dark/60 dark:text-background-light/60"
+            href="#"
+          >
+            <svg
+              fill="currentColor"
+              height="24px"
+              viewBox="0 0 256 256"
+              width="24px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+              ></path>
+            </svg>
+            <span class="text-xs font-medium">Profile</span>
+          </a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,141 +1,226 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sypot Chat</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sypot Chat</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
       tailwind.config = {
-        darkMode: "class",
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              primary: "#f26c0d",
-              "background-light": "#f8f7f5",
-              "background-dark": "#221710",
+              primary: '#f26c0d',
+              'background-light': '#f8f7f5',
+              'background-dark': '#221710',
             },
             fontFamily: {
-              display: ["Plus Jakarta Sans"],
+              display: ['Plus Jakarta Sans'],
             },
-            borderRadius: { DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px" },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
           },
         },
       };
     </script>
-<style>
+    <style>
       .material-symbols-outlined {
-        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       }
     </style>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-zinc-100">
-<div class="flex h-screen flex-col">
-<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-<div class="mx-auto flex max-w-md items-center justify-between p-4">
-<div class="w-10"></div>
-<h1 class="text-xl font-bold">Messages</h1>
-<button class="flex h-10 w-10 items-center justify-center rounded-full text-zinc-900 dark:text-zinc-100">
-<span class="material-symbols-outlined"> edit_square </span>
-</button>
-</div>
-<div class="mx-auto max-w-md px-4 pb-3">
-<div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 dark:text-zinc-400"> search </span>
-<input class="w-full rounded-lg border-0 bg-zinc-200/50 py-2 pl-10 pr-4 text-zinc-900 placeholder:text-zinc-500 focus:ring-2 focus:ring-primary dark:bg-zinc-800/50 dark:text-zinc-100 dark:placeholder:text-zinc-400" placeholder="Search" type="text"/>
-</div>
-</div>
-</header>
-<main class="flex-1 overflow-y-auto pb-24">
-<div class="mx-auto max-w-md">
-<ul class="divide-y divide-zinc-200/80 dark:divide-zinc-800/80">
-<li class="flex cursor-pointer items-center gap-4 p-4 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-<div class="relative">
-<img alt="Weekend Trip group avatar" class="h-14 w-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLosuo6dDmAB2LcMWXxEIE43I7Q6K9G-UFi_QYMSgjKBz6UUjVLqGEP319oncMovGyOFL2i3qEul0zePtwi0Q_P_FkM5YBKDinfU9D2QQfEiucVZcWa9Yls6mt2m6Jyv0xXQWw4qVELV5TVW4bi4zcIBUiWJotKYh1aZaIJD4Ko01C_BSGnb5-iYUd9dKAUBkQ7IuBuJYIqd6h6Fkl3Y8kW3GDwAuz8VE99yB5q2Yn1mAEj4zcYmAZL1AImhinCCdSQCmJJlszsnY"/>
-<div class="absolute bottom-0 right-0 h-4 w-4 rounded-full border-2 border-background-light bg-green-500 dark:border-background-dark"></div>
-</div>
-<div class="flex-1">
-<div class="flex items-center justify-between">
-<p class="font-bold">Weekend Trip</p>
-<p class="text-xs text-zinc-500 dark:text-zinc-400">10:42 AM</p>
-</div>
-<div class="flex items-center justify-between">
-<p class="text-sm text-zinc-600 dark:text-zinc-400">You: Sounds good!</p>
-<span class="flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">2</span>
-</div>
-</div>
-</li>
-<li class="flex cursor-pointer items-center gap-4 p-4 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-<div class="relative">
-<img alt="Hiking Group avatar" class="h-14 w-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd6TRUQPAlAsGXqOuixEgI0SokFHjbow1IPDXsHa4Gn60xJXIgAlyzdEnIeKE_Jezbm2lQ8thU3a3GxaqVRFgz5yoOR1cGsEJ1JS2jyw4tcwCwshiHCFXTGUs05qb6PLoVH6AGqEwrFPDS291EojKG-OQvYWcolS9ZTLwuJmCT5UDBwHWWo75PVS3yW8eZlKt39J30qeW7q8zCIRdkWaDVS9Q1p0fQQRHTs0qmhUOu7kyQezDwgTqePKWHg0tOHvtyZAg0l1m-tSo"/>
-</div>
-<div class="flex-1">
-<div class="flex items-center justify-between">
-<p class="font-bold">Hiking Group</p>
-<p class="text-xs text-zinc-500 dark:text-zinc-400">Yesterday</p>
-</div>
-<p class="text-sm text-zinc-600 dark:text-zinc-400">Alex: Anyone free this Saturday?</p>
-</div>
-</li>
-<li class="flex cursor-pointer items-center gap-4 p-4 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-<div class="relative">
-<img alt="Sarah's avatar" class="h-14 w-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-9TDv0RbOZisMHZd-sphKYL9TV80lnQ74vDH_us72Rbvm-AyTuGV3Z3ipQdqh6j1SeolFG-tbpr5c-HDMr-nJXuZqKCAU-JFW7H1H75crj4elQWUzUBgs7IrMs0bhGf03Gruyxhucx4OFiK3XipanG-o6yq5D4HE0jcEBa8FmVhCcqfyhb5x7sWv51kqErw395jyBES8lzyTjTf3PLSm_4syJFpIgQM1IuM-CPLhX_oMFzHNuovJTJo5PtCAHFHD_aiTwERBAAHY"/>
-<div class="absolute bottom-0 right-0 h-4 w-4 rounded-full border-2 border-background-light bg-green-500 dark:border-background-dark"></div>
-</div>
-<div class="flex-1">
-<div class="flex items-center justify-between">
-<p class="font-bold">Sarah</p>
-<p class="text-xs text-zinc-500 dark:text-zinc-400">Friday</p>
-</div>
-<p class="text-sm text-zinc-600 dark:text-zinc-400">Let's catch up soon!</p>
-</div>
-</li>
-<li class="flex cursor-pointer items-center gap-4 p-4 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-<div class="relative">
-<img alt="Alex's avatar" class="h-14 w-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQrG7nVIJD0hiZUfsdbyXqosFXDI5Ja9YnFighvhMLUa_aKN19gTepmE5ao2GRUSwGn9juuX4UP4BrPqDeB4kIGuv31rWKlXsfYYUIikOLASF5driAv37gY5szyoXPUBwhXgfbn1m0bjKsWhZgVbYeBTqEWHMiOu3AZ8uWN44rV0Tfn2g4vi0gBBiFP0Fj1YmuW-lk8p26LVeguJV_fsnAPWy92ob0illkA7mJD8tqLyoh-NwWeTJxzN17oERM7gdYNEk8Ay3Whs"/>
-</div>
-<div class="flex-1">
-<div class="flex items-center justify-between">
-<p class="font-bold">Alex</p>
-<p class="text-xs text-zinc-500 dark:text-zinc-400">Thursday</p>
-</div>
-<p class="text-sm text-zinc-600 dark:text-zinc-400">See you at the concert!</p>
-</div>
-</li>
-</ul>
-</div>
-</main>
-<nav class="fixed bottom-0 left-0 right-0 z-10 mx-auto max-w-md border-t border-zinc-200/80 bg-background-light/80 pb-4 pt-2 backdrop-blur-sm dark:border-zinc-800/80 dark:bg-background-dark/80">
-<div class="flex justify-around">
-<a class="flex flex-col items-center gap-1 text-zinc-500 dark:text-zinc-400" href="#">
-<span class="material-symbols-outlined"> home </span>
-<span class="text-xs">Home</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-zinc-500 dark:text-zinc-400" href="#">
-<span class="material-symbols-outlined"> travel_explore </span>
-<span class="text-xs">Explore</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-zinc-500 dark:text-zinc-400" href="#">
-<span class="material-symbols-outlined text-4xl"> add_circle </span>
-</a>
-<a class="flex flex-col items-center gap-1 text-primary" href="#">
-<span class="material-symbols-outlined"> forum </span>
-<span class="text-xs font-bold">Chat</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-zinc-500 dark:text-zinc-400" href="#">
-<span class="material-symbols-outlined"> account_circle </span>
-<span class="text-xs">Profile</span>
-</a>
-</div>
-</nav>
-</div>
-
-</body></html>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-zinc-100"
+  >
+    <div class="flex h-screen flex-col">
+      <header
+        class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
+      >
+        <div class="mx-auto flex max-w-md items-center justify-between p-4">
+          <div class="w-10"></div>
+          <h1 class="text-xl font-bold">Messages</h1>
+          <button
+            class="flex h-10 w-10 items-center justify-center rounded-full text-zinc-900 dark:text-zinc-100"
+          >
+            <span class="material-symbols-outlined"> edit_square </span>
+          </button>
+        </div>
+        <div class="mx-auto max-w-md px-4 pb-3">
+          <div class="relative">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 dark:text-zinc-400"
+            >
+              search
+            </span>
+            <input
+              class="w-full rounded-lg border-0 bg-zinc-200/50 py-2 pl-10 pr-4 text-zinc-900 placeholder:text-zinc-500 focus:ring-2 focus:ring-primary dark:bg-zinc-800/50 dark:text-zinc-100 dark:placeholder:text-zinc-400"
+              placeholder="Search"
+              type="text"
+            />
+          </div>
+        </div>
+      </header>
+      <main class="flex-1 overflow-y-auto pb-24">
+        <div class="mx-auto max-w-md">
+          <ul class="divide-y divide-zinc-200/80 dark:divide-zinc-800/80">
+            <li
+              class="flex cursor-pointer items-center gap-4 p-4 hover:bg-zinc-100 dark:hover:bg-zinc-900"
+            >
+              <div class="relative">
+                <img
+                  alt="Weekend Trip group avatar"
+                  class="h-14 w-14 rounded-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLosuo6dDmAB2LcMWXxEIE43I7Q6K9G-UFi_QYMSgjKBz6UUjVLqGEP319oncMovGyOFL2i3qEul0zePtwi0Q_P_FkM5YBKDinfU9D2QQfEiucVZcWa9Yls6mt2m6Jyv0xXQWw4qVELV5TVW4bi4zcIBUiWJotKYh1aZaIJD4Ko01C_BSGnb5-iYUd9dKAUBkQ7IuBuJYIqd6h6Fkl3Y8kW3GDwAuz8VE99yB5q2Yn1mAEj4zcYmAZL1AImhinCCdSQCmJJlszsnY"
+                />
+                <div
+                  class="absolute bottom-0 right-0 h-4 w-4 rounded-full border-2 border-background-light bg-green-500 dark:border-background-dark"
+                ></div>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <p class="font-bold">Weekend Trip</p>
+                  <p class="text-xs text-zinc-500 dark:text-zinc-400">
+                    10:42 AM
+                  </p>
+                </div>
+                <div class="flex items-center justify-between">
+                  <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                    You: Sounds good!
+                  </p>
+                  <span
+                    class="flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-white"
+                    >2</span
+                  >
+                </div>
+              </div>
+            </li>
+            <li
+              class="flex cursor-pointer items-center gap-4 p-4 hover:bg-zinc-100 dark:hover:bg-zinc-900"
+            >
+              <div class="relative">
+                <img
+                  alt="Hiking Group avatar"
+                  class="h-14 w-14 rounded-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd6TRUQPAlAsGXqOuixEgI0SokFHjbow1IPDXsHa4Gn60xJXIgAlyzdEnIeKE_Jezbm2lQ8thU3a3GxaqVRFgz5yoOR1cGsEJ1JS2jyw4tcwCwshiHCFXTGUs05qb6PLoVH6AGqEwrFPDS291EojKG-OQvYWcolS9ZTLwuJmCT5UDBwHWWo75PVS3yW8eZlKt39J30qeW7q8zCIRdkWaDVS9Q1p0fQQRHTs0qmhUOu7kyQezDwgTqePKWHg0tOHvtyZAg0l1m-tSo"
+                />
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <p class="font-bold">Hiking Group</p>
+                  <p class="text-xs text-zinc-500 dark:text-zinc-400">
+                    Yesterday
+                  </p>
+                </div>
+                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                  Alex: Anyone free this Saturday?
+                </p>
+              </div>
+            </li>
+            <li
+              class="flex cursor-pointer items-center gap-4 p-4 hover:bg-zinc-100 dark:hover:bg-zinc-900"
+            >
+              <div class="relative">
+                <img
+                  alt="Sarah's avatar"
+                  class="h-14 w-14 rounded-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-9TDv0RbOZisMHZd-sphKYL9TV80lnQ74vDH_us72Rbvm-AyTuGV3Z3ipQdqh6j1SeolFG-tbpr5c-HDMr-nJXuZqKCAU-JFW7H1H75crj4elQWUzUBgs7IrMs0bhGf03Gruyxhucx4OFiK3XipanG-o6yq5D4HE0jcEBa8FmVhCcqfyhb5x7sWv51kqErw395jyBES8lzyTjTf3PLSm_4syJFpIgQM1IuM-CPLhX_oMFzHNuovJTJo5PtCAHFHD_aiTwERBAAHY"
+                />
+                <div
+                  class="absolute bottom-0 right-0 h-4 w-4 rounded-full border-2 border-background-light bg-green-500 dark:border-background-dark"
+                ></div>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <p class="font-bold">Sarah</p>
+                  <p class="text-xs text-zinc-500 dark:text-zinc-400">Friday</p>
+                </div>
+                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                  Let's catch up soon!
+                </p>
+              </div>
+            </li>
+            <li
+              class="flex cursor-pointer items-center gap-4 p-4 hover:bg-zinc-100 dark:hover:bg-zinc-900"
+            >
+              <div class="relative">
+                <img
+                  alt="Alex's avatar"
+                  class="h-14 w-14 rounded-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQrG7nVIJD0hiZUfsdbyXqosFXDI5Ja9YnFighvhMLUa_aKN19gTepmE5ao2GRUSwGn9juuX4UP4BrPqDeB4kIGuv31rWKlXsfYYUIikOLASF5driAv37gY5szyoXPUBwhXgfbn1m0bjKsWhZgVbYeBTqEWHMiOu3AZ8uWN44rV0Tfn2g4vi0gBBiFP0Fj1YmuW-lk8p26LVeguJV_fsnAPWy92ob0illkA7mJD8tqLyoh-NwWeTJxzN17oERM7gdYNEk8Ay3Whs"
+                />
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <p class="font-bold">Alex</p>
+                  <p class="text-xs text-zinc-500 dark:text-zinc-400">
+                    Thursday
+                  </p>
+                </div>
+                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                  See you at the concert!
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </main>
+      <nav
+        class="fixed bottom-0 left-0 right-0 z-10 mx-auto max-w-md border-t border-zinc-200/80 bg-background-light/80 pb-4 pt-2 backdrop-blur-sm dark:border-zinc-800/80 dark:bg-background-dark/80"
+      >
+        <div class="flex justify-around">
+          <a
+            class="flex flex-col items-center gap-1 text-zinc-500 dark:text-zinc-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined"> home </span>
+            <span class="text-xs">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-zinc-500 dark:text-zinc-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined"> travel_explore </span>
+            <span class="text-xs">Explore</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-zinc-500 dark:text-zinc-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-4xl"> add_circle </span>
+          </a>
+          <a class="flex flex-col items-center gap-1 text-primary" href="#">
+            <span class="material-symbols-outlined"> forum </span>
+            <span class="text-xs font-bold">Chat</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-zinc-500 dark:text-zinc-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined"> account_circle </span>
+            <span class="text-xs">Profile</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>
