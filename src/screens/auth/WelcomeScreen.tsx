@@ -10,12 +10,12 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { AuthStackParamList } from '../../navigation/types';
+import { RootStackParamList } from '../../types/navigation';
 import { Colors, Typography, Spacing, BorderRadius } from '../../themes';
 import Logo from '../../components/common/Logo';
 import Button from '../../components/common/Button';
 
-type WelcomeNavigationProp = StackNavigationProp<AuthStackParamList, 'Welcome'>;
+type WelcomeNavigationProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
 const WelcomeScreen: React.FC = () => {
   const navigation = useNavigation<WelcomeNavigationProp>();

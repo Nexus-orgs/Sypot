@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-import { RootStackParamList } from '../navigation/types';
+import { RootStackParamList } from '../types/navigation';
 import { Colors, Typography, Spacing } from '../themes';
 import Logo from '../components/common/Logo';
 
@@ -17,8 +17,8 @@ const SplashScreen: React.FC = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      // Navigate to Auth screen after splash
-      navigation.replace('Auth');
+      // Navigate to Login screen after splash
+      navigation.replace('Login');
     }, 3000);
 
     return () => clearTimeout(timer);

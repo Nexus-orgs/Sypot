@@ -10,15 +10,15 @@ import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { AuthStackParamList } from '../../navigation/types';
+import { RootStackParamList } from '../../types/navigation';
 import { Colors, Typography, Spacing } from '../../themes';
 import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
 
-type ResetPasswordRouteProp = RouteProp<AuthStackParamList, 'ResetPassword'>;
+type ResetPasswordRouteProp = RouteProp<RootStackParamList, 'ForgotPassword'>;
 type ResetPasswordNavigationProp = StackNavigationProp<
-  AuthStackParamList,
-  'ResetPassword'
+  RootStackParamList,
+  'ForgotPassword'
 >;
 
 const ResetPasswordScreen: React.FC = () => {

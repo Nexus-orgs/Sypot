@@ -13,7 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { RootStackParamList } from '../../navigation/types';
+import { RootStackParamList } from '../../types/navigation';
 import { Colors, Typography, Spacing } from '../../themes';
 import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';

@@ -12,7 +12,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { HomeStackParamList } from '../../navigation/types';
+import { HomeStackParamList } from '../../types/navigation';
 import { Colors, Typography, Spacing } from '../../themes';
 import EventCard from '../../components/cards/EventCard';
 

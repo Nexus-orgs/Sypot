@@ -10,13 +10,13 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { AuthStackParamList } from '../../navigation/types';
+import { RootStackParamList } from '../../types/navigation';
 import { Colors, Typography, Spacing } from '../../themes';
 import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
 
 type ForgotPasswordNavigationProp = StackNavigationProp<
-  AuthStackParamList,
+  RootStackParamList,
   'ForgotPassword'
 >;
 
