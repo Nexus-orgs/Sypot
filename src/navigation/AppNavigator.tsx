@@ -3,45 +3,44 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
+// Navigators
+import AuthNavigator from './AuthNavigator';
+import HomeNavigator from './HomeNavigator';
+import ExploreNavigator from './ExploreNavigator';
+import MessagesNavigator from './MessagesNavigator';
+import ProfileNavigator from './ProfileNavigator';
 
 // Screens
 import SplashScreen from '../screens/SplashScreen';
-import LoginScreen from '../screens/auth/LoginScreen';
-import SignUpScreen from '../screens/auth/SignUpScreen';
-import ForgotPasswordScreen from '../screens/auth/ForgotPasswordScreen';
-import OnboardingInterestsScreen from '../screens/auth/OnboardingInterestsScreen';
-
-import HomeFeedScreen from '../screens/home/HomeFeedScreen';
-import ExploreScreen from '../screens/explore/ExploreScreen';
-import MessagesScreen from '../screens/messages/MessagesScreen';
-import ProfileScreen from '../screens/profile/ProfileScreen';
 import MapScreen from '../screens/map/MapScreen';
 
 // Types
 import { RootStackParamList, MainTabParamList } from '../types/navigation';
 
 // Theme
-import { colors } from '../utils/theme';
+import { Colors } from '../themes';
 
 const Stack = createStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
-// Tab Navigator Component
+// Main Tab Navigator Component
 function MainTabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: colors.backgroundLight,
+          backgroundColor: Colors.backgroundLight,
           borderTopWidth: 1,
-          borderTopColor: colors.neutral200,
+          borderTopColor: Colors.neutral200,
           paddingBottom: 8,
           paddingTop: 8,
           height: 70,
         },
-        tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.neutral400,
+        tabBarActiveTintColor: Colors.primary,
+        tabBarInactiveTintColor: Colors.neutral400,
         tabBarLabelStyle: {
           fontSize: 12,
           fontWeight: '500',
@@ -50,17 +49,22 @@ function MainTabNavigator() {
     >
       <Tab.Screen
         name="Home"
-        component={HomeFeedScreen}
+        component={HomeNavigator}
         options={{
           tabBarLabel: 'Home',
-          // We'll add icons later with react-native-vector-icons
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="home" size={size} color={color} />
+          ),
         }}
       />
       <Tab.Screen
         name="Explore"
-        component={ExploreScreen}
+        component={ExploreNavigator}
         options={{
           tabBarLabel: 'Explore',
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="explore" size={size} color={color} />
+          ),
         }}
       />
       <Tab.Screen
@@ -68,33 +72,42 @@ function MainTabNavigator() {
         component={MapScreen}
         options={{
           tabBarLabel: 'Map',
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="map" size={size} color={color} />
+          ),
         }}
       />
       <Tab.Screen
         name="Messages"
-        component={MessagesScreen}
+        component={MessagesNavigator}
         options={{
           tabBarLabel: 'Messages',
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="message" size={size} color={color} />
+          ),
         }}
       />
       <Tab.Screen
         name="Profile"
-        component={ProfileScreen}
+        component={ProfileNavigator}
         options={{
           tabBarLabel: 'Profile',
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="person" size={size} color={color} />
+          ),
         }}
       />
     </Tab.Navigator>
   );
 }
 
-// Main App Navigator
+// Root Stack Navigator
 export default function AppNavigator() {
   return (
     <NavigationContainer>
       <StatusBar
         barStyle="dark-content"
-        backgroundColor={colors.backgroundLight}
+        backgroundColor={Colors.backgroundLight}
       />
       <Stack.Navigator
         initialRouteName="Splash"
@@ -104,14 +117,8 @@ export default function AppNavigator() {
         }}
       >
         <Stack.Screen name="Splash" component={SplashScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="SignUp" component={SignUpScreen} />
-        <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
-        <Stack.Screen
-          name="OnboardingInterests"
-          component={OnboardingInterestsScreen}
-        />
-        <Stack.Screen name="MainTabs" component={MainTabNavigator} />
+        <Stack.Screen name="Auth" component={AuthNavigator} />
+        <Stack.Screen name="Main" component={MainTabNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );

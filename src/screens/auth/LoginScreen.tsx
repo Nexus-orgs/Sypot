@@ -11,14 +11,18 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { CompositeNavigationProp } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { AuthStackParamList } from '../../navigation/types';
+import { RootStackParamList, AuthStackParamList } from '../../navigation/types';
 import { Colors, Typography, Spacing } from '../../themes';
 import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
 
-type LoginNavigationProp = StackNavigationProp<AuthStackParamList, 'Login'>;
+type LoginNavigationProp = CompositeNavigationProp<
+  StackNavigationProp<AuthStackParamList, 'Login'>,
+  StackNavigationProp<RootStackParamList>
+>;
 
 const LoginScreen: React.FC = () => {
   const navigation = useNavigation<LoginNavigationProp>();
@@ -33,8 +37,8 @@ const LoginScreen: React.FC = () => {
     // Simulate API call
     setTimeout(() => {
       setLoading(false);
-      // Navigate to main app - this would normally check credentials
-      navigation.navigate('SignUp'); // For demo purposes, go to signup
+      // Navigate to main app after successful login
+      navigation.navigate('Main');
     }, 2000);
   };
 

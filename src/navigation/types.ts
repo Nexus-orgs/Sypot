@@ -15,7 +15,7 @@ export type AuthStackParamList = {
 export type MainTabParamList = {
   Home: undefined;
   Explore: undefined;
-  Create: undefined;
+  Map: undefined;
   Messages: undefined;
   Profile: undefined;
 };
@@ -28,31 +28,23 @@ export type HomeStackParamList = {
 };
 
 export type ExploreStackParamList = {
-  ExploreEvents: undefined;
-  MapView: undefined;
-  SearchResults: { query: string };
+  ExploreScreen: undefined;
   EventDetails: { eventId: string };
-};
-
-export type CreateStackParamList = {
-  CreateEvent: undefined;
-  EventPreview: { eventData: any };
-  UploadMedia: undefined;
+  BusinessProfile: { businessId: string };
 };
 
 export type MessagesStackParamList = {
   MessagesList: undefined;
-  ChatView: { chatId: string; recipientName: string };
-  GroupChat: { groupId: string; groupName: string };
+  IndividualChat: { chatId: string; userName: string };
 };
 
 export type ProfileStackParamList = {
-  ProfileMain: undefined;
+  UserProfile: undefined;
   EditProfile: undefined;
   Settings: undefined;
   MyBookings: undefined;
-  MyEvents: undefined;
   Friends: undefined;
   Notifications: undefined;
   Help: undefined;
+  Achievements: undefined;
 };
