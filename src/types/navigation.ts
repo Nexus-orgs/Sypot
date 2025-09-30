@@ -1,11 +1,15 @@
 export type RootStackParamList = {
   Splash: undefined;
   Auth: undefined;
+  Main: undefined;
+};
+
+export type AuthStackParamList = {
+  Welcome: undefined;
   Login: undefined;
   SignUp: undefined;
   ForgotPassword: undefined;
-  OnboardingInterests: undefined;
-  MainTabs: undefined;
+  ResetPassword: { token: string };
 };
 
 export type MainTabParamList = {

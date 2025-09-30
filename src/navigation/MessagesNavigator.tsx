@@ -4,8 +4,7 @@ import { MessagesStackParamList } from './types';
 
 // Import message screens
 import MessagesListScreen from '../screens/messages/MessagesListScreen';
-import ChatViewScreen from '../screens/messages/ChatViewScreen';
-import GroupChatScreen from '../screens/messages/GroupChatScreen';
+import IndividualChatScreen from '../screens/messages/IndividualChatScreen';
 
 const MessagesStack = createStackNavigator<MessagesStackParamList>();
 
@@ -21,8 +20,10 @@ const MessagesNavigator = () => {
         name="MessagesList"
         component={MessagesListScreen}
       />
-      <MessagesStack.Screen name="ChatView" component={ChatViewScreen} />
-      <MessagesStack.Screen name="GroupChat" component={GroupChatScreen} />
+      <MessagesStack.Screen
+        name="IndividualChat"
+        component={IndividualChatScreen}
+      />
     </MessagesStack.Navigator>
   );
 };
