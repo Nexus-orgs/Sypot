@@ -14,9 +14,11 @@ All colors MUST be HSL.
     --card: 0 0% 100%;
     --card-foreground: 240 10% 9%;
 
+    @tailwind reference;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 9%;
 
+    @tailwind reference;
     --primary: 24 100% 64%;
     --primary-foreground: 0 0% 100%;
 
@@ -110,11 +112,5 @@ All colors MUST be HSL.
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
+  /* Remove invalid @apply usages. Use utility classes in your components instead. */
 }

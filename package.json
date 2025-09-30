@@ -51,6 +51,7 @@
     "@stripe/stripe-js": "latest",
     "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "latest",
+    "@tailwindcss/postcss": "^4.1.13",
     "@tanstack/react-query": "latest",
     "@tanstack/react-table": "latest",
     "@types/leaflet": "latest",
