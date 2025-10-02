@@ -17,8 +17,8 @@ const SplashScreen: React.FC = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      // Navigate to Login screen after splash
-      navigation.replace('Login');
+      // Navigate to Auth screen after splash
+      navigation.replace('Auth');
     }, 3000);
 
     return () => clearTimeout(timer);

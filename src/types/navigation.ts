@@ -15,16 +15,16 @@ export type AuthStackParamList = {
 export type MainTabParamList = {
   Home: undefined;
   Explore: undefined;
+  Map: undefined;
   Messages: undefined;
   Profile: undefined;
-  Map: undefined;
 };
 
 export type HomeStackParamList = {
   HomeFeed: undefined;
   EventDetails: { eventId: string };
-  CreateEvent: undefined;
   UserProfile: { userId: string };
+  BusinessProfile: { businessId: string };
 };
 
 export type ExploreStackParamList = {
